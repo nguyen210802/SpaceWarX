@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class NguyenMonoBehaviour : MonoBehaviour
@@ -8,6 +9,7 @@ public class NguyenMonoBehaviour : MonoBehaviour
     {
         this.LoadComponents();
     }
+
 
     protected virtual void Reset()
     {
@@ -18,4 +20,6 @@ public class NguyenMonoBehaviour : MonoBehaviour
 
     protected virtual void LoadComponents() { }
     protected virtual void ResetValue() { }
+    protected virtual void Start(){}
+    protected virtual void OnEnable() { }
 }

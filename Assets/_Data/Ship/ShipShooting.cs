@@ -19,9 +19,8 @@ public class ShipShooting : MonoBehaviour
     {
         if (InputManager.Instance.OnPiring != 1)    return;
 
-        this.shootTimer += Time.fixedDeltaTime;
-        if (shootTimer < this.shootDelay) return;
-        this.shootTimer = 0f;
+        if (Time.time < this.shootTimer) return;
+        this.shootTimer = Time.time + this.shootDelay;
 
         Vector3 spawnPos = transform.position;
         Quaternion rotation = transform.parent.rotation;

@@ -33,7 +33,7 @@ public class DespawnByDistance : Despawn
         this.DespawnObject();
     }
 
-    protected override void DespawnObject()
+    public override void DespawnObject()
     {
         Destroy(transform.parent.gameObject);
     }
