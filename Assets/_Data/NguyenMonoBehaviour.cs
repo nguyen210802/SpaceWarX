@@ -10,13 +10,12 @@ public class NguyenMonoBehaviour : MonoBehaviour
         this.LoadComponents();
     }
 
-
     protected virtual void Reset()
     {
         this.LoadComponents();
         this.ResetValue();
+        this.OnEnable();
     }
-
 
     protected virtual void LoadComponents() { }
     protected virtual void ResetValue() { }

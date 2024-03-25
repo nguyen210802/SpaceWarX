@@ -22,13 +22,15 @@ public class ShipShooting : MonoBehaviour
         if (Time.time < this.shootTimer) return;
         this.shootTimer = Time.time + this.shootDelay;
 
-        Vector3 spawnPos = transform.position;
+        Vector3 spawnPos = transform.parent.position;
         Quaternion rotation = transform.parent.rotation;
-        Transform newBuller = BulletSpawner.Instance.Spawn(BulletSpawner.Instance.bulletOne, spawnPos, rotation);
-        if (newBuller == null)
+        Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.Instance.bulletOne, spawnPos, rotation);
+        if (newBullet == null)
             return;
 
-        newBuller.gameObject.SetActive(true);
+        newBullet.gameObject.SetActive(true);
+        BulletCtrl bulletCtrl = newBullet.GetComponent<BulletCtrl>();
+        bulletCtrl.SetShotter(transform.parent);
     }
 
     protected virtual bool IsShooting()

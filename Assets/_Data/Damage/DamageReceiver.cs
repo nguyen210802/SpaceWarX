@@ -5,7 +5,7 @@ using UnityEngine;
 
 [RequireComponent (typeof (SphereCollider))]
 
-public class DamageReceiver : NguyenMonoBehaviour
+public abstract class DamageReceiver : NguyenMonoBehaviour
 {
     [SerializeField] protected SphereCollider sphereCollider;
     [SerializeField] protected int hp  = 1;
@@ -15,6 +15,7 @@ public class DamageReceiver : NguyenMonoBehaviour
     protected override void OnEnable()
     {
         base.OnEnable();
+        this.Reborn();
     }
 
     protected override void LoadComponents()
@@ -28,13 +29,14 @@ public class DamageReceiver : NguyenMonoBehaviour
         if (this.sphereCollider != null) return;
         this.sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.isTrigger = true;
-        sphereCollider.radius = 0.25f;
+        sphereCollider.radius = 0.15f;
         Debug.Log(transform.name + ": LoadCollider", gameObject);
     }
 
-    protected virtual void Reborn()
+    public virtual void Reborn()
     {
         this.hp = this.maxHp;
+        this.isDead = false;
     }
 
     public virtual void Add(int add)
@@ -62,8 +64,5 @@ public class DamageReceiver : NguyenMonoBehaviour
         this.OnDead();
     }
 
-    protected virtual void OnDead()
-    {
-
-    }
+    protected abstract void OnDead();
 }

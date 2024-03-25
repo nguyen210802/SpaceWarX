@@ -5,12 +5,17 @@ using UnityEngine;
 public abstract class Spawner : NguyenMonoBehaviour
 {
     [SerializeField] protected Transform holder;
+
+    [SerializeField] protected int spawnedCount = 0;
+    public int SpawnedCount => spawnedCount;
+
     [SerializeField] protected List<Transform> prefabs;
 
     [SerializeField] protected List<Transform> poolObjs;
 
     protected override void LoadComponents()
     {
+        base.LoadComponents();
         this.LoadPrefabs();
         this.LoadHolder();
     }
@@ -53,11 +58,27 @@ public abstract class Spawner : NguyenMonoBehaviour
             return null;
         }
 
+        return this.Spawn(prefab, spawnPos, rotation);
+    }
+    
+    public virtual Transform Spawn(Transform prefab, Vector3 spawnPos, Quaternion rotation)
+    {
         Transform newPrefab = this.GetObjectFromPool(prefab);
         newPrefab.SetPositionAndRotation(spawnPos, rotation);
 
         newPrefab.parent = this.holder;
+        this.spawnedCount++;
         return newPrefab;
+    }
+
+    public virtual Transform getPrefabByName(string prefabName)
+    {
+        foreach (Transform prefab in this.prefabs)
+        {
+            if (prefab.name == prefabName)
+                return prefab;
+        }
+        return null;
     }
 
     protected virtual Transform GetObjectFromPool(Transform prefab)
@@ -80,14 +101,12 @@ public abstract class Spawner : NguyenMonoBehaviour
     {
         this.poolObjs.Add(obj);
         obj.transform.gameObject.SetActive(false);
+        this.spawnedCount--;
     }
 
-    public virtual Transform getPrefabByName(string pprefabName)
+    public virtual Transform RandomPrefab()
     {
-        foreach(Transform prefab in this.prefabs) {
-            if(prefab.name == pprefabName)
-                return prefab;
-        }
-        return null;
+        int rand = Random.Range(0, this.prefabs.Count);
+        return this.prefabs[rand];
     }
 }
