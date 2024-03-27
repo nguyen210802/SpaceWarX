@@ -24,14 +24,15 @@ public class BulletImpart : BulletAbstract
         this.sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.isTrigger = true;
         sphereCollider.radius = 0.1f;
-        Debug.Log(transform.name + ": LoadCollider", gameObject);
+        Debug.LogWarning(transform.name + ": LoadCollider", gameObject);
     }
     protected virtual void LoadRigidbody()
     {
         if (this.rigidbody != null) return;
         this.rigidbody = GetComponent<Rigidbody>();
+        rigidbody.useGravity = false;
         rigidbody.isKinematic = true;
-        Debug.Log(transform.name + ": LoadCollider", gameObject);
+        Debug.LogWarning(transform.name + ": LoadCollider", gameObject);
     }
 
     protected virtual void OnTriggerEnter(Collider other)
@@ -39,20 +40,5 @@ public class BulletImpart : BulletAbstract
         if (other.transform.parent == this.BulletCtrl.Shooter) return;
 
         this.bulletCtrl.DamageSender.Send(other.transform);
-        this.CreateFXImpact(other);
-    }
-
-    protected virtual void CreateFXImpact(Collider other)
-    {
-        string fxName = this.GetImpactFX();
-        Vector3 hitPos = transform.parent.position;
-        Quaternion hitRot = transform.parent.rotation;
-        Transform FXImpact = FXSpawner.Instance.Spawn(fxName, hitPos, hitRot);
-        FXImpact.gameObject.SetActive(true);
-    }
-
-    protected virtual string GetImpactFX()
-    {
-        return FXSpawner.Instance.Impact1;
     }
 }

@@ -30,6 +30,6 @@ public class JunkFly : ParentFly
         float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
         transform.parent.rotation = Quaternion.Euler(0f, 0f, rot_z);
 
-        //Debug.DrawLine(objPos, objPos + diff * 7, Color.red, Mathf.Infinity);
+        Debug.DrawLine(objPos, objPos + diff * 7, Color.red, Mathf.Infinity);
     }
 }

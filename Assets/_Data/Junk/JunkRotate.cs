@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JunkRotate : JunkAbstract
+public class JunkRotate : JunkAbstact
 {
     [SerializeField] protected float speed = 9f;
 
