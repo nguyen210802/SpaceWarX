@@ -1,0 +1,15 @@
+Pixel Art Starships Package - Terran Fleet - Unity Asset Package
+
+2D Sprites.
+
+To View the Prefab Demo Scene:
+
+1. Open the prefabDemoScene.unity scene located in the PixelArtStarshipPackage/Demo/Scenes folder.
+
+To use these 2D starship sprites in your project:
+
+1. Locate starship prefab in the Prefab/Starships folder.
+2. Drag into your prefered scene.
+
+Daniel Kole Productions
+www.danielkoleproductions.com

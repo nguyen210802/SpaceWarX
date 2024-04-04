@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd12a810bab51f94d9d6dadf6f570c6e, type: 3}
+  m_Script: {fileID: 11500000, guid: 37550c1ee72936e47afaa5a052edd162, type: 3}
   m_Name: GoldOre
   m_EditorClassIdentifier: 
   itemCode: 2
-  itemName: GoldOre
+  itemtype: 1
+  itemName: Gold Ore
+  defaultMaxStack: 7

@@ -10,15 +10,15 @@ public class JunkCtrl : NguyenMonoBehaviour
     [SerializeField] protected JunkDespawn junkDespawn;
     public JunkDespawn JunkDespawn { get => junkDespawn; }
 
-    [SerializeField] protected JunkSO junkSO;
-    public JunkSO JunkSO => junkSO;
+    [SerializeField] protected ShootableObjectSO shootableObject;
+    public ShootableObjectSO ShootableObject => shootableObject;
 
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadModel();
         this.LoadJunkDespawn();
-        this.LoadJunkSO();
+        this.LoadShootableObject();
     }
 
     protected virtual void LoadModel()
@@ -35,11 +35,11 @@ public class JunkCtrl : NguyenMonoBehaviour
         Debug.Log(transform.name + ": Load JunkDespawn", gameObject);
     }
 
-    protected virtual void LoadJunkSO()
+    protected virtual void LoadShootableObject()
     {
-        if (this.junkSO != null) return;
-        string resPath = "Junk/" + transform.name;
-        this.junkSO = Resources.Load<JunkSO>(resPath);
-        Debug.Log(transform.name + ": LoadJunkSO" + resPath, gameObject);
+        if (this.shootableObject != null) return;
+        string resPath = "ShootableObject/Junk/" + transform.name;
+        this.shootableObject = Resources.Load<ShootableObjectSO>(resPath);
+        Debug.Log(transform.name + ": LoadShootableObject" + resPath, gameObject);
     }
 }

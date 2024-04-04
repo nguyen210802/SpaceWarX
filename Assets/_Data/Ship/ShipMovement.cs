@@ -3,23 +3,17 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ShipMovement : MonoBehaviour
+public class ShipMovement : NguyenMonoBehaviour
 {
     [SerializeField] protected Vector3 targetPosition;
-    [SerializeField] protected float speed = 0.03f;
-    [SerializeField] protected float distance = 3f;
+    [SerializeField] protected float speed = 0.01f;
+    [SerializeField] protected float distance = 1f;
+    [SerializeField] protected float minDistance = 3f;
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
-        this.GetTargetPosition();
         this.LookAtTarget();
         this.Moving();
-    }
-
-    protected virtual void GetTargetPosition()
-    {
-        this.targetPosition = InputManager.Instance.MouseWorldPos;
-        this.targetPosition.z = 0;
     }
     protected virtual void LookAtTarget()
     {
@@ -31,16 +25,9 @@ public class ShipMovement : MonoBehaviour
 
     protected virtual void Moving()
     {
-        if (this.CheckDistance()) 
-            return;
+        this.distance = Vector3.Distance(transform.position, this.targetPosition);
+        if (this.distance < this.minDistance) return;
         Vector3 newPos = Vector3.Lerp(transform.parent.position, targetPosition, speed);
         transform.parent.position = newPos;
-    }
-
-    protected virtual bool CheckDistance()
-    {
-        if (Vector3.Distance(transform.position, targetPosition) < distance)
-            return true;
-        return false;
     }
 }

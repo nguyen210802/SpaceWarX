@@ -21,4 +21,5 @@ public class NguyenMonoBehaviour : MonoBehaviour
     protected virtual void ResetValue() { }
     protected virtual void Start(){}
     protected virtual void OnEnable() { }
+    protected virtual void OnDisable() { }
 }

@@ -1,0 +1,664 @@
+fileFormatVersion: 2
+guid: d5429eb211763cb44bdd3f6e5238823b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5894982366490987812
+    second: Cargo_BrownSmall
+  - first:
+      213: -2049226710614281503
+    second: Cargo_BrownSmall2
+  - first:
+      213: -1886565077903930198
+    second: Cargo_TanBox_Left
+  - first:
+      213: 8098123696893443960
+    second: Cargo_GreenBox_Right
+  - first:
+      213: -8464047541103630950
+    second: Cargo_RedTube1
+  - first:
+      213: 4493342722195761932
+    second: Cargo_BlueTube1
+  - first:
+      213: -4020405496662711009
+    second: Cargo_BlueShort1
+  - first:
+      213: -1199858316052609374
+    second: Cargo_BlueShort2
+  - first:
+      213: 7929272061191359848
+    second: Cargo_BrownLarge1
+  - first:
+      213: 4437343959428542443
+    second: Cargo_BrownLarge2
+  - first:
+      213: -8498065119676015082
+    second: Cargo_BrownBox_Left
+  - first:
+      213: 4440374781377508353
+    second: Cargo_TanBox_Right
+  - first:
+      213: -1523201541104918039
+    second: Cargo_GreenTube2
+  - first:
+      213: -3390544315354245919
+    second: Cargo_GreenTube1
+  - first:
+      213: -5094877069629302104
+    second: Cargo_BlueLong1
+  - first:
+      213: 2622490616300698636
+    second: Cargo_BlueLong2
+  - first:
+      213: 251758475921802012
+    second: Cargo_GreenBox_Left
+  - first:
+      213: 4491774643789244757
+    second: Cargo_TanBox_RightSmall
+  - first:
+      213: 358838535090681501
+    second: Cargo_BlueTube2
+  - first:
+      213: -7159310639774186974
+    second: Cargo_RedTube2
+  - first:
+      213: -578825127880433997
+    second: Cargo_BlueBox_Left
+  - first:
+      213: 4246226662896123575
+    second: Cargo_GrayBox_RightSmall
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cargo_BrownSmall
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 191
+        width: 18
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42d03e7ba3f2fc150800000000000000
+      internalID: 5894982366490987812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_BrownSmall2
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 191
+        width: 18
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2f799f92faf83e0800000000000000
+      internalID: -2049226710614281503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_TanBox_Left
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 216
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aac01ed9e0391d5e0800000000000000
+      internalID: -1886565077903930198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_GreenBox_Right
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 216
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87fb18cb890526070800000000000000
+      internalID: 8098123696893443960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_RedTube1
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 201
+        width: 22
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a95ef761b99a98a80800000000000000
+      internalID: -8464047541103630950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_BlueTube1
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 201
+        width: 22
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ba09a266f8b5e30800000000000000
+      internalID: 4493342722195761932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_BlueShort1
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 191
+        width: 18
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1524667086a438c0800000000000000
+      internalID: -4020405496662711009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_BlueShort2
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 191
+        width: 18
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a6c2eaf73f395fe0800000000000000
+      internalID: -1199858316052609374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_BrownLarge1
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 98
+        width: 18
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86d8db6bdee6a0e60800000000000000
+      internalID: 7929272061191359848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_BrownLarge2
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 98
+        width: 18
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: befa6ff22dc949d30800000000000000
+      internalID: 4437343959428542443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_BrownBox_Left
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 174
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ed29f5ccec01a80800000000000000
+      internalID: -8498065119676015082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_TanBox_Right
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 174
+        width: 26
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 104fb9966516f9d30800000000000000
+      internalID: 4440374781377508353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_GreenTube2
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 159
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e12d15c4408cdae0800000000000000
+      internalID: -1523201541104918039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_GreenTube1
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 159
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e41718b8ed52f0d0800000000000000
+      internalID: -3390544315354245919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_BlueLong1
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 98
+        width: 18
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8aa567a8c4c5b49b0800000000000000
+      internalID: -5094877069629302104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_BlueLong2
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 98
+        width: 18
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0cf56b2255f46420800000000000000
+      internalID: 2622490616300698636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_GreenBox_Left
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 147
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c13438efffc6e7300800000000000000
+      internalID: 251758475921802012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_TanBox_RightSmall
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 147
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5592a267d3df55e30800000000000000
+      internalID: 4491774643789244757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_BlueTube2
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 106
+        width: 22
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d963dc71fb9daf400800000000000000
+      internalID: 358838535090681501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_RedTube2
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 106
+        width: 22
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 222c59f97e405ac90800000000000000
+      internalID: -7159310639774186974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_BlueBox_Left
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 119
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bedd99ec9997f7f0800000000000000
+      internalID: -578825127880433997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cargo_GrayBox_RightSmall
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 119
+        width: 26
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be37b507a0adea30800000000000000
+      internalID: 4246226662896123575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Cargo_BlueBox_Left: -578825127880433997
+      Cargo_BlueLong1: -5094877069629302104
+      Cargo_BlueLong2: 2622490616300698636
+      Cargo_BlueShort1: -4020405496662711009
+      Cargo_BlueShort2: -1199858316052609374
+      Cargo_BlueTube1: 4493342722195761932
+      Cargo_BlueTube2: 358838535090681501
+      Cargo_BrownBox_Left: -8498065119676015082
+      Cargo_BrownLarge1: 7929272061191359848
+      Cargo_BrownLarge2: 4437343959428542443
+      Cargo_BrownSmall: 5894982366490987812
+      Cargo_BrownSmall2: -2049226710614281503
+      Cargo_GrayBox_RightSmall: 4246226662896123575
+      Cargo_GreenBox_Left: 251758475921802012
+      Cargo_GreenBox_Right: 8098123696893443960
+      Cargo_GreenTube1: -3390544315354245919
+      Cargo_GreenTube2: -1523201541104918039
+      Cargo_RedTube1: -8464047541103630950
+      Cargo_RedTube2: -7159310639774186974
+      Cargo_TanBox_Left: -1886565077903930198
+      Cargo_TanBox_Right: 4440374781377508353
+      Cargo_TanBox_RightSmall: 4491774643789244757
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
