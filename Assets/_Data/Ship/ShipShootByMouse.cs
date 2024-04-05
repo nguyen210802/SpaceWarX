@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipShootByMouse : ShipShooting
+public class ShipShootByMouse : ObjectShooting
 {
     protected override bool IsShooting()
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ShipMovement : NguyenMonoBehaviour
+public class ObjectMovement : NguyenMonoBehaviour
 {
     [SerializeField] protected Vector3 targetPosition;
     [SerializeField] protected float speed = 0.01f;

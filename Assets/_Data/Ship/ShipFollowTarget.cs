@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ShipFollowTarget : ShipMovement
+public class ShipFollowTarget : ObjectMovement
 {
     [Header("Follow Target")]
     [SerializeField] protected Transform target;
