@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectAppearingBigger : ObjectAppearing
+public class ObjAppearingBigger : ObjAppearing
 {
     [Header("Object Appearing Bigger")]
     [SerializeField] protected float currentScale = 0;
+    public float CurrentScale => currentScale;
+
     [SerializeField] protected float startScale = 0;
     [SerializeField] protected float maxScale = 1;
     [SerializeField] protected float speedScale = 0.01f;

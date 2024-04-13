@@ -13,9 +13,9 @@ public class SpanwerRandom : NguyenMonoBehaviour
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.LoadJunkSpawnerCtrl();
+        this.LoadSpawnerCtrl();
     }
-    protected virtual void LoadJunkSpawnerCtrl()
+    protected virtual void LoadSpawnerCtrl()
     {
         if (this.spawnerCtrl != null) return;
         this.spawnerCtrl = GetComponent<SpawnerCtrl>();
