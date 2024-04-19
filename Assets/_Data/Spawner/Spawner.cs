@@ -7,7 +7,7 @@ public abstract class Spawner : NguyenMonoBehaviour
     [SerializeField] protected Transform holder;
 
     [SerializeField] protected int spawnedCount = 0;
-    public int SpawnedCount => spawnedCount;
+    public int GetSpawnedCount => spawnedCount;
 
     [SerializeField] protected List<Transform> prefabs;
 
@@ -108,5 +108,10 @@ public abstract class Spawner : NguyenMonoBehaviour
     {
         int rand = Random.Range(0, this.prefabs.Count);
         return this.prefabs[rand];
+    }
+
+    public virtual void Hold(Transform obj)
+    {
+        obj.parent = this.holder;
     }
 }

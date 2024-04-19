@@ -9,8 +9,8 @@ public abstract class ObjAppearing : NguyenMonoBehaviour
     [SerializeField] protected bool appeared = false;
     [SerializeField] protected List<IObjAppeearObserver> observers = new List<IObjAppeearObserver>();
 
-    public bool IsAppearing => isAppearing;
-    public bool Appeared => appeared;
+    public bool GetIsAppearing => isAppearing;
+    public bool GetAppeared => appeared;
 
     protected override void Start()
     {

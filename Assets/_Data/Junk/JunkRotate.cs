@@ -14,6 +14,6 @@ public class JunkRotate : JunkAbstact
     protected virtual void Rotating()
     {
         Vector3 eulers = Vector3.forward;
-        this.JunkCtrl.Model.Rotate(eulers * this.speed * Time.deltaTime);
+        this.GetJunkCtrl.GetModel.Rotate(eulers * this.speed * Time.deltaTime);
     }
 }

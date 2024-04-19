@@ -41,7 +41,7 @@ public class ItemLooter : InventoryAbstract
         if (itemPickupable == null)
             return;
 
-        ItemInventory itemInventory = itemPickupable.ItemCtrl.ItemInventory;
+        ItemInventory itemInventory = itemPickupable.GetItemCtrl.GetItemInventory;
         if (this.inventory.AddItem(itemInventory))
         {
             itemPickupable.Picked();

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FXSpawner : Spawner
 {
-    protected static FXSpawner instance;
+    private static FXSpawner instance;
     public static FXSpawner Instance => instance;
 
     public string smoke1 = "Smoke_1";

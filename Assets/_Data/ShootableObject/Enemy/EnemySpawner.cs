@@ -7,13 +7,11 @@ public class EnemySpawner : Spawner
     protected static EnemySpawner instance;
     public static EnemySpawner Instance => instance;
 
-    public static string meteoriteOne = "Meteorite_1";
-
     protected override void Awake()
     {
         base.Awake();
         if (EnemySpawner.instance != null)
-            Debug.LogError("Only one JunkSpawner allow to exit!");
+            Debug.LogError("Only one EnemySpawner allow to exit!");
         EnemySpawner.instance = this;
     }
 }

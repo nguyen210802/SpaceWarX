@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class ItemAbstact : NguyenMonoBehaviour
 {
     [SerializeField] protected ItemCtrl itemCtrl;
-    public ItemCtrl ItemCtrl => itemCtrl;
+    public ItemCtrl GetItemCtrl => itemCtrl;
 
     protected override void LoadComponents()
     {

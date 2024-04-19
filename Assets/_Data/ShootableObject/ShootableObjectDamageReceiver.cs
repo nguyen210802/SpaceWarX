@@ -29,7 +29,7 @@ public class ShootableObjectDamageReceiver : DamageReceiver
     protected override void OnDead()
     {
         this.OnDeadFX();
-        this.shootableObjectCtrl.Despawn.DespawnObject();
+        this.shootableObjectCtrl.GetDespawn.DespawnObject();
         //Drop here
         this.OnDeadDrop();
     }
@@ -38,7 +38,7 @@ public class ShootableObjectDamageReceiver : DamageReceiver
     {
         Vector3 dropPos = transform.position;
         Quaternion dropRot = transform.rotation;
-        ItemDropSpawner.Instance.Drop(this.shootableObjectCtrl.ShootableObject.dropList, dropPos, dropRot);
+        ItemDropSpawner.Instance.Drop(this.shootableObjectCtrl.GetShootableObject.dropList, dropPos, dropRot);
     }
 
     protected virtual void OnDeadFX()
@@ -55,7 +55,7 @@ public class ShootableObjectDamageReceiver : DamageReceiver
 
     public override void Reborn()
     {
-        this.maxHp = this.shootableObjectCtrl.ShootableObject.maxHp;
         base.Reborn();
+        this.maxHp = this.shootableObjectCtrl.GetShootableObject.maxHp;
     }
 }

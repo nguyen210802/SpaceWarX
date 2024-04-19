@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAbstract : NguyenMonoBehaviour
 {
     [SerializeField] protected PlayerCtrl playerCtrl;
-    public PlayerCtrl PlayerCtrl { get => playerCtrl; }
+    public PlayerCtrl GetPlayerCtrl => playerCtrl;
 
     protected override void LoadComponents()
     {

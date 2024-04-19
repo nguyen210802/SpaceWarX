@@ -7,7 +7,7 @@ public abstract class BaseAbility : NguyenMonoBehaviour
     [Header("Base Ability")]
 
     [SerializeField] protected Abilities abilities;
-    public Abilities Abilities => abilities;
+    public Abilities GetAbilities => abilities;
 
     [SerializeField] protected float timer = 2f;
     [SerializeField] protected float delay = 2f;

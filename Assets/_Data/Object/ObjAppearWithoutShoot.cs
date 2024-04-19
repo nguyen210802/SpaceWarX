@@ -33,11 +33,16 @@ public class ObjAppearWithoutShoot : ShootableObjectAbstract, IObjAppeearObserve
 
     public void OnAppearStart()
     {
-        this.shootableObjectCtrl.ObjectShooting.gameObject.SetActive(false);
+        this.shootableObjectCtrl.GetObjectShooting.gameObject.SetActive(false);
+        this.shootableObjectCtrl.GetObjLookAtTarget.gameObject.SetActive(false);
+
     }
 
     public void OnAppearFinish()
     {
-        this.shootableObjectCtrl.ObjectShooting.gameObject.SetActive(true);
+        this.shootableObjectCtrl.GetObjectShooting.gameObject.SetActive(true);
+        this.shootableObjectCtrl.GetObjLookAtTarget.gameObject.SetActive(true);
+
+        this.shootableObjectCtrl.GetSpawner.Hold(transform.parent);
     }
 }

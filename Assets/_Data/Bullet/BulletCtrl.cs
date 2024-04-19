@@ -7,13 +7,13 @@ using UnityEngine.Video;
 public class BulletCtrl : NguyenMonoBehaviour
 {
     [SerializeField] protected BulletDamageSender bulletDamageSender;
-    public BulletDamageSender DamageSender { get => bulletDamageSender; }
+    public BulletDamageSender GetDamageSender => bulletDamageSender;
 
     [SerializeField] protected BulletDespawn bulletDespawn;
-    public BulletDespawn BulletDespawn { get => bulletDespawn; }
+    public BulletDespawn GetBulletDespawn => bulletDespawn;
 
     [SerializeField] protected Transform shooter;
-    public Transform Shooter => shooter;
+    public Transform GetShooter => shooter;
 
     protected override void LoadComponents()
     {

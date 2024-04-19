@@ -45,7 +45,7 @@ public class JunkSpanwerRandom : NguyenMonoBehaviour
 
     protected virtual bool RandomReachLimit()
     {
-        int currenJunk = this.junkSpawnerCtrl.JunkSpawner.SpawnedCount;
+        int currenJunk = this.junkSpawnerCtrl.JunkSpawner.GetSpawnedCount;
         return currenJunk >= this.randomLimit;
     }
 }

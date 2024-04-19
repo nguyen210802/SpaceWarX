@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class JunkAbstact : NguyenMonoBehaviour
 {
     [SerializeField] protected JunkCtrl junkCtrl;
-    public JunkCtrl JunkCtrl { get => junkCtrl;}
+    public JunkCtrl GetJunkCtrl => junkCtrl;
 
     protected override void LoadComponents()
     {

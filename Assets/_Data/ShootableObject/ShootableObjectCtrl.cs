@@ -6,16 +6,25 @@ public abstract class ShootableObjectCtrl : NguyenMonoBehaviour
 {
     [Header("Shootable Object Ctrl")]
     [SerializeField] protected Transform model;
-    public Transform Model => model;
+    public Transform GetModel => model;
 
     [SerializeField] protected Despawn despawn;
-    public Despawn Despawn => despawn;
+    public Despawn GetDespawn => despawn;
 
     [SerializeField] protected ShootableObjectSO shootableObject;
-    public ShootableObjectSO ShootableObject => shootableObject;
+    public ShootableObjectSO GetShootableObject => shootableObject;
     
-    [SerializeField] protected ObjShooting objectShooting;
-    public ObjShooting ObjectShooting => objectShooting;
+    [SerializeField] protected ObjShooting objShooting;
+    public ObjShooting GetObjectShooting => objShooting;
+
+    [SerializeField] protected ObjMovement objMovement;
+    public ObjMovement GetObjMovement => objMovement;
+    
+    [SerializeField] protected ObjLookAtTarget objLookAtTarget;
+    public ObjLookAtTarget GetObjLookAtTarget => objLookAtTarget;
+
+    [SerializeField] protected Spawner spawner;
+    public Spawner GetSpawner => spawner;
 
     protected override void LoadComponents()
     {
@@ -24,6 +33,9 @@ public abstract class ShootableObjectCtrl : NguyenMonoBehaviour
         this.LoadDespawn();
         this.LoadSO();
         this.LoadObjectShooting();
+        this.LoadObjectMovement();
+        this.LoadObjLookAtTarget();
+        this.LoadSpawner();
     }
 
     protected virtual void LoadModel()
@@ -50,9 +62,30 @@ public abstract class ShootableObjectCtrl : NguyenMonoBehaviour
 
     protected virtual void LoadObjectShooting()
     {
-        if (this.objectShooting != null) return;
-        this.objectShooting = GetComponentInChildren<ObjShooting>();
+        if (this.objShooting != null) return;
+        this.objShooting = GetComponentInChildren<ObjShooting>();
         Debug.Log(transform.name + ": LoadObjectShooting", gameObject);
+    }
+
+    protected virtual void LoadObjectMovement()
+    {
+        if (this.objMovement != null) return;
+        this.objMovement = GetComponentInChildren<ObjMovement>();
+        Debug.Log(transform.name + ": LoadObjectMovement", gameObject);
+    }
+
+    protected virtual void LoadObjLookAtTarget()
+    {
+        if (this.objLookAtTarget != null) return;
+        this.objLookAtTarget = GetComponentInChildren<ObjLookAtTarget>();
+        Debug.Log(transform.name + ": LoadObjLookAtTarget", gameObject);
+    }
+
+    protected virtual void LoadSpawner()
+    {
+        if (this.spawner != null) return;
+        this.spawner = transform.parent?.parent?.GetComponent<Spawner>();
+        Debug.Log(transform.name + ": LoadSpawner", gameObject);
     }
 
     protected abstract string GetObjectTypeString();

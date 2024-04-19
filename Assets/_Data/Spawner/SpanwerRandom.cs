@@ -19,7 +19,7 @@ public class SpanwerRandom : NguyenMonoBehaviour
     {
         if (this.spawnerCtrl != null) return;
         this.spawnerCtrl = GetComponent<SpawnerCtrl>();
-        Debug.Log(transform.name + ": Load JunkCtrl", gameObject);
+        Debug.Log(transform.name + ": LoadSpawnerCtrl", gameObject);
     }
 
     protected virtual void FixedUpdate()
@@ -35,18 +35,18 @@ public class SpanwerRandom : NguyenMonoBehaviour
         if (this.randomTime < this.randomDelay) return;
         this.randomTime = 0f;
 
-        Transform randomPoint = this.spawnerCtrl.SpawnPoints.GetRanDom();
+        Transform randomPoint = this.spawnerCtrl.GetSpawnPoints.GetRanDom();
         Vector3 pos = randomPoint.position;
         Quaternion rot = transform.rotation;
 
-        Transform prefab = this.spawnerCtrl.Spawner.RandomPrefab();
-        Transform obj = this.spawnerCtrl.Spawner.Spawn(prefab, pos, rot);
+        Transform prefab = this.spawnerCtrl.GetSpawner.RandomPrefab();
+        Transform obj = this.spawnerCtrl.GetSpawner.Spawn(prefab, pos, rot);
         obj.gameObject.SetActive(true);
     }
 
     protected virtual bool RandomReachLimit()
     {
-        int currenJunk = this.spawnerCtrl.Spawner.SpawnedCount;
+        int currenJunk = this.spawnerCtrl.GetSpawner.GetSpawnedCount;
         return currenJunk >= this.randomLimit;
     }
 }

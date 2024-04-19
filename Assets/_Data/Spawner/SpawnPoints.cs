@@ -19,7 +19,7 @@ public class SpawnPoints : NguyenMonoBehaviour
         {
             this.points.Add(point);
         }
-        Debug.Log(transform.name + ": LoadPoints", gameObject);
+        //Debug.Log(transform.name + ": LoadPoints", gameObject);
     }
 
     public virtual Transform GetRanDom()

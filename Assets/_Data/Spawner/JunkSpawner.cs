@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class JunkSpawner : Spawner
 {
-    protected static JunkSpawner instance;
-    public static JunkSpawner Instance { get => instance; }
+    private static JunkSpawner instance;
+    public static JunkSpawner Instance => instance;
 
     public static string meteoriteOne = "Meteorite_1";
 

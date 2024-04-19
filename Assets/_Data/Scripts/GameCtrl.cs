@@ -5,10 +5,10 @@ using UnityEngine;
 public class GameCtrl : NguyenMonoBehaviour
 {
     private static GameCtrl instance;
-    public static GameCtrl Instance { get => instance; }
+    public static GameCtrl Instance => instance;
 
     [SerializeField] protected Camera mainCamera;
-    public Camera MainCamera { get => mainCamera; }
+    public Camera GetMainCamera => mainCamera;
 
     protected override void Awake()
     {

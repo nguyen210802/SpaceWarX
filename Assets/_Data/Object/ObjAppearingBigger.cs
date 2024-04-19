@@ -6,7 +6,7 @@ public class ObjAppearingBigger : ObjAppearing
 {
     [Header("Object Appearing Bigger")]
     [SerializeField] protected float currentScale = 0;
-    public float CurrentScale => currentScale;
+    public float GetCurrentScale => currentScale;
 
     [SerializeField] protected float startScale = 0;
     [SerializeField] protected float maxScale = 1;

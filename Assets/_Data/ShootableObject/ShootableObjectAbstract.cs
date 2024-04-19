@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class ShootableObjectAbstract : NguyenMonoBehaviour
 {
     [SerializeField] protected ShootableObjectCtrl shootableObjectCtrl;
-    public ShootableObjectCtrl ShootableObjectCtrl => shootableObjectCtrl;
+    public ShootableObjectCtrl GetShootableObjectCtrl => shootableObjectCtrl;
 
     protected override void LoadComponents()
     {

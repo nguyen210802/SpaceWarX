@@ -5,13 +5,13 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     private static InputManager instance;
-    public static InputManager Instance { get => instance; }
+    public static InputManager Instance => instance;
 
     [SerializeField] private Vector3 mouseWorldPos;
-    public Vector3 MouseWorldPos { get => mouseWorldPos; }
+    public Vector3 GetMouseWorldPos => mouseWorldPos;
 
     [SerializeField] protected float onFiring;
-    public float OnPiring { get => onFiring; }
+    public float GetOnPiring => onFiring;
 
     private void Awake()
     {

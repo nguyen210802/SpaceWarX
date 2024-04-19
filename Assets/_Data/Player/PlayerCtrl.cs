@@ -8,10 +8,10 @@ public class PlayerCtrl : NguyenMonoBehaviour
     public static PlayerCtrl Instance => instance;
 
     [SerializeField] protected ShipCtrl currentShip;
-    public ShipCtrl CurrentShip => currentShip;
+    public ShipCtrl GetCurrentShip => currentShip;
 
     [SerializeField] protected PlayerPickup playerPickup;
-    public PlayerPickup PlayerPickup => playerPickup;
+    public PlayerPickup GetPlayerPickup => playerPickup;
 
     protected override void Awake()
     {

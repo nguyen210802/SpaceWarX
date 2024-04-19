@@ -5,10 +5,10 @@ using UnityEngine;
 public class SpawnerCtrl : NguyenMonoBehaviour
 {
     [SerializeField] protected Spawner spawner;
-    public Spawner Spawner => spawner;
+    public Spawner GetSpawner => spawner;
 
     [SerializeField] protected SpawnPoints spawnPoints;
-    public SpawnPoints SpawnPoints=> spawnPoints;
+    public SpawnPoints GetSpawnPoints=> spawnPoints;
 
     protected override void LoadComponents()
     {
@@ -27,7 +27,7 @@ public class SpawnerCtrl : NguyenMonoBehaviour
     protected virtual void LoadSpawnPoints()
     {
         if(this.spawnPoints != null) return;
-        this.spawnPoints = Transform.FindObjectOfType<SpawnPoints>();
+        this.spawnPoints = GameObject.Find("SceneSpawnPoints").GetComponent<SpawnPoints>();
         Debug.Log(transform.name + ": Load SpawnPoints", gameObject);
     }
 }

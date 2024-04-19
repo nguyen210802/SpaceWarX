@@ -7,7 +7,7 @@ public class Abilities : NguyenMonoBehaviour
     [Header("Abilities")]
 
     [SerializeField] protected AbilityObjectCtrl abilityObjectCtrl;
-    public AbilityObjectCtrl AbilityObjectCtrl => abilityObjectCtrl;
+    public AbilityObjectCtrl GetAbilityObjectCtrl => abilityObjectCtrl;
 
     protected override void LoadComponents()
     {

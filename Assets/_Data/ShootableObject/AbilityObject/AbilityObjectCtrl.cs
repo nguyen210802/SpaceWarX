@@ -6,7 +6,7 @@ public abstract class AbilityObjectCtrl : ShootableObjectCtrl
 {
     [Header("Ability Object")]
     [SerializeField] protected SpawnPoints spawnPoints;
-    public SpawnPoints SpawnPoints => spawnPoints;
+    public SpawnPoints GetSpawnPoints => spawnPoints;
 
     protected override void LoadComponents()
     {

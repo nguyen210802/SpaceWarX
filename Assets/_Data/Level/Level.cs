@@ -8,8 +8,8 @@ public class Level : NguyenMonoBehaviour
     [SerializeField] protected int levelCurrent = 0;
     [SerializeField] protected int maxLevel = 99;
 
-    public int LevelCurrent => levelCurrent;
-    public int MaxLevel => maxLevel;
+    public int GetLevelCurrent => levelCurrent;
+    public int GetMaxLevel => maxLevel;
 
     public virtual void LevelUp()
     {

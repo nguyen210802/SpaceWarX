@@ -5,10 +5,10 @@ using UnityEngine;
 public class ItemCtrl : NguyenMonoBehaviour
 {
     [SerializeField] protected ItemDespawn itemDespawn;
-    public ItemDespawn ItemDespawn => itemDespawn;
+    public ItemDespawn GetItemDespawn => itemDespawn;
 
     [SerializeField] protected ItemInventory itemInventory;
-    public ItemInventory ItemInventory => itemInventory;
+    public ItemInventory GetItemInventory => itemInventory;
 
     protected override void LoadComponents()
     {
@@ -48,7 +48,7 @@ public class ItemCtrl : NguyenMonoBehaviour
 
     protected virtual void ResetItem()
     {
-        this.ItemInventory.itemCount = 1;
+        this.GetItemInventory.itemCount = 1;
         this.itemInventory.upgradeLevel = 0;
     }
 }

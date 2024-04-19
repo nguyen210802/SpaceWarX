@@ -5,13 +5,13 @@ using UnityEngine;
 public class JunkCtrl : NguyenMonoBehaviour
 {
     [SerializeField] protected Transform model;
-    public Transform Model { get => model; }
+    public Transform GetModel => model;
 
     [SerializeField] protected JunkDespawn junkDespawn;
-    public JunkDespawn JunkDespawn { get => junkDespawn; }
+    public JunkDespawn GetJunkDespawn => junkDespawn;
 
     [SerializeField] protected ShootableObjectSO shootableObject;
-    public ShootableObjectSO ShootableObject => shootableObject;
+    public ShootableObjectSO GetShootableObject => shootableObject;
 
     protected override void LoadComponents()
     {

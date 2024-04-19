@@ -5,10 +5,10 @@ using UnityEngine;
 public class JunkSpawnerCtrl : NguyenMonoBehaviour
 {
     [SerializeField] protected JunkSpawner junkSpawner;
-    public JunkSpawner JunkSpawner { get => junkSpawner; }
+    public JunkSpawner JunkSpawner => junkSpawner;
 
     [SerializeField] protected SpawnPoints spawnPoints;
-    public SpawnPoints JunkSpawnPoints=> spawnPoints;
+    public SpawnPoints JunkSpawnPoints => spawnPoints;
 
     protected override void LoadComponents()
     {

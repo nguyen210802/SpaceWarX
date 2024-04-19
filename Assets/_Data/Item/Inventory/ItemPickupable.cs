@@ -28,7 +28,7 @@ public class ItemPickupable : ItemAbstact
     public virtual void OnMouseDown()
     {
         //Debug.Log(transform.parent.name);
-        PlayerCtrl.Instance.PlayerPickup.ItemPickup(this);
+        PlayerCtrl.Instance.GetPlayerPickup.ItemPickup(this);
     }
 
     public static ItemCode String2ItemCode(string itemName)
@@ -52,6 +52,6 @@ public class ItemPickupable : ItemAbstact
 
     public virtual void Picked()
     {
-        this.itemCtrl.ItemDespawn.DespawnObject();
+        this.itemCtrl.GetItemDespawn.DespawnObject();
     }
 }

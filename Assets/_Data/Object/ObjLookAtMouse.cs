@@ -13,7 +13,7 @@ public class ObjLookAtMouse : ObjLookAtTarget
 
     protected virtual void GetMousePosition()
     {
-        this.targetPosition = InputManager.Instance.MouseWorldPos;
+        this.targetPosition = InputManager.Instance.GetMouseWorldPos;
         this.targetPosition.z = 0;
     }
 }

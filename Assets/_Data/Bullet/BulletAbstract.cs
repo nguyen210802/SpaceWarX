@@ -6,7 +6,7 @@ public class BulletAbstract : NguyenMonoBehaviour
 {
     [Header("Bullet Abstract")]
     [SerializeField] protected BulletCtrl bulletCtrl;
-    public BulletCtrl BulletCtrl { get => bulletCtrl; }
+    public BulletCtrl GetBulletCtrl => bulletCtrl;
 
     protected override void LoadComponents()
     {
