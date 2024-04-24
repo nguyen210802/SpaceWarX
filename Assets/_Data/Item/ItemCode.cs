@@ -7,7 +7,7 @@ public enum ItemCode
 
     IronOre = 1, 
     GoldOre = 2,
-    CopperSworld = 1000,
+    //CopperSworld = 1000,
 }
 
 public class ItemCodeParser

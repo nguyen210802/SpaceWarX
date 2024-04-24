@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d741959b206a9dd49a95a1b10d4d7132, type: 3}
   m_Name: Ship
   m_EditorClassIdentifier: 
-  objectName: Shootable Object
+  objectName: Ship
   objectType: 4
   maxHp: 10
   dropList: []

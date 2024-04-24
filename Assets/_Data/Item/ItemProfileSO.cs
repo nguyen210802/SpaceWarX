@@ -6,10 +6,10 @@ using UnityEngine;
 public class ItemProfileSO : ScriptableObject
 {
     public ItemCode itemCode = ItemCode.NoItem;
-    public ItemType itemtype = ItemType.NoItem;
+    //public ItemType itemtype = ItemType.NoItem;
     public string itemName = "no-name";
     public int defaultMaxStack = 7;
-    public List<ItemRecipe> upgradeLevels;
+    //public List<ItemRecipe> upgradeLevels;
 
     public static ItemProfileSO FindByItemCode(ItemCode itemCode)
     {

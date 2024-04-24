@@ -12,32 +12,33 @@ public class Inventory : NguyenMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        this.AddItem(ItemCode.CopperSworld, 1);
-        this.AddItem(ItemCode.IronOre, 10);
-        this.AddItem(ItemCode.GoldOre, 10);
+        //this.AddItem(ItemCode.CopperSworld, 1);
+
+        //this.AddItem(ItemCode.IronOre, 10);
+        //this.AddItem(ItemCode.GoldOre, 10);
     }
 
-    public virtual bool AddItem(ItemInventory itemInventory)
-    {
-        int addCount = itemInventory.itemCount;
-        ItemProfileSO itemProfile = itemInventory.itemProfile;
-        ItemCode itemCode = itemProfile.itemCode;
-        ItemType itemType = itemProfile.itemtype;
+    //public virtual bool AddItem(ItemInventory itemInventory)
+    //{
+    //    int addCount = itemInventory.itemCount;
+    //    ItemProfileSO itemProfile = itemInventory.itemProfile;
+    //    ItemCode itemCode = itemProfile.itemCode;
+    //    //ItemType itemType = itemProfile.itemtype;
 
-        if (itemType == ItemType.Equiment) return this.AddEquiment(itemInventory);
+    //    //if (itemType == ItemType.Equiment) return this.AddEquiment(itemInventory);
 
-        return this.AddItem(itemCode, addCount);
-    }
+    //    return this.AddItem(itemCode, addCount);
+    //}
 
-    public virtual bool AddEquiment(ItemInventory itemPicked)
-    {
-        if (this.IsInventoryFull()) return false;
+    //public virtual bool AddEquiment(ItemInventory itemPicked)
+    //{
+    //    if (this.IsInventoryFull()) return false;
 
-        ItemInventory item = itemPicked.Clone();
+    //    ItemInventory item = itemPicked.Clone();
 
-        this.items.Add(item);
-        return true;
-    }
+    //    this.items.Add(item);
+    //    return true;
+    //}
 
     public virtual bool AddItem(ItemCode itemCode, int addCount)
     {

@@ -30,6 +30,7 @@ public class JunkDamageReceiver : DamageReceiver
     {
         this.OnDeadFX();
         this.junkCtrl.GetJunkDespawn.DespawnObject();
+
         //Drop here
         this.OnDeadDrop();
     }
