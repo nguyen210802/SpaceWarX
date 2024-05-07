@@ -39,7 +39,7 @@ public class JunkSpanwerRandom : NguyenMonoBehaviour
         Quaternion rot = transform.rotation;
 
         Transform prefab = this.junkSpawnerCtrl.JunkSpawner.RandomPrefab();
-        Transform obj = this.junkSpawnerCtrl.JunkSpawner.Spawn(prefab, pos, rot);
+        Transform obj = this.junkSpawnerCtrl.JunkSpawner.SpawnByTransform(prefab, pos, rot);
         obj.gameObject.SetActive(true);
     }
 

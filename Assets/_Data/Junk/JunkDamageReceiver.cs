@@ -39,13 +39,13 @@ public class JunkDamageReceiver : DamageReceiver
     {
         Vector3 dropPos = transform.position;
         Quaternion dropRot = transform.rotation;
-        ItemDropSpawner.Instance.Drop(this.junkCtrl.GetShootableObject.dropList, dropPos, dropRot);
+        ItemDropSpawner.Instance.Drop(this.junkCtrl.GetShootableObject.dropItem, dropPos, dropRot);
     }
 
     protected virtual void OnDeadFX()
     {
         string fxName = this.GetOnDeadFXSmoke();
-        Transform fxOnDead = FXSpawner.Instance.Spawn(fxName, transform.position, transform.rotation);
+        Transform fxOnDead = FXSpawner.Instance.SpawnByName(fxName, transform.position, transform.rotation);
         fxOnDead.gameObject.SetActive(true);
     }
 

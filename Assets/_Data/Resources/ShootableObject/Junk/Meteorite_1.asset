@@ -15,8 +15,8 @@ MonoBehaviour:
   objectName: Meteorite_1
   objectType: 1
   maxHp: 2
-  dropList:
-  - itemProfile: {fileID: 11400000, guid: 36a56996f05c4744fb9eb4810086f8e8, type: 2}
-    dropRate: 0
+  dropItem:
+    itemProfile: {fileID: 11400000, guid: 36a56996f05c4744fb9eb4810086f8e8, type: 2}
+    dropValue: 70
     minDrop: 0
-    maxDrop: 0
+    maxDrop: 100

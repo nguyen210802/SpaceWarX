@@ -26,6 +26,7 @@ public class BulletImpart : BulletAbstract
         sphereCollider.radius = 0.1f;
         Debug.LogWarning(transform.name + ": LoadCollider", gameObject);
     }
+
     protected virtual void LoadRigidbody()
     {
         if (this.rigidbody != null) return;
@@ -39,6 +40,6 @@ public class BulletImpart : BulletAbstract
     {
         if (other.transform.parent == this.GetBulletCtrl.GetShooter) return;
 
-        this.bulletCtrl.GetDamageSender.Send(other.transform);
+        this.bulletCtrl.GetBulletDamageSender.SendByTransform(other.transform);
     }
 }

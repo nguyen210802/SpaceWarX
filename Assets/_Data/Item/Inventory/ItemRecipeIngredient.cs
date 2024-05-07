@@ -6,6 +6,6 @@ using UnityEngine;
 [Serializable]
 public class ItemRecipeIngredient
 {
-    public ItemProfileSO itemProfile;
-    public int itemCount;
+    //public ItemProfileSO itemProfile;
+    //public int itemCount;
 }

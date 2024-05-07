@@ -25,11 +25,11 @@ public class ItemPickupable : ItemAbstact
         Debug.LogWarning(transform.name + ": LoadCollider", gameObject);
     }
 
-    public virtual void OnMouseDown()
-    {
-        //Debug.Log(transform.parent.name);
-        PlayerCtrl.Instance.GetPlayerPickup.ItemPickup(this);
-    }
+    //public virtual void OnMouseDown()
+    //{
+    //    //Debug.Log(transform.parent.name);
+    //    PlayerCtrl.Instance.GetPlayerPickup.ItemPickup(this);
+    //}
 
     public static ItemCode String2ItemCode(string itemName)
     {
@@ -37,12 +37,11 @@ public class ItemPickupable : ItemAbstact
         {
             return (ItemCode)System.Enum.Parse(typeof(ItemCode), itemName);
         }
-        catch(ArgumentException e)
+        catch (ArgumentException e)
         {
             Debug.LogError(e.ToString());
             return ItemCode.NoItem;
         }
-        
     }
 
     public virtual ItemCode GetItemCode()

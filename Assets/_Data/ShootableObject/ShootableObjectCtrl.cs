@@ -23,8 +23,8 @@ public abstract class ShootableObjectCtrl : NguyenMonoBehaviour
     [SerializeField] protected ObjLookAtTarget objLookAtTarget;
     public ObjLookAtTarget GetObjLookAtTarget => objLookAtTarget;
 
-    [SerializeField] protected Spawner spawner;
-    public Spawner GetSpawner => spawner;
+    //[SerializeField] protected Spawner spawner;
+    //public Spawner GetSpawner => spawner;
 
     protected override void LoadComponents()
     {
@@ -35,7 +35,7 @@ public abstract class ShootableObjectCtrl : NguyenMonoBehaviour
         this.LoadObjectShooting();
         this.LoadObjectMovement();
         this.LoadObjLookAtTarget();
-        this.LoadSpawner();
+        //this.LoadSpawner();
     }
 
     protected virtual void LoadModel()
@@ -81,12 +81,12 @@ public abstract class ShootableObjectCtrl : NguyenMonoBehaviour
         Debug.Log(transform.name + ": LoadObjLookAtTarget", gameObject);
     }
 
-    protected virtual void LoadSpawner()
-    {
-        if (this.spawner != null) return;
-        this.spawner = transform.parent?.parent?.GetComponent<Spawner>();
-        Debug.Log(transform.name + ": LoadSpawner", gameObject);
-    }
+    //protected virtual void LoadSpawner()
+    //{
+    //    if (this.spawner != null) return;
+    //    this.spawner = transform.parent?.parent?.GetComponent<Spawner>();
+    //    Debug.Log(transform.name + ": LoadSpawner", gameObject);
+    //}
 
     protected abstract string GetObjectTypeString();
 }

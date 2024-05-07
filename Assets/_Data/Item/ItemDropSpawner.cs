@@ -7,6 +7,8 @@ public class ItemDropSpawner : Spawner
     private static ItemDropSpawner instance;
     public static ItemDropSpawner Instance => instance;
 
+    [SerializeField] protected int randomDropValue;
+
     protected override void Awake()
     {
         base.Awake();
@@ -15,13 +17,44 @@ public class ItemDropSpawner : Spawner
         ItemDropSpawner.instance = this;
     }
 
-    public virtual void Drop(List<DropRate> dropList, Vector3 pos, Quaternion rot)
+    //public virtual void Drop(List<ItemDropRate> dropList, Vector3 pos, Quaternion rot)
+    //{
+    //    if (dropList.Count < 1) return;
+
+    //    ItemDropRate randomItemDrop = this.GetRandomItemDrop(dropList);
+
+    //    if (this.DropRate(randomItemDrop)) return;
+
+    //    ItemCode itemCode = randomItemDrop.itemProfile.itemCode;
+    //    Transform itemDrop = this.Spawn(itemCode.ToString(), pos, rot);
+    //    if (itemDrop == null) return;
+    //    itemDrop.gameObject.SetActive(true);
+    //}
+    
+    public virtual void Drop(ItemDropRate dropItem, Vector3 pos, Quaternion rot)
     {
-        if (dropList.Count < 1) return;
-        ItemCode itemCode = dropList[0].itemProfile.itemCode;
-        Transform itemDrop = this.Spawn(itemCode.ToString(), pos, rot);
+        if (dropItem == null) return;
+
+        //ItemDropRate randomItemDrop = this.GetRandomItemDrop(dropItem);
+
+        if (this.DropRate(dropItem)) return;
+
+        ItemCode itemCode = dropItem.itemProfile.itemCode;
+        Transform itemDrop = this.SpawnByName(itemCode.ToString(), pos, rot);
         if (itemDrop == null) return;
         itemDrop.gameObject.SetActive(true);
+    }
+
+    public virtual bool DropRate(ItemDropRate dropRate)
+    {
+        this.randomDropValue = Random.Range(dropRate.minDrop, dropRate.maxDrop);
+        return dropRate.dropValue >= this.randomDropValue;
+    }
+
+    public virtual ItemDropRate GetRandomItemDrop(List<ItemDropRate> dropList)
+    {
+        int valueItemDrop = Random.Range(0, dropList.Count);
+        return dropList[valueItemDrop];
     }
 
     //public virtual Transform Drop(ItemInventory itemInventory, Vector3 pos, Quaternion rot)

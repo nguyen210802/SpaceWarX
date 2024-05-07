@@ -5,5 +5,5 @@ using UnityEngine;
 [Serializable]
 public class ItemRecipe
 {
-    public List<ItemRecipeIngredient> ingredients;
+    //public List<ItemRecipeIngredient> ingredients;
 }

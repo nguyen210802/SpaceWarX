@@ -8,8 +8,8 @@ using UnityEngine;
 public abstract class DamageReceiver : NguyenMonoBehaviour
 {
     [SerializeField] protected SphereCollider sphereCollider;
-    [SerializeField] protected int hp  = 1;
-    [SerializeField] protected int maxHp = 2;
+    [SerializeField] protected float hp  = 1;
+    [SerializeField] protected float maxHp = 2;
     [SerializeField] protected bool isDead = false;
 
     protected override void OnEnable()
@@ -39,13 +39,13 @@ public abstract class DamageReceiver : NguyenMonoBehaviour
         this.isDead = false;
     }
 
-    public virtual void Add(int add)
+    public virtual void Add(float add)
     {
         this.hp += add;
         if(this.hp > this.maxHp)   this.hp = this.maxHp;
     }
 
-    public virtual void Deduct(int deduct)
+    public virtual void Deduct(float deduct)
     {
         this.hp -= deduct;
         if (this.hp < 0) this.hp = 0;

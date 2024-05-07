@@ -16,14 +16,14 @@ public class ShootableObjectDamageReceiver : DamageReceiver
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.LoadJunkCtrl();
+        this.LoadShootableObjectCtrl();
     }
 
-    protected virtual void LoadJunkCtrl()
+    protected virtual void LoadShootableObjectCtrl()
     {
         if (this.shootableObjectCtrl != null) return;
         this.shootableObjectCtrl = transform.parent.GetComponent<ShootableObjectCtrl>();
-        Debug.Log(transform.name + ": Load JunkCtrl", gameObject);
+        Debug.Log(transform.name + ": LoadShootableObjectCtrl", gameObject);
     }
 
     protected override void OnDead()
@@ -38,13 +38,13 @@ public class ShootableObjectDamageReceiver : DamageReceiver
     {
         Vector3 dropPos = transform.position;
         Quaternion dropRot = transform.rotation;
-        ItemDropSpawner.Instance.Drop(this.shootableObjectCtrl.GetShootableObject.dropList, dropPos, dropRot);
+        ItemDropSpawner.Instance.Drop(this.shootableObjectCtrl.GetShootableObject.dropItem, dropPos, dropRot);
     }
 
     protected virtual void OnDeadFX()
     {
         string fxName = this.GetOnDeadFXSmoke();
-        Transform fxOnDead = FXSpawner.Instance.Spawn(fxName, transform.position, transform.rotation);
+        Transform fxOnDead = FXSpawner.Instance.SpawnByName(fxName, transform.position, transform.rotation);
         fxOnDead.gameObject.SetActive(true);
     }
 

@@ -34,7 +34,7 @@ public abstract class ObjShooting : NguyenMonoBehaviour
 
         Vector3 spawnPos = transform.parent.position;
         Quaternion rotation = transform.parent.rotation;
-        Transform newBullet = BulletSpawner.Instance.Spawn(BulletSpawner.Instance.bulletOne, spawnPos, rotation);
+        Transform newBullet = BulletSpawner.Instance.SpawnByName(BulletSpawner.Instance.bulletOne, spawnPos, rotation);
         if (newBullet == null)
             return;
 

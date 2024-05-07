@@ -7,7 +7,7 @@ using UnityEngine.Video;
 public class BulletCtrl : NguyenMonoBehaviour
 {
     [SerializeField] protected BulletDamageSender bulletDamageSender;
-    public BulletDamageSender GetDamageSender => bulletDamageSender;
+    public BulletDamageSender GetBulletDamageSender => bulletDamageSender;
 
     [SerializeField] protected BulletDespawn bulletDespawn;
     public BulletDespawn GetBulletDespawn => bulletDespawn;

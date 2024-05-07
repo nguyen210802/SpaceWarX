@@ -49,7 +49,7 @@ public abstract class Spawner : NguyenMonoBehaviour
         Debug.Log(transform.name + ": LoadHolder", gameObject);
     }
 
-    public virtual Transform Spawn(string prefabName, Vector3 spawnPos, Quaternion rotation)
+    public virtual Transform SpawnByName(string prefabName, Vector3 spawnPos, Quaternion rotation)
     {
         Transform prefab = this.getPrefabByName(prefabName);
         if(prefab == null)
@@ -58,10 +58,10 @@ public abstract class Spawner : NguyenMonoBehaviour
             return null;
         }
 
-        return this.Spawn(prefab, spawnPos, rotation);
+        return this.SpawnByTransform(prefab, spawnPos, rotation);
     }
     
-    public virtual Transform Spawn(Transform prefab, Vector3 spawnPos, Quaternion rotation)
+    public virtual Transform SpawnByTransform(Transform prefab, Vector3 spawnPos, Quaternion rotation)
     {
         Transform newPrefab = this.GetObjectFromPool(prefab);
         newPrefab.SetPositionAndRotation(spawnPos, rotation);

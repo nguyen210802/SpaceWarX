@@ -4,33 +4,24 @@ using UnityEngine;
 
 public class DamageSender : NguyenMonoBehaviour
 {
-    [SerializeField] protected int damage = 1;
+    [SerializeField] protected float damage = 1;
+    public float GetDamage => damage;
 
-    public virtual void Send(Transform obj)
+    [SerializeField] protected float critDamageBonus = 0f;
+    public void SetCritDamageBonus(float value) { this.critDamageBonus = value; }
+
+    public virtual void SendByTransform(Transform obj)
     {
         DamageReceiver damageReceiver = obj.GetComponentInChildren<DamageReceiver>();
         if (damageReceiver == null)
             return;
-        this.Send(damageReceiver);
-        this.CreateFXImpact();
+        this.SendByDamageReceiver(damageReceiver);
     }
 
-    public virtual void Send(DamageReceiver damageReceiver) 
+    public virtual void SendByDamageReceiver(DamageReceiver damageReceiver)
     {
-        damageReceiver.Deduct(this.damage);
-    }
-
-    protected virtual void CreateFXImpact()
-    {
-        string fxName = this.GetImpactFX();
-        Vector3 hitPos = transform.parent.position;
-        Quaternion hitRot = transform.parent.rotation;
-        Transform FXImpact = FXSpawner.Instance.Spawn(fxName, hitPos, hitRot);
-        FXImpact.gameObject.SetActive(true);
-    }
-
-    protected virtual string GetImpactFX()
-    {
-        return FXSpawner.Instance.impact1;
+        float valueDamage = this.damage * (1 + this.critDamageBonus);
+        damageReceiver.Deduct(valueDamage);
+        Debug.Log(valueDamage);
     }
 }

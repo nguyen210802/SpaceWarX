@@ -11,10 +11,10 @@ public class BulletAbstract : NguyenMonoBehaviour
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.LoadDamageReceiver();
+        this.LoadBulletCtrl();
     }
 
-    protected virtual void LoadDamageReceiver()
+    protected virtual void LoadBulletCtrl()
     {
         if (this.bulletCtrl != null) return;
         this.bulletCtrl = transform.parent.GetComponent<BulletCtrl>();

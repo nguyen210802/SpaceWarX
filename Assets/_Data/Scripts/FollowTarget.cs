@@ -15,6 +15,7 @@ public class FollowTarget : NguyenMonoBehaviour
     protected virtual void Following()
     {
         if (this.target == null) return;
+
         transform.position = Vector3.Lerp(transform.position, target.position, speed * Time.fixedDeltaTime);
     }
 }

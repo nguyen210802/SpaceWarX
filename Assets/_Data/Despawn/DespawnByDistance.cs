@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DespawnByDistance : Despawn
 {
-    [SerializeField] protected float disLimit = 70f;
+    [SerializeField] protected float disLimit = 20f;
     [SerializeField] protected float distance = 0;
     [SerializeField] protected Camera mainCam;
 
