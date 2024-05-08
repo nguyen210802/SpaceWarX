@@ -22,7 +22,7 @@ public class BulletUpgrade : NguyenMonoBehaviour
 
     private void Update()
     {
-        this.UpgradeByLevel();
+        //this.UpgradeByLevel();
     }
 
     public virtual void UpgradeByLevel()

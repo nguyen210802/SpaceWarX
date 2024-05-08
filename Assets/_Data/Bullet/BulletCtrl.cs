@@ -12,6 +12,9 @@ public class BulletCtrl : NguyenMonoBehaviour
     [SerializeField] protected BulletDespawn bulletDespawn;
     public BulletDespawn GetBulletDespawn => bulletDespawn;
 
+    [SerializeField] protected BulletUpgrade bulletUpgrade;
+    public BulletUpgrade GetBulletUpgrade => bulletUpgrade;
+
     [SerializeField] protected Transform shooter;
     public Transform GetShooter => shooter;
 
@@ -20,6 +23,7 @@ public class BulletCtrl : NguyenMonoBehaviour
         base.LoadComponents();
         this.LoadDamageSender();
         this.LoadBulletDespawn();
+        this.LoadBulletUpgrade();
     }
 
     protected virtual void LoadDamageSender()
@@ -35,6 +39,14 @@ public class BulletCtrl : NguyenMonoBehaviour
         this.bulletDespawn = transform.GetComponentInChildren<BulletDespawn>();
         Debug.Log(transform.name + ": LoadBulletDespawn", gameObject);
     }
+
+    protected virtual void LoadBulletUpgrade()
+    {
+        if (this.bulletUpgrade != null) return;
+        this.bulletUpgrade = transform.GetComponentInChildren<BulletUpgrade>();
+        Debug.Log(transform.name + ": LoadBulletUpgrade", gameObject);
+    }
+
 
     public virtual void SetShotter(Transform shooter)
     {

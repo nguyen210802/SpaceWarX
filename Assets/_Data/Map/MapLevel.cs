@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class MapLevel : LevelByDistance
 {
-    
     protected override void FixedUpdate()
     {
         base.FixedUpdate();

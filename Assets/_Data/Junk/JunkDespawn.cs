@@ -12,6 +12,6 @@ public class JunkDespawn : DespawnByDistance
     protected override void ResetValue()
     {
         base.ResetValue();
-        this.disLimit = 34;
+        this.disLimit = 25;
     }
 }

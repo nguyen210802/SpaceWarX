@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpanwerRandom : NguyenMonoBehaviour
+public class SpawnerRandom : NguyenMonoBehaviour
 {
     [Header("Spawn Random")]
     [SerializeField] protected SpawnerCtrl spawnerCtrl;
-    [SerializeField] protected float randomDelay = 1f;
-    [SerializeField] protected float randomTime = 0f;
-    [SerializeField] protected float randomLimit = 9;
+    [SerializeField] protected float spawnDelay = 1f;
+    [SerializeField] protected float spawnTime = 0f;
+    [SerializeField] protected int spawnLimit = 9;
+
+    public void SetSpawn(float spawnDelay, int spawnLimit)
+    {
+        this.spawnDelay = spawnDelay;
+        this.spawnLimit = spawnLimit;
+    }
 
     protected override void LoadComponents()
     {
@@ -31,9 +37,9 @@ public class SpanwerRandom : NguyenMonoBehaviour
     {
         if (this.RandomReachLimit()) return;
 
-        this.randomTime += Time.fixedDeltaTime;
-        if (this.randomTime < this.randomDelay) return;
-        this.randomTime = 0f;
+        this.spawnTime += Time.fixedDeltaTime;
+        if (this.spawnTime < this.spawnDelay) return;
+        this.spawnTime = 0f;
 
         Transform randomPoint = this.spawnerCtrl.GetSpawnPoints.GetRanDom();
         Vector3 pos = randomPoint.position;
@@ -46,7 +52,7 @@ public class SpanwerRandom : NguyenMonoBehaviour
 
     protected virtual bool RandomReachLimit()
     {
-        int currenJunk = this.spawnerCtrl.GetSpawner.GetSpawnedCount;
-        return currenJunk >= this.randomLimit;
+        int currentSpawn = this.spawnerCtrl.GetSpawner.GetSpawnedCount;
+        return currentSpawn >= this.spawnLimit;
     }
 }

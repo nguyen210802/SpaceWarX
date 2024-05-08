@@ -45,13 +45,9 @@ public class LaserImpact : NguyenMonoBehaviour
         Debug.LogWarning(transform.name + ": LoadCollider", gameObject);
     }
 
-    //protected virtual void OnTrigger(Collider other)
-    //{
-    //    this.laserCtrl.GetDamageSender.Send(other.transform);
-    //}
-
     protected virtual void OnTriggerStay(Collider other)
     {
+        if (other.transform.parent == this.laserCtrl.GetShooter) return;
         this.laserCtrl.GetLaserDamageSender.SendByTransform(other.transform);
     }
 }

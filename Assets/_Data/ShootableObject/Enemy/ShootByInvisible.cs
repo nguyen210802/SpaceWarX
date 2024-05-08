@@ -6,8 +6,6 @@ public class ShootByInvisible : NguyenMonoBehaviour
 {
     [SerializeField] protected Transform shooting;
 
-    //[SerializeField] protected bool checkShipInvisible = false;
-
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -17,8 +15,8 @@ public class ShootByInvisible : NguyenMonoBehaviour
     {
         if (this.shooting != null) return;
 
-        EnemyCtrl enemyCtrl = transform.parent.GetComponent<EnemyCtrl>();
-        this.shooting = enemyCtrl.GetObjectShooting.transform;
+        ShootableObjectCtrl shootableObjectCtrl = transform.parent.GetComponent<ShootableObjectCtrl>();
+        this.shooting = shootableObjectCtrl.GetObjectShooting.transform;
     }
 
     private void FixedUpdate()
@@ -26,16 +24,8 @@ public class ShootByInvisible : NguyenMonoBehaviour
         this.SetShootingByInvisible();
     }
 
-    //protected virtual void ChangeActiveShooting()
-    //{
-    //    if (this.checkShipInvisible == Invisible.Instance.GetInvisible) return;
-
-    //    this.SetShootingByInvisible();
-    //}
-
     protected virtual void SetShootingByInvisible()
     {
-        //this.checkShipInvisible = Invisible.Instance.GetInvisible;
         shooting.gameObject.SetActive(!Invisible.Instance.GetInvisible);
     }
 }

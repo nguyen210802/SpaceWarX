@@ -14,6 +14,9 @@ public class ShipCtrl : ShootableObjectCtrl
     [SerializeField] protected SkillCtrl skillCtrl;
     public SkillCtrl GetSkillCtrl => skillCtrl;
 
+    [SerializeField] protected DamageReceiver damageReceiver;
+    public DamageReceiver GetDamageReceiver => damageReceiver;
+
     protected override string GetObjectTypeString()
     {
         return ObjectType.Ship.ToString();
@@ -22,9 +25,17 @@ public class ShipCtrl : ShootableObjectCtrl
     protected override void LoadComponents()
     {
         base.LoadComponents();
+        this.LoadDamageReceiver();
         this.LoadInventory();
         this.LoadShipUpgrade();
         this.LoadSkillCtrl();
+    }
+
+    protected virtual void LoadDamageReceiver()
+    {
+        if (this.damageReceiver != null) return;
+        this.damageReceiver = transform.GetComponentInChildren<DamageReceiver>();
+        Debug.Log(transform.name + ": LoadDamageReceiver", gameObject);
     }
 
     protected virtual void LoadInventory()

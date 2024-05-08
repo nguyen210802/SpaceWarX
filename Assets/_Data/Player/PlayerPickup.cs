@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class PlayerPickup : PlayerAbstract
 {
-    public virtual void ItemPickup(ItemPickupable itemPickupable)
-    {
-        Debug.Log("ItemPickup");
+    //public virtual void ItemPickup(ItemPickupable itemPickupable)
+    //{
+    //    Debug.Log("ItemPickup");
 
-        ItemCode itemCode = itemPickupable.GetItemCode();
+    //    ItemCode itemCode = itemPickupable.GetItemCode();
 
-        //ItemInventory itemInventory = itemPickupable.GetItemCtrl.GetItemInventory;
-        if (this.playerCtrl.GetCurrentShip.GetInventory.AddItem(itemCode, 1))
-        {
-            itemPickupable.Picked();
-        }
-    }
+    //    //ItemInventory itemInventory = itemPickupable.GetItemCtrl.GetItemInventory;
+    //    if (this.playerCtrl.GetCurrentShip.GetInventory.AddItem(itemCode, 1))
+    //    {
+    //        itemPickupable.Picked();
+    //    }
+    //}
 }

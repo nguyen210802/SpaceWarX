@@ -7,7 +7,7 @@ public abstract class ObjShooting : NguyenMonoBehaviour
     [SerializeField] protected bool isShooting = false;
     [SerializeField] protected float shootDelay = 0.2f;
     [SerializeField] protected float shootTimer = 0f;
-
+    [SerializeField] protected bool upgrade = false;
 
     private void Update()
     {
@@ -41,6 +41,11 @@ public abstract class ObjShooting : NguyenMonoBehaviour
         newBullet.gameObject.SetActive(true);
         BulletCtrl bulletCtrl = newBullet.GetComponent<BulletCtrl>();
         bulletCtrl.SetShotter(transform.parent);
+
+        if (upgrade)
+        {
+            bulletCtrl.GetBulletUpgrade.UpgradeByLevel();
+        }
     }
 
     protected abstract bool IsShooting();

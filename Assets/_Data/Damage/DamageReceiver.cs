@@ -5,9 +5,12 @@ using UnityEngine;
 
 [RequireComponent (typeof (SphereCollider))]
 
-public abstract class DamageReceiver : NguyenMonoBehaviour
+public class DamageReceiver : NguyenMonoBehaviour
 {
     [SerializeField] protected SphereCollider sphereCollider;
+
+    //[SerializeField] protected ShootableObjectCtrl shootableObjectCtrl;
+
     [SerializeField] protected float hp  = 1;
     [SerializeField] protected float maxHp = 2;
     [SerializeField] protected bool isDead = false;
@@ -22,6 +25,7 @@ public abstract class DamageReceiver : NguyenMonoBehaviour
     {
         base.LoadComponents();
         this.LoadCollider();
+        //this.LoadShootableObjectCtrl();
     }
 
     protected virtual void LoadCollider()
@@ -33,8 +37,16 @@ public abstract class DamageReceiver : NguyenMonoBehaviour
         Debug.Log(transform.name + ": LoadCollider", gameObject);
     }
 
+    //protected virtual void LoadShootableObjectCtrl()
+    //{
+    //    if (this.shootableObjectCtrl != null) return;
+    //    this.shootableObjectCtrl = transform.parent.GetComponent<ShootableObjectCtrl>();
+    //    Debug.Log(transform.name + ": LoadShootableObjectCtrl", gameObject);
+    //}
+
     public virtual void Reborn()
     {
+        //this.maxHp = this.shootableObjectCtrl.GetShootableObject.maxHp;
         this.hp = this.maxHp;
         this.isDead = false;
     }
@@ -64,5 +76,5 @@ public abstract class DamageReceiver : NguyenMonoBehaviour
         this.OnDead();
     }
 
-    protected abstract void OnDead();
+    protected virtual void OnDead() { }
 }
