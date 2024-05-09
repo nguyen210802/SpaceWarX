@@ -14,7 +14,7 @@ public class GameCtrl : NguyenMonoBehaviour
     [SerializeField] protected float timeFinish = 30f;
 
     [SerializeField] protected List<GameWave> gameWaves;
-    [SerializeField] protected int nextValueWave = 0;
+    [SerializeField] protected int valueWave = 0;
     [SerializeField] protected float timeNext = 0f;
 
     protected override void Awake()
@@ -27,25 +27,38 @@ public class GameCtrl : NguyenMonoBehaviour
 
     protected override void Start()
     {
-        //JunkSpawnerRandom.Instance.SetRandomLimit(1);
-        //JunkSpawner
+        if(gameWaves.Count == 0)
+        {
+            Debug.Log("gameWaves = 0");
+            return;
+        }
+        this.SetValueSpawner();
+        this.timeNext = gameWaves[valueWave + 1].timeStart;
+    }
 
-        //EnemySpawnerRandom.Instance.SetRandomLimit(2);
-
-
-
-        //MotherShipSpawnerRandom.Instance.SetRandomLimit(3);
+    protected virtual void SetValueSpawner()
+    {
+        JunkSpawnerRandom.Instance.SetSpawnDelay(gameWaves[valueWave].junkDelay);
+        JunkSpawnerRandom.Instance.SetSpawnLimit(gameWaves[valueWave].junkLimit);
+        
+        EnemySpawnerRandom.Instance.SetSpawnDelay(gameWaves[valueWave].enemyDelay);
+        EnemySpawnerRandom.Instance.SetSpawnLimit(gameWaves[valueWave].enemyLimit);
+        
+        MotherShipSpawnerRandom.Instance.SetSpawnDelay(gameWaves[valueWave].motherShipDelay);
+        MotherShipSpawnerRandom.Instance.SetSpawnLimit(gameWaves[valueWave].motherShipLimit);
     }
 
     private void Update()
     {
-        if (nextValueWave >= gameWaves.Count - 1) return;
-        if (this.time >= gameWaves[nextValueWave].timeStart)
+        if (valueWave >= gameWaves.Count - 1) return;
+        if (this.time >= gameWaves[valueWave + 1].timeStart)
         {
-            nextValueWave++;
-            this.timeNext = gameWaves[nextValueWave].timeStart;
+            valueWave++;
+            this.SetValueSpawner();
+            if (valueWave < gameWaves.Count - 1)
+                this.timeNext = gameWaves[valueWave + 1].timeStart;
         }
-            
+
     }
 
     private void FixedUpdate()

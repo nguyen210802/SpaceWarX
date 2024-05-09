@@ -21,7 +21,7 @@ public class ItemPickupable : ItemAbstact
         if (this.sphereCollider != null) return;
         this.sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.isTrigger = true;
-        sphereCollider.radius = 0.2f;
+        sphereCollider.radius = 0.15f;
         Debug.LogWarning(transform.name + ": LoadCollider", gameObject);
     }
 

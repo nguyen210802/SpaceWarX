@@ -29,6 +29,7 @@ public class ShootableObjectDamageReceiver : DamageReceiver
     protected override void OnDead()
     {
         base.OnDead();
+        this.shootableObjectCtrl.GetDespawn.DespawnObject();
         this.OnDeadFX();
         //Drop here
         this.OnDeadDrop();

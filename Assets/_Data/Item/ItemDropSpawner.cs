@@ -37,7 +37,7 @@ public class ItemDropSpawner : Spawner
 
         //ItemDropRate randomItemDrop = this.GetRandomItemDrop(dropItem);
 
-        if (this.DropRate(dropItem)) return;
+        if (!this.DropRate(dropItem)) return;
 
         ItemCode itemCode = dropItem.itemProfile.itemCode;
         Transform itemDrop = this.SpawnByName(itemCode.ToString(), pos, rot);

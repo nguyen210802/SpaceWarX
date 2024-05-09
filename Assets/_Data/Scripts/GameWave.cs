@@ -6,11 +6,11 @@ public class GameWave
     public float timeStart;
 
     public float junkDelay;
-    public float junkLimit;
+    public int junkLimit;
 
     public float enemyDelay;
-    public float enemyLimit;
+    public int enemyLimit;
 
     public float motherShipDelay;
-    public float motherLimit;
+    public int motherShipLimit;
 }

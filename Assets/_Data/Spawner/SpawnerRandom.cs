@@ -10,6 +10,9 @@ public class SpawnerRandom : NguyenMonoBehaviour
     [SerializeField] protected float spawnTime = 0f;
     [SerializeField] protected int spawnLimit = 9;
 
+    public void SetSpawnDelay(float value) { this.spawnDelay = value; }
+    public void SetSpawnLimit(int value) { this.spawnLimit = value; }
+
     public void SetSpawn(float spawnDelay, int spawnLimit)
     {
         this.spawnDelay = spawnDelay;

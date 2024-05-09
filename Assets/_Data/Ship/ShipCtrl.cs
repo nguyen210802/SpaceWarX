@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class ShipCtrl : ShootableObjectCtrl
 {
+    private static ShipCtrl instance;
+    public static ShipCtrl Instance => instance;
+
     [Header("Ship Ctrl")]
     [SerializeField] protected Inventory inventory;
     public Inventory GetInventory => inventory;
@@ -16,6 +19,12 @@ public class ShipCtrl : ShootableObjectCtrl
 
     [SerializeField] protected DamageReceiver damageReceiver;
     public DamageReceiver GetDamageReceiver => damageReceiver;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        ShipCtrl.instance = this;
+    }
 
     protected override string GetObjectTypeString()
     {

@@ -26,6 +26,7 @@ public class ShootByInvisible : NguyenMonoBehaviour
 
     protected virtual void SetShootingByInvisible()
     {
+        if (Invisible.Instance == null) return;
         shooting.gameObject.SetActive(!Invisible.Instance.GetInvisible);
     }
 }

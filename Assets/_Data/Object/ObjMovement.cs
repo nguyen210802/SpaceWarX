@@ -8,7 +8,7 @@ public class ObjMovement : NguyenMonoBehaviour
     [SerializeField] protected Vector3 targetPosition;
     [SerializeField] protected float speed = 0.01f;
     [SerializeField] protected float distance;
-    [SerializeField] protected float minDistance = 3f;
+    [SerializeField] protected float minDistance = 2f;
 
     protected virtual void FixedUpdate()
     {

@@ -9,10 +9,11 @@ public class DamageReceiver : NguyenMonoBehaviour
 {
     [SerializeField] protected SphereCollider sphereCollider;
 
-    //[SerializeField] protected ShootableObjectCtrl shootableObjectCtrl;
-
     [SerializeField] protected float hp  = 1;
+    public float GetHp => hp;
     [SerializeField] protected float maxHp = 2;
+    public float GetMaxHp => maxHp;
+
     [SerializeField] protected bool isDead = false;
 
     protected override void OnEnable()
@@ -25,7 +26,6 @@ public class DamageReceiver : NguyenMonoBehaviour
     {
         base.LoadComponents();
         this.LoadCollider();
-        //this.LoadShootableObjectCtrl();
     }
 
     protected virtual void LoadCollider()
@@ -37,16 +37,8 @@ public class DamageReceiver : NguyenMonoBehaviour
         Debug.Log(transform.name + ": LoadCollider", gameObject);
     }
 
-    //protected virtual void LoadShootableObjectCtrl()
-    //{
-    //    if (this.shootableObjectCtrl != null) return;
-    //    this.shootableObjectCtrl = transform.parent.GetComponent<ShootableObjectCtrl>();
-    //    Debug.Log(transform.name + ": LoadShootableObjectCtrl", gameObject);
-    //}
-
     public virtual void Reborn()
     {
-        //this.maxHp = this.shootableObjectCtrl.GetShootableObject.maxHp;
         this.hp = this.maxHp;
         this.isDead = false;
     }

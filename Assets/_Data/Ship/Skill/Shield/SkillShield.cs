@@ -1,0 +1,78 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SkillShield : SkillAbstract
+{
+    private static SkillShield instance;
+    public static SkillShield Instance => instance;
+
+    [SerializeField] protected GameObject shield;
+    public GameObject GetShield => shield;
+
+    [SerializeField] protected GameObject damageReceiver;
+
+    [SerializeField] private float timeDelaySkill = 0f;
+    [SerializeField] private float timeCD = 20f;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        SkillShield.instance = this;
+    }
+
+    private void Update()
+    {
+        if (this.timeDelaySkill <= 0)
+        {
+            this.ActivateShield();
+        }
+        this.ActiveDamageReceiver();
+    }
+
+    private void FixedUpdate()
+    {
+        this.timeDelaySkill -= Time.fixedDeltaTime;
+        if (this.timeDelaySkill <= 0)
+            this.timeDelaySkill = 0;
+    }
+
+    protected virtual void ActivateShield()
+    {
+        this.shield.SetActive(true);
+    }
+
+    protected virtual void ActiveDamageReceiver()
+    {
+        if (shield.activeSelf)
+            this.damageReceiver.SetActive(false);
+        else
+            this.damageReceiver.SetActive(true);
+    }
+
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        this.LoadShield();
+        this.LoadDamageReceiver();
+    }
+
+    protected virtual void LoadShield()
+    {
+        if (this.shield != null) return;
+        shield = transform.Find("Shield").gameObject;
+        Debug.Log(transform.name + ": LoadShield", gameObject);
+    }
+
+    protected virtual void LoadDamageReceiver()
+    {
+        if(this.damageReceiver != null) return;
+        this.damageReceiver = transform.parent.parent.Find("DamageReceiver").gameObject;
+        Debug.Log(transform.name + ": LoadDamageReceiver", gameObject);
+    }
+
+    public virtual void TimeDespawn()
+    {
+        this.timeDelaySkill = this.timeCD;
+    }
+}
