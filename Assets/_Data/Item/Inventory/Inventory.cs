@@ -12,7 +12,6 @@ public class Inventory : NguyenMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        //this.AddItem(ItemCode.CopperSworld, 1);
 
         //this.AddItem(ItemCode.IronOre, 10);
         //this.AddItem(ItemCode.GoldOre, 10);

@@ -9,6 +9,8 @@ public class ItemPickupable : ItemAbstact
 {
     [Header("Item Pickupable")]
     [SerializeField] protected SphereCollider sphereCollider;
+    [SerializeField] protected int point;
+    public int GetPoint => point;
 
     protected override void LoadComponents()
     {

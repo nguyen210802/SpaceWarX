@@ -22,6 +22,6 @@ public class DamageSender : NguyenMonoBehaviour
     {
         float valueDamage = this.damage * (1 + this.critDamageBonus);
         damageReceiver.Deduct(valueDamage);
-        //Debug.Log(valueDamage);
+        Debug.Log(transform.parent.name + ": " + valueDamage);
     }
 }

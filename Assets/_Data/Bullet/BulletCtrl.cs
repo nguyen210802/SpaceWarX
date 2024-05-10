@@ -6,11 +6,11 @@ using UnityEngine.Video;
 
 public class BulletCtrl : NguyenMonoBehaviour
 {
+    [SerializeField] protected Despawn bulletDespawn;
+    public Despawn GetBulletDespawn => bulletDespawn;
+
     [SerializeField] protected BulletDamageSender bulletDamageSender;
     public BulletDamageSender GetBulletDamageSender => bulletDamageSender;
-
-    [SerializeField] protected BulletDespawn bulletDespawn;
-    public BulletDespawn GetBulletDespawn => bulletDespawn;
 
     [SerializeField] protected BulletUpgrade bulletUpgrade;
     public BulletUpgrade GetBulletUpgrade => bulletUpgrade;
@@ -36,7 +36,7 @@ public class BulletCtrl : NguyenMonoBehaviour
     protected virtual void LoadBulletDespawn()
     {
         if (this.bulletDespawn != null) return;
-        this.bulletDespawn = transform.GetComponentInChildren<BulletDespawn>();
+        this.bulletDespawn = transform.GetComponentInChildren<Despawn>();
         Debug.Log(transform.name + ": LoadBulletDespawn", gameObject);
     }
 
@@ -46,7 +46,6 @@ public class BulletCtrl : NguyenMonoBehaviour
         this.bulletUpgrade = transform.GetComponentInChildren<BulletUpgrade>();
         Debug.Log(transform.name + ": LoadBulletUpgrade", gameObject);
     }
-
 
     public virtual void SetShotter(Transform shooter)
     {

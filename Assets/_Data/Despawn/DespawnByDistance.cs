@@ -8,10 +8,10 @@ public class DespawnByDistance : Despawn
     [SerializeField] protected float distance = 0;
     [SerializeField] protected Camera mainCam;
 
-    private void FixedUpdate()
-    {
-        this.Despawning();
-    }
+    //private void FixedUpdate()
+    //{
+    //    this.Despawning();
+    //}
 
     protected override void LoadComponents()
     {
@@ -26,21 +26,21 @@ public class DespawnByDistance : Despawn
         Debug.Log(transform.parent.name + ": LoadCamera");
     }
 
-    protected override void Despawning()
-    {
-        if (!this.CanDespan())
-            return;
-        this.DespawnObject();
-    }
+    //protected override void Despawning()
+    //{
+    //    if (!this.CanDespan())
+    //        return;
+    //    this.DespawnObject();
+    //}
 
-    public override void DespawnObject()
-    {
-        Destroy(transform.parent.gameObject);
-    }
+    //public override void DespawnObject()
+    //{
+    //    Destroy(transform.parent.gameObject);
+    //}
 
     protected override bool CanDespan()
     {
-        this.distance = Vector3.Distance(transform.parent.position, mainCam.transform.position);
+        this.distance = Vector2.Distance(transform.parent.position, mainCam.transform.position);
         if (this.distance > this.disLimit)
             return true;
         return false;

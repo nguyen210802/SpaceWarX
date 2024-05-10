@@ -15,4 +15,8 @@ MonoBehaviour:
   objectName: Ship
   objectType: 4
   maxHp: 10
-  dropList: []
+  dropItem:
+    itemProfile: {fileID: 0}
+    dropValue: 0
+    minDrop: 0
+    maxDrop: 0

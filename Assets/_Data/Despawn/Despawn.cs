@@ -4,8 +4,7 @@ using UnityEngine;
 
 public abstract class Despawn : NguyenMonoBehaviour
 {
-
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         this.Despawning();
     }

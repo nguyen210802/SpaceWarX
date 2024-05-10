@@ -9,7 +9,6 @@ public class ItemProfileSO : ScriptableObject
     //public ItemType itemtype = ItemType.NoItem;
     public string itemName = "no-name";
     public int defaultMaxStack = 7;
-    //public List<ItemRecipe> upgradeLevels;
 
     //public static ItemProfileSO FindByItemCode(ItemCode itemCode)
     //{

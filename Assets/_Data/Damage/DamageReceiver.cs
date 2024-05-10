@@ -9,10 +9,16 @@ public class DamageReceiver : NguyenMonoBehaviour
 {
     [SerializeField] protected SphereCollider sphereCollider;
 
-    [SerializeField] protected float hp  = 1;
+    [SerializeField] protected float hp = 1;
     public float GetHp => hp;
     [SerializeField] protected float maxHp = 2;
     public float GetMaxHp => maxHp;
+    [SerializeField] protected float critHpBonus = 0f;
+    public void SetCritHpBonus(float critHpBonus) 
+    { 
+        this.critHpBonus = critHpBonus;
+        this.UpgradeByLevel();
+    }
 
     [SerializeField] protected bool isDead = false;
 
@@ -66,6 +72,13 @@ public class DamageReceiver : NguyenMonoBehaviour
         if (!this.IsDead()) return;
         this.isDead = true;
         this.OnDead();
+    }
+
+    protected virtual void UpgradeByLevel()
+    {
+        if (this.critHpBonus == 0) return;
+        float newHp = this.maxHp * (1 + this.critHpBonus);
+        this.hp = newHp;
     }
 
     protected virtual void OnDead() { }

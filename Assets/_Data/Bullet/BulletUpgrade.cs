@@ -7,6 +7,13 @@ public class BulletUpgrade : NguyenMonoBehaviour
     [SerializeField] protected BulletCtrl bulletCtrl;
     [SerializeField] protected float valueCritDamageBonus = 0.1f;
 
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        if (bulletCtrl.GetShooter != null && bulletCtrl.GetShooter.CompareTag("Player"))
+            this.UpgradeByLevel();
+    }
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -18,11 +25,6 @@ public class BulletUpgrade : NguyenMonoBehaviour
         if (bulletCtrl != null) return;
         bulletCtrl = transform.parent.GetComponent<BulletCtrl>();
         Debug.Log(transform.name + ": LoadBulletCtrl", gameObject);
-    }
-
-    private void Update()
-    {
-        //this.UpgradeByLevel();
     }
 
     public virtual void UpgradeByLevel()

@@ -12,20 +12,14 @@ public class ShipUpgrade : NguyenMonoBehaviour
     [SerializeField] protected int currentLevel = 2;
     public int GetCurrentLevel => currentLevel;
     [SerializeField] protected int maxLevel = 9;
+    [SerializeField] protected int upgradePoint;
+    [SerializeField] protected int nextUpgradePoint;
 
     protected override void Awake()
     {
         base.Awake();
         ShipUpgrade.instance = this;
     }
-
-    //protected override void Start()
-    //{
-    //    shipCtrl.GetSkillCtrl.GetSkillInvisible.GetInvisibleUpgrade.UpgradeByLevel(currentLevel);
-
-    //    LaserCtrl laserCtrl = shipCtrl.GetSkillCtrl.GetSkillLaser.GetLaser.GetComponent<LaserCtrl>();
-    //    laserCtrl.GetLaserUpgrade.UpgradeByLevel(2);
-    //}
 
     protected override void LoadComponents()
     {
@@ -38,5 +32,26 @@ public class ShipUpgrade : NguyenMonoBehaviour
         if (this.shipCtrl != null) return;
         this.shipCtrl = transform.parent.GetComponent<ShipCtrl>();
         Debug.Log(transform.name + ": LoadShipCtrl", gameObject);
+    }
+
+    public void AddUpgradePoint(int point)
+    {
+        this.upgradePoint += point;
+    }
+
+    public void checkUpgrade()
+    {
+        if(this.upgradePoint >= this.nextUpgradePoint && this.currentLevel < this.maxLevel)
+        {
+            this.upgradePoint -= this.nextUpgradePoint;
+            this.UpgradeLevel();
+        }
+    }
+
+    public void UpgradeLevel()
+    {
+        this.currentLevel++;
+        if (this.currentLevel >= this.maxLevel)
+            this.currentLevel = this.maxLevel;
     }
 }

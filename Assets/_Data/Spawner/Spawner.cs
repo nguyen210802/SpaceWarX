@@ -102,6 +102,7 @@ public abstract class Spawner : NguyenMonoBehaviour
         this.poolObjs.Add(obj);
         obj.transform.gameObject.SetActive(false);
         this.spawnedCount--;
+        if (this.spawnedCount <= 0) this.spawnedCount = 0;
     }
 
     public virtual Transform RandomPrefab()

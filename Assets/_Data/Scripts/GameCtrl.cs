@@ -7,6 +7,8 @@ public class GameCtrl : NguyenMonoBehaviour
     private static GameCtrl instance;
     public static GameCtrl Instance => instance;
 
+    [SerializeField] protected Transform player;
+
     [SerializeField] protected Camera mainCamera;
     public Camera GetMainCamera => mainCamera;
 
@@ -16,6 +18,8 @@ public class GameCtrl : NguyenMonoBehaviour
     [SerializeField] protected List<GameWave> gameWaves;
     [SerializeField] protected int valueWave = 0;
     [SerializeField] protected float timeNext = 0f;
+
+    [SerializeField] protected float timeOverDelay = 3f;
 
     protected override void Awake()
     {
@@ -76,15 +80,29 @@ public class GameCtrl : NguyenMonoBehaviour
         }
     }
 
-    protected virtual void GameOver()
+    public void PlayerDespawn()
     {
+        Debug.Log("GameOver");
+        Invoke("GameOver", this.timeOverDelay);
+    }
 
+    public void GameOver()
+    {
+        Time.timeScale = 0f;
     }
 
     protected override void LoadComponents()
     {
         base.LoadComponents();
+        this.LoadPlayer();
         this.LoadCamera();
+    }
+
+    protected virtual void LoadPlayer()
+    {
+        if (this.player != null) return;
+        this.player = GameObject.FindGameObjectWithTag("Player").transform;
+        Debug.Log(transform.name + ": LoadShooter", gameObject);
     }
 
     protected virtual void LoadCamera()

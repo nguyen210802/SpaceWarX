@@ -7,6 +7,12 @@ public class ShieldDamageReceiver : DamageReceiver
     [Header("Shield")]
     [SerializeField] protected ShieldCtrl shieldCtrl;
 
+    protected override void ResetValue()
+    {
+        base.ResetValue();
+        this.maxHp = 5;
+    }
+
     protected override void LoadComponents()
     {
         base.LoadComponents();

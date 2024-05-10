@@ -29,20 +29,21 @@ public class ShipDamageReceiver : DamageReceiver
     protected override void OnDead()
     {
         base.OnDead();
-        this.shipCtrl.GetDespawn.DespawnObject();
         this.OnDeadFX();
+        GameCtrl.Instance.PlayerDespawn();
+        this.shipCtrl.GetDespawn.DespawnObject();
     }
 
     protected virtual void OnDeadFX()
     {
         string fxName = this.GetOnDeadFXSmoke();
-        Transform fxOnDead = FXSpawner.Instance.SpawnByName(fxName, transform.position, transform.rotation);
+        Transform fxOnDead = FXSpawner.Instance.SpawnByName(fxName, transform.parent.position, transform.parent.rotation);
         fxOnDead.gameObject.SetActive(true);
     }
 
     protected virtual string GetOnDeadFXSmoke()
     {
-        return FXSpawner.Instance.smoke1;
+        return FXSpawner.Instance.explotion;
     }
 
     public override void Reborn()

@@ -13,7 +13,7 @@ public class TextShipHP : BaseText
     {
         float hp = ShipCtrl.Instance.GetDamageReceiver.GetHp;
         float maxHp = ShipCtrl.Instance.GetDamageReceiver.GetMaxHp;
-        this.text.SetText(hp+"/"+maxHp);
+        this.text.SetText((int)hp+"/"+(int)maxHp);
         
     }
 }
