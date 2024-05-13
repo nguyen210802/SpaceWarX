@@ -10,6 +10,8 @@ public class MotherShipSpawnerRandom : SpawnerRandom
     protected override void Awake()
     {
         base.Awake();
+        if (MotherShipSpawnerRandom.instance != null)
+            Debug.LogError("Only one MotherShipSpawnerRandom allow to exit!");
         MotherShipSpawnerRandom.instance = this;
     }
 

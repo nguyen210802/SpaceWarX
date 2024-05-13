@@ -53,4 +53,9 @@ public class ShipLooter : NguyenMonoBehaviour
         shipUpgrade.checkUpgrade();
         itemPickupable.Picked();
     }
+
+    public virtual void UpgradeRadiusLoot()
+    {
+        sphereCollider.radius += 0.1f;
+    }
 }

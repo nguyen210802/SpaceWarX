@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Enemy_1
   objectType: 2
-  maxHp: 2
+  baseHp: 2
   dropItem:
     itemProfile: {fileID: 11400000, guid: 36a56996f05c4744fb9eb4810086f8e8, type: 2}
     dropValue: 70

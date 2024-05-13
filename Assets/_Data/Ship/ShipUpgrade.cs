@@ -14,7 +14,7 @@ public class ShipUpgrade : NguyenMonoBehaviour
     [SerializeField] protected int maxLevel = 9;
     [SerializeField] protected int upgradePoint;
     [SerializeField] protected int nextUpgradePoint;
-
+    [SerializeField] protected ShipLooter shipLooter;
     protected override void Awake()
     {
         base.Awake();
@@ -25,6 +25,7 @@ public class ShipUpgrade : NguyenMonoBehaviour
     {
         base.LoadComponents();
         this.LoadShipCtrl();
+        this.LoadShipLooter();
     }
 
     protected virtual void LoadShipCtrl()
@@ -32,6 +33,13 @@ public class ShipUpgrade : NguyenMonoBehaviour
         if (this.shipCtrl != null) return;
         this.shipCtrl = transform.parent.GetComponent<ShipCtrl>();
         Debug.Log(transform.name + ": LoadShipCtrl", gameObject);
+    }
+
+    protected virtual void LoadShipLooter()
+    {
+        if (this.shipLooter != null) return;
+        this.shipLooter = GetComponent<ShipLooter>();
+        Debug.Log(transform.name + ": LoadShipLooter", gameObject);
     }
 
     public void AddUpgradePoint(int point)
@@ -50,6 +58,7 @@ public class ShipUpgrade : NguyenMonoBehaviour
 
     public void UpgradeLevel()
     {
+        shipLooter.UpgradeRadiusLoot();
         this.currentLevel++;
         if (this.currentLevel >= this.maxLevel)
             this.currentLevel = this.maxLevel;

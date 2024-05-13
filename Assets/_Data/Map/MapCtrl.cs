@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapCtrl : MonoBehaviour
+public class MapCtrl : NguyenMonoBehaviour
 {
     private static MapCtrl instance;
     public static MapCtrl Instance => instance;
@@ -11,4 +11,11 @@ public class MapCtrl : MonoBehaviour
     public float GetLimitX => limitX;
     [SerializeField] protected float limitY = 50;
     public float GetLimitY => limitY;
+
+    protected override void Awake()
+    {
+        if (MapCtrl.instance != null)
+            Debug.LogWarning("Only 1 MapCtrl allow to exit");
+        MapCtrl.instance = this;
+    }
 }

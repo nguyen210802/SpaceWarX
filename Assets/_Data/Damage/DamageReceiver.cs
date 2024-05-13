@@ -11,12 +11,13 @@ public class DamageReceiver : NguyenMonoBehaviour
 
     [SerializeField] protected float hp = 1;
     public float GetHp => hp;
-    [SerializeField] protected float maxHp = 2;
-    public float GetMaxHp => maxHp;
+    [SerializeField] protected float baseHp = 2;
+    public float GetMaxHp => baseHp;
+
     [SerializeField] protected float critHpBonus = 0f;
-    public void SetCritHpBonus(float critHpBonus) 
+    public void SetCritHpBonus(float critHp) 
     { 
-        this.critHpBonus = critHpBonus;
+        this.critHpBonus = critHp;
         this.UpgradeByLevel();
     }
 
@@ -45,14 +46,14 @@ public class DamageReceiver : NguyenMonoBehaviour
 
     public virtual void Reborn()
     {
-        this.hp = this.maxHp;
+        this.hp = this.baseHp;
         this.isDead = false;
     }
 
     public virtual void Add(float add)
     {
         this.hp += add;
-        if(this.hp > this.maxHp)   this.hp = this.maxHp;
+        if(this.hp > this.baseHp)   this.hp = this.baseHp;
     }
 
     public virtual void Deduct(float deduct)
@@ -77,7 +78,7 @@ public class DamageReceiver : NguyenMonoBehaviour
     protected virtual void UpgradeByLevel()
     {
         if (this.critHpBonus == 0) return;
-        float newHp = this.maxHp * (1 + this.critHpBonus);
+        float newHp = this.baseHp * (1 + this.critHpBonus);
         this.hp = newHp;
     }
 

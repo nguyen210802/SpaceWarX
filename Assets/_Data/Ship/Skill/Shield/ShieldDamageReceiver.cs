@@ -10,7 +10,7 @@ public class ShieldDamageReceiver : DamageReceiver
     protected override void ResetValue()
     {
         base.ResetValue();
-        this.maxHp = 5;
+        this.baseHp = 5;
     }
 
     protected override void LoadComponents()

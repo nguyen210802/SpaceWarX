@@ -15,6 +15,11 @@ public class GameCtrl : NguyenMonoBehaviour
     [SerializeField] protected float time = 0f;
     [SerializeField] protected float timeFinish = 30f;
 
+    [SerializeField] protected int mapLevel = 0;
+    public int GetMapLevel => mapLevel;
+    [SerializeField] protected int countMapLevel = 5;
+    [SerializeField] protected float timeNextLevel;
+
     [SerializeField] protected List<GameWave> gameWaves;
     [SerializeField] protected int valueWave = 0;
     [SerializeField] protected float timeNext = 0f;
@@ -27,6 +32,8 @@ public class GameCtrl : NguyenMonoBehaviour
         if (GameCtrl.instance != null) 
             Debug.LogError("Only 1 GameManager alow to");
         GameCtrl.instance = this;
+
+        this.timeNextLevel = this.timeFinish / this.countMapLevel;
     }
 
     protected override void Start()
@@ -68,6 +75,7 @@ public class GameCtrl : NguyenMonoBehaviour
     private void FixedUpdate()
     {
         this.TimeGame();
+        this.SetMapLevel();
     }
 
     protected virtual void TimeGame()
@@ -78,6 +86,12 @@ public class GameCtrl : NguyenMonoBehaviour
             this.time = this.timeFinish;
             Time.timeScale = 0f;
         }
+    }
+
+    protected virtual void SetMapLevel()
+    {
+        //if (this.time >= timeNextLevel * this.mapLevel)
+        //    this.mapLevel++;
     }
 
     public void PlayerDespawn()

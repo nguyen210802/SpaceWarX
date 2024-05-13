@@ -33,10 +33,11 @@ public class ItemDropSpawner : Spawner
     
     public virtual void Drop(ItemDropRate dropItem, Vector3 pos, Quaternion rot)
     {
-        if (dropItem == null) return;
+        //if (dropItem == null) return;
 
         //ItemDropRate randomItemDrop = this.GetRandomItemDrop(dropItem);
 
+        if (dropItem.itemProfile == null) return;
         if (!this.DropRate(dropItem)) return;
 
         ItemCode itemCode = dropItem.itemProfile.itemCode;

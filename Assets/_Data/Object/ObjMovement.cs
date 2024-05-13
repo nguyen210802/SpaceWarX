@@ -28,6 +28,10 @@ public class ObjMovement : NguyenMonoBehaviour
             if (this.distance < this.minDistance) return;
         }
         Vector3 newPos = Vector3.Lerp(transform.parent.position, targetPosition, speed);
+
+        //newPos.x = Mathf.Clamp(newPos.x, -MapCtrl.Instance.GetLimitX, MapCtrl.Instance.GetLimitX);
+        //newPos.y = Mathf.Clamp(newPos.y, -MapCtrl.Instance.GetLimitY, MapCtrl.Instance.GetLimitY);
+
         transform.parent.position = newPos;
     }
 }

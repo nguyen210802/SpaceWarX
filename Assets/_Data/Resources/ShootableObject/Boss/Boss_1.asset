@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d741959b206a9dd49a95a1b10d4d7132, type: 3}
-  m_Name: MotherShip_1
+  m_Name: Boss_1
   m_EditorClassIdentifier: 
-  objectName: MotherShip_1
-  objectType: 2
-  baseHp: 2
+  objectName: Boss_1
+  objectType: 3
+  baseHp: 30
   dropItem:
-    itemProfile: {fileID: 11400000, guid: cba37c987ae1f7d46ae2fb3b5d175604, type: 2}
+    itemProfile: {fileID: 0}
     dropValue: 70
     minDrop: 0
     maxDrop: 100

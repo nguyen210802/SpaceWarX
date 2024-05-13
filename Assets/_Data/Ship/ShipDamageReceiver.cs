@@ -48,7 +48,7 @@ public class ShipDamageReceiver : DamageReceiver
 
     public override void Reborn()
     {
-        this.maxHp = this.shipCtrl.GetShootableObject.maxHp;
+        this.baseHp = this.shipCtrl.GetShootableObject.baseHp;
         base.Reborn();
     }
 }

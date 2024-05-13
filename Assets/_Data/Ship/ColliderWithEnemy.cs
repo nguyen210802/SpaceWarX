@@ -25,7 +25,6 @@ public class ColliderWithEnemy : NguyenMonoBehaviour
     {
         if (other.transform.parent.CompareTag("Enemy"))
         {
-            Debug.Log("Nguyen");
             shipCtrl.GetDamageReceiver.Deduct(damageReceive);
         }
     }
