@@ -15,8 +15,13 @@ MonoBehaviour:
   objectName: MotherShip_1
   objectType: 2
   baseHp: 2
-  dropItem:
-    itemProfile: {fileID: 11400000, guid: cba37c987ae1f7d46ae2fb3b5d175604, type: 2}
-    dropValue: 70
+  dropList:
+  - itemProfile: {fileID: 11400000, guid: cba37c987ae1f7d46ae2fb3b5d175604, type: 2}
+    dropValue: 0
     minDrop: 0
-    maxDrop: 100
+    maxDrop: 0
+  - itemProfile: {fileID: 11400000, guid: 5cd14f822e0df254eaf2ddf5fa99e7e1, type: 2}
+    dropValue: 0
+    minDrop: 0
+    maxDrop: 0
+  listUpgradePoint: 

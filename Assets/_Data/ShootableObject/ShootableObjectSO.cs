@@ -8,6 +8,7 @@ public class ShootableObjectSO : ScriptableObject
     public string objectName = "Shootable Object";
     public ObjectType objectType = ObjectType.NoType;
     public int baseHp = 2;
-    //public List<ItemDropRate> dropList;
-    public ItemDropRate dropItem;
+    public List<ItemDropRate> dropList;
+    //public ItemDropRate dropItem;
+    public List<int> listUpgradePoint;
 }

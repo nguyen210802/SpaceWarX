@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d741959b206a9dd49a95a1b10d4d7132, type: 3}
-  m_Name: Boss_1
+  m_Script: {fileID: 11500000, guid: 37550c1ee72936e47afaa5a052edd162, type: 3}
+  m_Name: RareOre
   m_EditorClassIdentifier: 
-  objectName: Boss_1
-  objectType: 3
-  baseHp: 30
-  dropList: []
-  listUpgradePoint: 
+  itemCode: 3
+  itemName: RareOre

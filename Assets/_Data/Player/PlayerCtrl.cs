@@ -7,8 +7,8 @@ public class PlayerCtrl : NguyenMonoBehaviour
     private static PlayerCtrl instance;
     public static PlayerCtrl Instance => instance;
 
-    [SerializeField] protected ShipCtrl currentShip;
-    public ShipCtrl GetCurrentShip => currentShip;
+    //[SerializeField] protected ShipCtrl currentShip;
+    //public ShipCtrl GetCurrentShip => currentShip;
 
     [SerializeField] protected PlayerPickup playerPickup;
     public PlayerPickup GetPlayerPickup => playerPickup;

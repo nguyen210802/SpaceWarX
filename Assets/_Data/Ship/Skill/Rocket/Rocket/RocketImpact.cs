@@ -49,6 +49,6 @@ public class RocketImpact : NguyenMonoBehaviour
     {
         if (other.transform.parent.tag == this.rocketCtrl.GetShooter.tag) return;
 
-        this.rocketCtrl.GetRocketDamageSender.SendByTransform(other.transform);
+        this.rocketCtrl.GetRocketDespawn.DespawnObject();
     }
 }

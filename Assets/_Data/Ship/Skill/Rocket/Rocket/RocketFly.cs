@@ -27,14 +27,13 @@ public class RocketFly : ParentFly
         this.distanceFly = Vector3.Distance(posStart, transform.parent.position);
         if (this.distanceFly >= this.distanceExplotion)
         {
-            this.CreateExp();
+            //this.CreateExp();
+            rocketCtrl.GetRocketDespawn.DespawnObject();
         }
     }
 
     protected virtual void CreateExp()
     {
-        //rocketCtrl.GetExplotion.gameObject.SetActive(true);
-        //rocketCtrl.GetExplotion.transform.position = transform.position;
         Vector3 spawnPos = transform.parent.position;
         Quaternion rotation = transform.parent.rotation;
         Transform newBullet = BulletSpawner.Instance.SpawnByName(BulletSpawner.Instance.explotion, spawnPos, rotation);
@@ -43,7 +42,7 @@ public class RocketFly : ParentFly
 
         newBullet.gameObject.SetActive(true);
 
-        rocketCtrl.GetBulletDespawn.DespawnObject();
+        rocketCtrl.GetRocketDespawn.DespawnObject();
     }
 
     protected override void LoadComponents()

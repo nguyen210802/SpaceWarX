@@ -5,7 +5,7 @@ using UnityEngine;
 public class RocketCtrl : NguyenMonoBehaviour
 {
     [SerializeField] protected RocketDespawn rocketDespawn;
-    public RocketDespawn GetBulletDespawn => rocketDespawn;
+    public RocketDespawn GetRocketDespawn => rocketDespawn;
 
     [SerializeField] protected RocketDamageSender rocketDamageSender;
     public RocketDamageSender GetRocketDamageSender => rocketDamageSender;

@@ -24,7 +24,7 @@ public class GameCtrl : NguyenMonoBehaviour
     [SerializeField] protected int valueWave = 0;
     [SerializeField] protected float timeNext = 0f;
 
-    [SerializeField] protected float timeOverDelay = 3f;
+    [SerializeField] protected float timeDelay = 3f;
 
     protected override void Awake()
     {
@@ -57,6 +57,9 @@ public class GameCtrl : NguyenMonoBehaviour
         
         MotherShipSpawnerRandom.Instance.SetSpawnDelay(gameWaves[valueWave].motherShipDelay);
         MotherShipSpawnerRandom.Instance.SetSpawnLimit(gameWaves[valueWave].motherShipLimit);
+
+        BossSpawnerRandom.Instance.SetSpawnDelay(gameWaves[valueWave].motherShipDelay);
+        BossSpawnerRandom.Instance.SetSpawnLimit(gameWaves[valueWave].motherShipLimit);
     }
 
     private void Update()
@@ -76,31 +79,42 @@ public class GameCtrl : NguyenMonoBehaviour
     {
         this.TimeGame();
         this.SetMapLevel();
+        this.CheckGameWin();
     }
 
     protected virtual void TimeGame()
     {
         this.time += Time.fixedDeltaTime;
         if(this.time >= this.timeFinish)
-        {
             this.time = this.timeFinish;
-            Time.timeScale = 0f;
-        }
     }
 
     protected virtual void SetMapLevel()
     {
-        //if (this.time >= timeNextLevel * this.mapLevel)
-        //    this.mapLevel++;
+        if (this.time >= timeNextLevel * this.mapLevel)
+            this.mapLevel++;
+    }
+
+    protected virtual void CheckGameWin()
+    {
+        if(this.time >= this.timeFinish && BossSpawner.Instance.GetSpawnedCount <= 0)
+        {
+            Debug.Log("GameWin");
+            Invoke("GameWin", this.timeDelay);
+        }
     }
 
     public void PlayerDespawn()
     {
         Debug.Log("GameOver");
-        Invoke("GameOver", this.timeOverDelay);
+        Invoke("GameOver", this.timeDelay);
     }
 
-    public void GameOver()
+    protected virtual void GameWin()
+    {
+        Time.timeScale = 0f;
+    }
+    protected virtual void GameOver()
     {
         Time.timeScale = 0f;
     }

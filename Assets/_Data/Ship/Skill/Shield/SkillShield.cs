@@ -67,7 +67,7 @@ public class SkillShield : SkillAbstract
     protected virtual void LoadDamageReceiver()
     {
         if(this.damageReceiver != null) return;
-        this.damageReceiver = transform.parent.parent.Find("DamageReceiver").gameObject;
+        this.damageReceiver = transform.parent?.parent?.Find("DamageReceiver").gameObject;
         Debug.Log(transform.name + ": LoadDamageReceiver", gameObject);
     }
 

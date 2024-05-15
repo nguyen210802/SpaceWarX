@@ -38,5 +38,5 @@ public abstract class ObjShooting : NguyenMonoBehaviour
         newBullet.gameObject.SetActive(true);
     }
 
-    protected abstract bool IsShooting();
+    protected abstract void IsShooting();
 }

@@ -6,8 +6,8 @@ using UnityEngine;
 public class EnemyUpgrade : ShootableObjectUpgrade
 {
     [Header("Enemy Upgrade")]
-    [SerializeField] protected int level;
-    [SerializeField] protected float critHpBonus = 0.1f;
+    [SerializeField] protected int level = 0;
+    [SerializeField] protected float critHpBonus = 0.2f;
 
     protected override void OnEnable()
     {

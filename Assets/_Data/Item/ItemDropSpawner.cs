@@ -7,8 +7,6 @@ public class ItemDropSpawner : Spawner
     private static ItemDropSpawner instance;
     public static ItemDropSpawner Instance => instance;
 
-    [SerializeField] protected int randomDropValue;
-
     protected override void Awake()
     {
         base.Awake();
@@ -16,40 +14,41 @@ public class ItemDropSpawner : Spawner
             Debug.LogError("Only 1 ItemDropSpawner allow to exit");
         ItemDropSpawner.instance = this;
     }
-
-    //public virtual void Drop(List<ItemDropRate> dropList, Vector3 pos, Quaternion rot)
-    //{
-    //    if (dropList.Count < 1) return;
-
-    //    ItemDropRate randomItemDrop = this.GetRandomItemDrop(dropList);
-
-    //    if (this.DropRate(randomItemDrop)) return;
-
-    //    ItemCode itemCode = randomItemDrop.itemProfile.itemCode;
-    //    Transform itemDrop = this.Spawn(itemCode.ToString(), pos, rot);
-    //    if (itemDrop == null) return;
-    //    itemDrop.gameObject.SetActive(true);
-    //}
     
-    public virtual void Drop(ItemDropRate dropItem, Vector3 pos, Quaternion rot)
+    public virtual void Drop(List<ItemDropRate> listDropItem, Vector3 pos, Quaternion rot)
     {
-        //if (dropItem == null) return;
+        if (listDropItem.Count == 0) return;
 
-        //ItemDropRate randomItemDrop = this.GetRandomItemDrop(dropItem);
+        ItemDropRate randomItemDrop = this.GetRandomItemDrop(listDropItem);
 
-        if (dropItem.itemProfile == null) return;
-        if (!this.DropRate(dropItem)) return;
+        if (randomItemDrop.itemProfile == null) return;
+        if (!this.DropRate(randomItemDrop)) return;
 
-        ItemCode itemCode = dropItem.itemProfile.itemCode;
+        ItemCode itemCode = randomItemDrop.itemProfile.itemCode;
         Transform itemDrop = this.SpawnByName(itemCode.ToString(), pos, rot);
         if (itemDrop == null) return;
         itemDrop.gameObject.SetActive(true);
     }
 
+    //public virtual void Drop(ItemDropRate dropItem, Vector3 pos, Quaternion rot)
+    //{
+    //    //if (dropItem == null) return;
+
+    //    //ItemDropRate randomItemDrop = this.GetRandomItemDrop(dropItem);
+
+    //    if (dropItem.itemProfile == null) return;
+    //    if (!this.DropRate(dropItem)) return;
+
+    //    ItemCode itemCode = dropItem.itemProfile.itemCode;
+    //    Transform itemDrop = this.SpawnByName(itemCode.ToString(), pos, rot);
+    //    if (itemDrop == null) return;
+    //    itemDrop.gameObject.SetActive(true);
+    //}
+
     public virtual bool DropRate(ItemDropRate dropRate)
     {
-        this.randomDropValue = Random.Range(dropRate.minDrop, dropRate.maxDrop);
-        return dropRate.dropValue >= this.randomDropValue;
+        float randomDropValue = Random.Range(dropRate.minDrop, dropRate.maxDrop);
+        return dropRate.dropValue >= randomDropValue;
     }
 
     public virtual ItemDropRate GetRandomItemDrop(List<ItemDropRate> dropList)

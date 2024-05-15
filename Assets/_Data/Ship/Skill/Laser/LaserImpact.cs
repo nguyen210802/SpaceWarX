@@ -32,7 +32,6 @@ public class LaserImpact : NguyenMonoBehaviour
         if (this.boxCollider != null) return;
         this.boxCollider = GetComponent<BoxCollider>();
         boxCollider.isTrigger = true;
-        //boxCollider.size.;
         Debug.LogWarning(transform.name + ": LoadCollider", gameObject);
     }
 

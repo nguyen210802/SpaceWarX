@@ -9,14 +9,14 @@ public class RocketDamageSender : DamageSender
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.LoadBulletCtrl();
+        this.LoadRocketCtrl();
     }
 
-    protected virtual void LoadBulletCtrl()
+    protected virtual void LoadRocketCtrl()
     {
         if (this.rocketCtrl != null) return;
         this.rocketCtrl = transform.parent.GetComponent<RocketCtrl>();
-        Debug.Log(transform.name + ": Load BulletCtrl", gameObject);
+        Debug.Log(transform.name + ": LoadRocketCtrl", gameObject);
     }
 
     public override void SendByDamageReceiver(DamageReceiver damageReceiver)

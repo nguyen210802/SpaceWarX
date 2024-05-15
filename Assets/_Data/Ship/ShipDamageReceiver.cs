@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShipDamageReceiver : DamageReceiver
+public class ShipDamageReceiver : ShootableObjectDamageReceiver
 {
     [Header("ShipDamageReceiver")]
     [SerializeField] protected ShipCtrl shipCtrl;
@@ -34,14 +34,7 @@ public class ShipDamageReceiver : DamageReceiver
         this.shipCtrl.GetDespawn.DespawnObject();
     }
 
-    protected virtual void OnDeadFX()
-    {
-        string fxName = this.GetOnDeadFXSmoke();
-        Transform fxOnDead = FXSpawner.Instance.SpawnByName(fxName, transform.parent.position, transform.parent.rotation);
-        fxOnDead.gameObject.SetActive(true);
-    }
-
-    protected virtual string GetOnDeadFXSmoke()
+    protected override string GetOnDeadFXSmoke()
     {
         return FXSpawner.Instance.explotion;
     }

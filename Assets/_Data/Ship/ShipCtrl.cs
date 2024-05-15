@@ -8,8 +8,8 @@ public class ShipCtrl : ShootableObjectCtrl
     public static ShipCtrl Instance => instance;
 
     [Header("Ship Ctrl")]
-    [SerializeField] protected Inventory inventory;
-    public Inventory GetInventory => inventory;
+    //[SerializeField] protected Inventory inventory;
+    //public Inventory GetInventory => inventory;
     
     [SerializeField] protected ShipUpgrade shipUpgrade;
     public ShipUpgrade GetShipUpgrade => shipUpgrade;
@@ -17,8 +17,8 @@ public class ShipCtrl : ShootableObjectCtrl
     [SerializeField] protected SkillCtrl skillCtrl;
     public SkillCtrl GetSkillCtrl => skillCtrl;
 
-    [SerializeField] protected DamageReceiver damageReceiver;
-    public DamageReceiver GetDamageReceiver => damageReceiver;
+    //[SerializeField] protected DamageReceiver damageReceiver;
+    //public DamageReceiver GetDamageReceiver => damageReceiver;
 
     protected override void Awake()
     {
@@ -34,25 +34,25 @@ public class ShipCtrl : ShootableObjectCtrl
     protected override void LoadComponents()
     {
         base.LoadComponents();
-        this.LoadDamageReceiver();
-        this.LoadInventory();
+        //this.LoadDamageReceiver();
+        //this.LoadInventory();
         this.LoadShipUpgrade();
         this.LoadSkillCtrl();
     }
 
-    protected virtual void LoadDamageReceiver()
-    {
-        if (this.damageReceiver != null) return;
-        this.damageReceiver = transform.GetComponentInChildren<DamageReceiver>();
-        Debug.Log(transform.name + ": LoadDamageReceiver", gameObject);
-    }
+    //protected virtual void LoadDamageReceiver()
+    //{
+    //    if (this.damageReceiver != null) return;
+    //    this.damageReceiver = transform.GetComponentInChildren<DamageReceiver>();
+    //    Debug.Log(transform.name + ": LoadDamageReceiver", gameObject);
+    //}
 
-    protected virtual void LoadInventory()
-    {
-        if (this.inventory != null) return;
-        this.inventory = transform.GetComponentInChildren<Inventory>();
-        Debug.Log(transform.name + ": LoadInventory", gameObject);
-    }
+    //protected virtual void LoadInventory()
+    //{
+    //    if (this.inventory != null) return;
+    //    this.inventory = transform.GetComponentInChildren<Inventory>();
+    //    Debug.Log(transform.name + ": LoadInventory", gameObject);
+    //}
 
     protected virtual void LoadShipUpgrade()
     {

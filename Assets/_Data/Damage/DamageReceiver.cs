@@ -12,7 +12,7 @@ public class DamageReceiver : NguyenMonoBehaviour
     [SerializeField] protected float hp = 1;
     public float GetHp => hp;
     [SerializeField] protected float baseHp = 2;
-    public float GetMaxHp => baseHp;
+    public float GetBaseHp => baseHp;
 
     [SerializeField] protected float critHpBonus = 0f;
     public void SetCritHpBonus(float critHp) 
@@ -63,16 +63,16 @@ public class DamageReceiver : NguyenMonoBehaviour
         this.CheckIsDead();
     }
 
-    protected virtual bool IsDead()
-    {
-        return this.hp <= 0;
-    }
-
     protected virtual void CheckIsDead()
     {
         if (!this.IsDead()) return;
         this.isDead = true;
         this.OnDead();
+    }
+
+    protected virtual bool IsDead()
+    {
+        return this.hp <= 0;
     }
 
     protected virtual void UpgradeByLevel()

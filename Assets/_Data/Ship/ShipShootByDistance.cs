@@ -14,10 +14,10 @@ public class ShipShootDistance : ObjShooting
         this.target = target;
     }
 
-    protected override bool IsShooting()
+    protected override void IsShooting()
     {
         this.distance = Vector3.Distance(transform.position, this.target.position);
         this.isShooting = this.distance < this.shootDistance;
-        return this.isShooting;
+        //return this.isShooting;
     }
 }

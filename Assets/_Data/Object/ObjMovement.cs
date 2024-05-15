@@ -22,7 +22,7 @@ public class ObjMovement : NguyenMonoBehaviour
 
     protected virtual void Moving()
     {
-        if(string.Equals(transform.parent.name, "Ship"))
+        if(string.Equals(transform.parent.tag, "Player"))
         {
             this.distance = Vector2.Distance(transform.position, InputManager.Instance.GetMouseWorldPos);
             if (this.distance < this.minDistance) return;

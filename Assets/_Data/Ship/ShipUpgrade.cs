@@ -9,16 +9,22 @@ public class ShipUpgrade : NguyenMonoBehaviour
     private static ShipUpgrade instance;
     public static ShipUpgrade Instance => instance;
 
-    [SerializeField] protected int currentLevel = 2;
+    [SerializeField] protected int currentLevel = 0;
     public int GetCurrentLevel => currentLevel;
     [SerializeField] protected int maxLevel = 9;
     [SerializeField] protected int upgradePoint;
     [SerializeField] protected int nextUpgradePoint;
     [SerializeField] protected ShipLooter shipLooter;
+    
     protected override void Awake()
     {
         base.Awake();
         ShipUpgrade.instance = this;
+    }
+
+    protected override void Start()
+    {
+        this.nextUpgradePoint = shipCtrl.GetShootableObject.listUpgradePoint[currentLevel]; 
     }
 
     protected override void LoadComponents()
@@ -45,9 +51,10 @@ public class ShipUpgrade : NguyenMonoBehaviour
     public void AddUpgradePoint(int point)
     {
         this.upgradePoint += point;
+        this.checkUpgrade();
     }
 
-    public void checkUpgrade()
+    protected virtual void checkUpgrade()
     {
         if(this.upgradePoint >= this.nextUpgradePoint && this.currentLevel < this.maxLevel)
         {
@@ -62,5 +69,7 @@ public class ShipUpgrade : NguyenMonoBehaviour
         this.currentLevel++;
         if (this.currentLevel >= this.maxLevel)
             this.currentLevel = this.maxLevel;
+        if(currentLevel < shipCtrl.GetShootableObject.listUpgradePoint.Count)
+            this.nextUpgradePoint = shipCtrl.GetShootableObject.listUpgradePoint[currentLevel];
     }
 }

@@ -50,7 +50,6 @@ public class ShipLooter : NguyenMonoBehaviour
             return;
         int point = itemPickupable.GetPoint;
         shipUpgrade.AddUpgradePoint(point);
-        shipUpgrade.checkUpgrade();
         itemPickupable.Picked();
     }
 

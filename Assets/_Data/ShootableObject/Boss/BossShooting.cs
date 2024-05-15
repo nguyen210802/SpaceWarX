@@ -8,10 +8,10 @@ public class BossShooting : ObjShooting
     [Header("Boss Shooting")]
     [SerializeField] protected int coutBullet = 5;
 
-    protected override bool IsShooting()
+    protected override void IsShooting()
     {
         this.isShooting = true;
-        return this.isShooting;
+        //return this.isShooting;
     }
 
     protected override void Shooting()

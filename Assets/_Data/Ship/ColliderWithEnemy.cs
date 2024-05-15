@@ -25,7 +25,7 @@ public class ColliderWithEnemy : NguyenMonoBehaviour
     {
         if (other.transform.parent.CompareTag("Enemy"))
         {
-            shipCtrl.GetDamageReceiver.Deduct(damageReceive);
+            shipCtrl.GetShootableObjectDamageReceiver.Deduct(damageReceive);
         }
     }
 }

@@ -11,9 +11,9 @@ public class TextShipHP : BaseText
 
     protected virtual void UpdateShipHP()
     {
-        float hp = ShipCtrl.Instance.GetDamageReceiver.GetHp;
-        float maxHp = ShipCtrl.Instance.GetDamageReceiver.GetMaxHp;
-        this.text.SetText((int)hp+"/"+(int)maxHp);
+        float hp = ShipCtrl.Instance.GetShootableObjectDamageReceiver.GetHp;
+        float baseHp = ShipCtrl.Instance.GetShootableObjectDamageReceiver.GetBaseHp;
+        this.text.SetText((int)hp+"/"+(int)baseHp);
         
     }
 }

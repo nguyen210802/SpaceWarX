@@ -27,11 +27,11 @@ public class ItemPickupable : ItemAbstact
         Debug.LogWarning(transform.name + ": LoadCollider", gameObject);
     }
 
-    //public virtual void OnMouseDown()
-    //{
-    //    //Debug.Log(transform.parent.name);
-    //    PlayerCtrl.Instance.GetPlayerPickup.ItemPickup(this);
-    //}
+    public virtual void OnMouseDown()
+    {
+        ShipCtrl.Instance.GetShipUpgrade.AddUpgradePoint(point);
+        this.Picked();
+    }
 
     public static ItemCode String2ItemCode(string itemName)
     {

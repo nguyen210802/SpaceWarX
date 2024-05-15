@@ -122,7 +122,7 @@ public class Inventory : NguyenMonoBehaviour
         ItemInventory itemInventory = new ItemInventory
         {
             itemProfile = itemProfile,
-            maxStack = itemProfile.defaultMaxStack
+            //maxStack = itemProfile.defaultMaxStack
         };
         return itemInventory;
     }

@@ -14,9 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Ship
   objectType: 4
-  maxHp: 10
-  dropItem:
-    itemProfile: {fileID: 0}
-    dropValue: 0
-    minDrop: 0
-    maxDrop: 0
+  baseHp: 3
+  dropList: []
+  listUpgradePoint: 0200000004000000080000000a0000000c0000000e000000100000001200000014000000

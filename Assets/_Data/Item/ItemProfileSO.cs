@@ -8,7 +8,7 @@ public class ItemProfileSO : ScriptableObject
     public ItemCode itemCode = ItemCode.NoItem;
     //public ItemType itemtype = ItemType.NoItem;
     public string itemName = "no-name";
-    public int defaultMaxStack = 7;
+    //public int defaultMaxStack = 7;
 
     //public static ItemProfileSO FindByItemCode(ItemCode itemCode)
     //{
