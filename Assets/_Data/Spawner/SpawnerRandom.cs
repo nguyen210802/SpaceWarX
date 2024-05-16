@@ -9,9 +9,11 @@ public class SpawnerRandom : NguyenMonoBehaviour
     [SerializeField] protected float spawnDelay = 1f;
     [SerializeField] protected float spawnTime = 0f;
     [SerializeField] protected int spawnLimit = 9;
+    [SerializeField] protected int totalSpawnLimit = 0;
 
     public void SetSpawnDelay(float value) { this.spawnDelay = value; }
     public void SetSpawnLimit(int value) { this.spawnLimit = value; }
+    public void SetTotalSpawnLimit(int value) { this.totalSpawnLimit = value; }
 
     public void SetSpawn(float spawnDelay, int spawnLimit)
     {
@@ -56,6 +58,12 @@ public class SpawnerRandom : NguyenMonoBehaviour
     protected virtual bool RandomReachLimit()
     {
         int currentSpawn = this.spawnerCtrl.GetSpawner.GetSpawnedCount;
-        return currentSpawn >= this.spawnLimit;
+        int currentTotalSpawn = this.spawnerCtrl.GetSpawner.GetTotalSpawnedCount;
+
+        if (currentSpawn >= this.spawnLimit)
+            return true;
+        if (this.totalSpawnLimit != 0 && currentTotalSpawn >= this.totalSpawnLimit)
+            return true;
+        return false;
     }
 }

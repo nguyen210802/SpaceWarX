@@ -6,6 +6,7 @@ public class ShootableObjectDamageReceiver : DamageReceiver
 {
     [Header("Shootable Object")]
     [SerializeField] protected ShootableObjectCtrl shootableObjectCtrl;
+    [SerializeField] protected int point;
 
     protected override void OnEnable()
     {
@@ -30,6 +31,7 @@ public class ShootableObjectDamageReceiver : DamageReceiver
     {
         base.OnDead();
         this.shootableObjectCtrl.GetDespawn.DespawnObject();
+        TextPoint.Instance.AddPoint(point);
         this.OnDeadFX();
         //Drop here
         this.OnDeadDrop();

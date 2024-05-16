@@ -30,7 +30,7 @@ public class ShipDamageReceiver : ShootableObjectDamageReceiver
     {
         base.OnDead();
         this.OnDeadFX();
-        GameCtrl.Instance.PlayerDespawn();
+        GameCtrl.Instance.GetGameWave.PlayerDespawn();
         this.shipCtrl.GetDespawn.DespawnObject();
     }
 

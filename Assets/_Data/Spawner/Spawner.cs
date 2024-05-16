@@ -9,6 +9,9 @@ public abstract class Spawner : NguyenMonoBehaviour
     [SerializeField] protected int spawnedCount = 0;
     public int GetSpawnedCount => spawnedCount;
 
+    [SerializeField] protected int totalSpawnedCount = 0;
+    public int GetTotalSpawnedCount => totalSpawnedCount;
+
     [SerializeField] protected List<Transform> prefabs;
 
     [SerializeField] protected List<Transform> poolObjs;
@@ -68,6 +71,7 @@ public abstract class Spawner : NguyenMonoBehaviour
 
         newPrefab.parent = this.holder;
         this.spawnedCount++;
+        this.totalSpawnedCount++;
         return newPrefab;
     }
 

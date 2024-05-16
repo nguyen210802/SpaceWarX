@@ -6,7 +6,7 @@ public class BossDespawn : DespawnByDistance
 {
     public override void DespawnObject()
     {
-        MotherShipSpawner.Instance.Despawn(transform.parent);
+        BossSpawner.Instance.Despawn(transform.parent);
     }
 
     protected override void ResetValue()
