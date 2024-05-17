@@ -103,21 +103,21 @@ public class GameWave : NguyenMonoBehaviour
     {
         JunkSpawnerRandom.Instance.SetSpawnDelay(gameWaves[currentWave].junkDelay);
         JunkSpawnerRandom.Instance.SetSpawnLimit(gameWaves[currentWave].junkLimit);
-        JunkSpawnerRandom.Instance.SetTotalSpawnLimit(gameWaves[currentWave].junkTotalLimit);
+        //JunkSpawnerRandom.Instance.SetTotalSpawnLimit(gameWaves[currentWave].junkTotalLimit);
     }
 
     protected virtual void SetValueEnemySpawner()
     {
         EnemySpawnerRandom.Instance.SetSpawnDelay(gameWaves[currentWave].enemyDelay);
         EnemySpawnerRandom.Instance.SetSpawnLimit(gameWaves[currentWave].enemyLimit);
-        EnemySpawnerRandom.Instance.SetTotalSpawnLimit(gameWaves[currentWave].enemyTotalLimit);
+        //EnemySpawnerRandom.Instance.SetTotalSpawnLimit(gameWaves[currentWave].enemyTotalLimit);
     }
 
     protected virtual void SetValueMotherShipSpawner()
     {
         MotherShipSpawnerRandom.Instance.SetSpawnDelay(gameWaves[currentWave].motherShipDelay);
         MotherShipSpawnerRandom.Instance.SetSpawnLimit(gameWaves[currentWave].motherShipLimit);
-        MotherShipSpawnerRandom.Instance.SetTotalSpawnLimit(gameWaves[currentWave].motherShipTotalLimit);
+        //MotherShipSpawnerRandom.Instance.SetTotalSpawnLimit(gameWaves[currentWave].motherShipTotalLimit);
     }
 
     protected virtual void SetValueBossSpawner()

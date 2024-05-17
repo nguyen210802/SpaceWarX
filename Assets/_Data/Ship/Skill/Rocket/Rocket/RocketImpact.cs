@@ -48,7 +48,7 @@ public class RocketImpact : NguyenMonoBehaviour
     protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.transform.parent.tag == this.rocketCtrl.GetShooter.tag) return;
-
+        if (other.transform.parent.tag == this.rocketCtrl.tag) return;
         this.rocketCtrl.GetRocketDespawn.DespawnObject();
     }
 }

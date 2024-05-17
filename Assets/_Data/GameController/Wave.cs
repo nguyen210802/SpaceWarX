@@ -7,15 +7,15 @@ public class Wave
 
     public float junkDelay;
     public int junkLimit;
-    public int junkTotalLimit;
+    //public int junkTotalLimit;
 
     public float enemyDelay;
     public int enemyLimit;
-    public int enemyTotalLimit;
+    //public int enemyTotalLimit;
 
     public float motherShipDelay;
     public int motherShipLimit;
-    public int motherShipTotalLimit;
+    //public int motherShipTotalLimit;
 
     public float bossDelay;
     public int bossLimit;
