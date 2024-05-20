@@ -519,6 +519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 42703976}
   - component: {fileID: 42703977}
+  - component: {fileID: 42703978}
   m_Layer: 0
   m_Name: ObjMovement
   m_TagString: Untagged
@@ -551,13 +552,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 42703975}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ab216c12ae2e3144982dc836ab30883, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
+--- !u!114 &42703978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 42703975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d8ec438baf23e14da58ec6803881bcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0, z: 0}
-  speed: 0.075
+  speed: 0.01
   distance: 0
-  minDistance: 1
+  minDistance: 2
   moveTarget: {fileID: 1253932375}
 --- !u!1 &50007335
 GameObject:
@@ -921,8 +935,8 @@ MonoBehaviour:
   despawn: {fileID: 419663412}
   shootableObject: {fileID: 11400000, guid: a58018daa83c5e44fabbd686e281141b, type: 2}
   objShooting: {fileID: 1506996230}
-  objMovement: {fileID: 42703977}
-  objLookAtTarget: {fileID: 870076600}
+  objMovement: {fileID: 0}
+  objLookAtTarget: {fileID: 0}
   objDamageReveiver: {fileID: 1691532505}
   shipUpgrade: {fileID: 1415988351}
   skillCtrl: {fileID: 1074470371}
@@ -6053,11 +6067,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 870076598}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68af9beb41514fc4481df8194387c336, type: 3}
+  m_Script: {fileID: 11500000, guid: eca91d43d81264849840369619ed1723, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0, z: 0}
-  rotSpeed: 5
 --- !u!1 &870735026
 GameObject:
   m_ObjectHideFlags: 0
