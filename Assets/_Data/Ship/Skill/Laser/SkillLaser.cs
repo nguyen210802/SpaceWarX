@@ -16,6 +16,8 @@ public class SkillLaser : SkillAbstract
     [SerializeField] private float timeFireLaser = 5f;
 
     [SerializeField] private float timeDelaySkill = 0f;
+    public float GetTimeDelaySkill => timeDelaySkill;
+
     [SerializeField] private float timeCD = 20f;
 
     protected override void Awake()

@@ -16,10 +16,15 @@ public class GameWave : NguyenMonoBehaviour
     [SerializeField] protected bool spawnedBoss = false;
     [SerializeField] protected bool gameWin = false;
 
+    [SerializeField] protected GameObject canvasGameWin;
+    [SerializeField] protected GameObject canvasGameOver;
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadGameCtrl();
+        this.LoadCanvasGameWin();
+        this.LoadCanvasGameOver();
     }
 
     protected virtual void LoadGameCtrl()
@@ -27,6 +32,18 @@ public class GameWave : NguyenMonoBehaviour
         if (gameCtrl != null) return;
         this.gameCtrl = transform.parent.GetComponent<GameCtrl>();
         Debug.Log(transform.name + ": LoadGameCtrl", gameObject);
+    }
+    protected virtual void LoadCanvasGameWin()
+    {
+        if (this.canvasGameWin != null) return;
+        this.canvasGameWin = GameObject.Find("CanvasGameWin");
+        Debug.Log(transform.name + ": LoadCanvasGameWin", gameObject);
+    }
+    protected virtual void LoadCanvasGameOver()
+    {
+        if (this.canvasGameWin != null) return;
+        this.canvasGameWin = GameObject.Find("CanvasGameOver");
+        Debug.Log(transform.name + ": LoadCanvasGameOver", gameObject);
     }
 
     protected override void Start()
@@ -85,10 +102,12 @@ public class GameWave : NguyenMonoBehaviour
     protected virtual void GameWin()
     {
         Time.timeScale = 0f;
+        canvasGameWin.SetActive(true);
     }
     protected virtual void GameOver()
     {
         Time.timeScale = 0f;
+        canvasGameOver.SetActive(true);
     }
 
     protected virtual void SetValueSpawner()

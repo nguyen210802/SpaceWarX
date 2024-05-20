@@ -21,8 +21,9 @@ public class Invisible : NguyenMonoBehaviour
     public void SetCritTimeBonus(float value) { this.critTimeBonus = value; }
 
     [SerializeField] private float timeDelaySkill = 0f;
+    public float GetTimeDelaySkill => timeDelaySkill;
 
-    [SerializeField] private float timeCD = 20f;
+    [SerializeField] private float timeCD = 8f;
     public float GetTimeCD => timeCD;
 
     [SerializeField] private bool invisible = false;

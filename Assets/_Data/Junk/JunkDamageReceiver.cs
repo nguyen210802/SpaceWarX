@@ -6,6 +6,7 @@ public class JunkDamageReceiver : DamageReceiver
 {
     [Header("Junk")]
     [SerializeField] protected JunkCtrl junkCtrl;
+    [SerializeField] protected int point;
 
     protected override void OnEnable()
     {
@@ -30,8 +31,7 @@ public class JunkDamageReceiver : DamageReceiver
     {
         this.OnDeadFX();
         this.junkCtrl.GetJunkDespawn.DespawnObject();
-
-        //Drop here
+        TextPoint.Instance.AddPoint(point);
         this.OnDeadDrop();
     }
 

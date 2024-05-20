@@ -13,6 +13,8 @@ public class SkillShield : SkillAbstract
     [SerializeField] protected GameObject damageReceiver;
 
     [SerializeField] private float timeDelaySkill = 0f;
+    public float GetTimeDelaySkill => timeDelaySkill;
+
     [SerializeField] private float timeCD = 20f;
 
     protected override void Awake()
