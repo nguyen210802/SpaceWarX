@@ -29,7 +29,7 @@ public class BossShooting : ObjShooting
         for(int i=0; i< coutBullet; i++)
         {
             Quaternion rotation = transform.parent.rotation * Quaternion.Euler(0, 0, angle * i);
-            Transform newBullet = BulletSpawner.Instance.SpawnByName(BulletSpawner.Instance.bulletOne, spawnPos, rotation);
+            Transform newBullet = BulletSpawner.Instance.SpawnByName(BulletSpawner.Instance.bullet1, spawnPos, rotation);
             if (newBullet == null)
                 return;
 

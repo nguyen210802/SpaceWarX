@@ -15,7 +15,7 @@ public class SkillShield : SkillAbstract
     [SerializeField] private float timeDelaySkill = 0f;
     public float GetTimeDelaySkill => timeDelaySkill;
 
-    [SerializeField] private float timeCD = 20f;
+    [SerializeField] private float timeCD = 12f;
 
     protected override void Awake()
     {

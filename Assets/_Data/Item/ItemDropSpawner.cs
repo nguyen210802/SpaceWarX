@@ -30,21 +30,6 @@ public class ItemDropSpawner : Spawner
         itemDrop.gameObject.SetActive(true);
     }
 
-    //public virtual void Drop(ItemDropRate dropItem, Vector3 pos, Quaternion rot)
-    //{
-    //    //if (dropItem == null) return;
-
-    //    //ItemDropRate randomItemDrop = this.GetRandomItemDrop(dropItem);
-
-    //    if (dropItem.itemProfile == null) return;
-    //    if (!this.DropRate(dropItem)) return;
-
-    //    ItemCode itemCode = dropItem.itemProfile.itemCode;
-    //    Transform itemDrop = this.SpawnByName(itemCode.ToString(), pos, rot);
-    //    if (itemDrop == null) return;
-    //    itemDrop.gameObject.SetActive(true);
-    //}
-
     public virtual bool DropRate(ItemDropRate dropRate)
     {
         float randomDropValue = Random.Range(dropRate.minDrop, dropRate.maxDrop);
@@ -56,16 +41,4 @@ public class ItemDropSpawner : Spawner
         int valueItemDrop = Random.Range(0, dropList.Count);
         return dropList[valueItemDrop];
     }
-
-    //public virtual Transform Drop(ItemInventory itemInventory, Vector3 pos, Quaternion rot)
-    //{
-    //    ItemCode itemCode = itemInventory.itemProfile.itemCode;
-
-    //    Transform itemDrop = this.Spawn(itemCode.ToString(), pos, rot);
-    //    if (itemDrop == null) return null;
-    //    itemDrop.gameObject.SetActive(true);
-    //    ItemCtrl itemCtrl = itemDrop.GetComponent<ItemCtrl>();
-    //    itemCtrl.SetItemInventory(itemInventory);
-    //    return itemDrop;
-    //}
 }

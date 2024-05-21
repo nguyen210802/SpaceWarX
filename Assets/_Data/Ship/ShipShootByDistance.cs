@@ -18,6 +18,5 @@ public class ShipShootDistance : ObjShooting
     {
         this.distance = Vector3.Distance(transform.position, this.target.position);
         this.isShooting = this.distance < this.shootDistance;
-        //return this.isShooting;
     }
 }

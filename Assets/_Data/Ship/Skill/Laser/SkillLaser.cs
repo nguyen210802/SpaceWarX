@@ -11,14 +11,17 @@ public class SkillLaser : SkillAbstract
     public GameObject GetLaser => laser;
 
     [SerializeField] protected GameObject objShooting;
+    [SerializeField] protected bool locked = true;
 
     [SerializeField] private float timeIndex = 0f;
     [SerializeField] private float timeFireLaser = 5f;
 
     [SerializeField] private float timeDelaySkill = 0f;
     public float GetTimeDelaySkill => timeDelaySkill;
-
     [SerializeField] private float timeCD = 20f;
+
+    [SerializeField] private GameObject canvasLock;
+    [SerializeField] private GameObject canvasUnLock;
 
     protected override void Awake()
     {
@@ -26,8 +29,16 @@ public class SkillLaser : SkillAbstract
         SkillLaser.instance = this;
     }
 
+    protected override void Start()
+    {
+        canvasLock.SetActive(true);
+        canvasUnLock.SetActive(false);
+    }
+
     private void Update()
     {
+        if (this.locked) return;
+
         if (Input.GetKeyDown(KeyCode.Alpha2) && this.timeDelaySkill <= 0)
         {
             this.timeDelaySkill = this.timeCD;
@@ -44,6 +55,13 @@ public class SkillLaser : SkillAbstract
 
         this.timeIndex -= Time.fixedDeltaTime;
         if (this.timeIndex <= 0) this.timeIndex = 0;
+    }
+
+    public void UnLock()
+    {
+        this.locked = false;
+        canvasLock.SetActive(false);
+        canvasUnLock.SetActive(true);
     }
 
     protected override void LoadComponents()

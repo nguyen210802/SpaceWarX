@@ -39,7 +39,7 @@ public class ShipLooter : NguyenMonoBehaviour
     protected virtual void LoadShipUpgrade()
     {
         if (this.shipUpgrade != null) return;
-        this.shipUpgrade = transform.GetComponent<ShipUpgrade>();
+        this.shipUpgrade = transform.parent.GetComponentInChildren<ShipUpgrade>();
         Debug.Log(transform.name + ": LoadShipUpgrade", gameObject);
     }
 
@@ -51,10 +51,5 @@ public class ShipLooter : NguyenMonoBehaviour
         int point = itemPickupable.GetPoint;
         shipUpgrade.AddUpgradePoint(point);
         itemPickupable.Picked();
-    }
-
-    public virtual void UpgradeRadiusLoot()
-    {
-        sphereCollider.radius += 0.1f;
     }
 }

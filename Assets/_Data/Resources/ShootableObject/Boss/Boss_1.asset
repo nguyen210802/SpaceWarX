@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Boss_1
   objectType: 3
-  baseHp: 20
+  baseHp: 30
   dropList: []
   listUpgradePoint: 

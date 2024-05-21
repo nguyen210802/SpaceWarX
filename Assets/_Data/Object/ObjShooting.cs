@@ -7,6 +7,14 @@ public abstract class ObjShooting : NguyenMonoBehaviour
     [SerializeField] protected bool isShooting = false;
     [SerializeField] protected float shootDelay = 0.2f;
     [SerializeField] protected float shootTimer = 0f;
+    [SerializeField] protected string bulletName;
+    public void SetBulletName (string name) { this.bulletName = name; }
+
+    protected override void Start()
+    {
+        base.Start();
+        bulletName = BulletSpawner.Instance.bullet1;
+    }
 
     private void Update()
     {
@@ -28,7 +36,7 @@ public abstract class ObjShooting : NguyenMonoBehaviour
 
         Vector3 spawnPos = transform.parent.position;
         Quaternion rotation = transform.parent.rotation;
-        Transform newBullet = BulletSpawner.Instance.SpawnByName(BulletSpawner.Instance.bulletOne, spawnPos, rotation);
+        Transform newBullet = BulletSpawner.Instance.SpawnByName(bulletName, spawnPos, rotation);
         if (newBullet == null)
             return;
 

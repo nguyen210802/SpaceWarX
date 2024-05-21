@@ -12,7 +12,7 @@ public class DamageSender : NguyenMonoBehaviour
 
     public virtual void SendByTransform(Transform obj)
     {
-        DamageReceiver damageReceiver = obj.GetComponentInChildren<DamageReceiver>();
+        DamageReceiver damageReceiver = obj.GetComponent<DamageReceiver>();
         if (damageReceiver == null)
             return;
         this.SendByDamageReceiver(damageReceiver);

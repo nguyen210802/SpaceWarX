@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectName: Ship
   objectType: 4
-  baseHp: 3
+  baseHp: 5
   dropList: []
   listUpgradePoint: 0300000006000000090000000c0000000f0000001200000015000000180000001b000000

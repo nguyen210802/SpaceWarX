@@ -37,7 +37,7 @@ public class TestShooting : MonoBehaviour
 
         Vector3 spawnPos = transform.parent.position;
         //Quaternion rotation = transform.parent.rotation;
-        Transform newBullet = BulletSpawner.Instance.SpawnByName(BulletSpawner.Instance.bulletOne, spawnPos, targetEuler);
+        Transform newBullet = BulletSpawner.Instance.SpawnByName(BulletSpawner.Instance.bullet1, spawnPos, targetEuler);
         if (newBullet == null)
             return;
 

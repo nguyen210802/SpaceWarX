@@ -15,6 +15,11 @@ public class ShipUpgrade : NguyenMonoBehaviour
     [SerializeField] protected int upgradePoint;
     [SerializeField] protected int nextUpgradePoint;
     [SerializeField] protected ShipLooter shipLooter;
+
+    [SerializeField] protected ExpBar expBar;
+
+    [SerializeField] protected bool unLockLaser = false;
+    [SerializeField] protected bool unLockRocket = false;
     
     protected override void Awake()
     {
@@ -24,7 +29,12 @@ public class ShipUpgrade : NguyenMonoBehaviour
 
     protected override void Start()
     {
-        this.nextUpgradePoint = shipCtrl.GetShootableObject.listUpgradePoint[currentLevel]; 
+        this.nextUpgradePoint = shipCtrl.GetShootableObject.listUpgradePoint[currentLevel];
+    }
+
+    private void FixedUpdate()
+    {
+        this.UpdateBar();
     }
 
     protected override void LoadComponents()
@@ -44,7 +54,7 @@ public class ShipUpgrade : NguyenMonoBehaviour
     protected virtual void LoadShipLooter()
     {
         if (this.shipLooter != null) return;
-        this.shipLooter = GetComponent<ShipLooter>();
+        this.shipLooter = transform.parent.GetComponentInChildren<ShipLooter>();
         Debug.Log(transform.name + ": LoadShipLooter", gameObject);
     }
 
@@ -65,11 +75,42 @@ public class ShipUpgrade : NguyenMonoBehaviour
 
     public void UpgradeLevel()
     {
-        shipLooter.UpgradeRadiusLoot();
         this.currentLevel++;
         if (this.currentLevel >= this.maxLevel)
             this.currentLevel = this.maxLevel;
         if(currentLevel < shipCtrl.GetShootableObject.listUpgradePoint.Count)
             this.nextUpgradePoint = shipCtrl.GetShootableObject.listUpgradePoint[currentLevel];
+        this.UpgradeShoot();
+        this.UnLockedSkill();
+    }
+
+    protected virtual void UpgradeShoot()
+    {
+        if (this.currentLevel < 3)
+            shipCtrl.GetObjectShooting.SetBulletName(BulletSpawner.Instance.bullet1);
+        else if (this.currentLevel < 6)
+            shipCtrl.GetObjectShooting.SetBulletName(BulletSpawner.Instance.bullet2);
+        else
+            shipCtrl.GetObjectShooting.SetBulletName(BulletSpawner.Instance.bullet3);
+    }
+
+    protected virtual void UnLockedSkill()
+    {
+        if (this.currentLevel >= 4 && !this.unLockLaser)
+        {
+            this.unLockLaser = true;
+            shipCtrl.GetSkillCtrl.GetSkillLaser.UnLock();
+        }
+        if(this.currentLevel >= 7 && !this.unLockRocket)
+        {
+            this.unLockRocket = true;
+            shipCtrl.GetSkillCtrl.GetSkillRocket.UnLock();
+        }
+            
+    }
+
+    protected virtual void UpdateBar()
+    {
+        expBar.UpdateBar(upgradePoint, nextUpgradePoint);
     }
 }

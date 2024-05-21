@@ -26,12 +26,6 @@ public abstract class ShootableObjectCtrl : NguyenMonoBehaviour
     [SerializeField] protected ShootableObjectDamageReceiver objDamageReveiver;
     public ShootableObjectDamageReceiver GetShootableObjectDamageReceiver => objDamageReveiver;
 
-    //[SerializeField] protected ShootableObjectUpgrade shootableObjectUpgrade;
-    //public ShootableObjectUpgrade GetShootableObjectUpgrade => shootableObjectUpgrade;
-
-    //[SerializeField] protected Spawner spawner;
-    //public Spawner GetSpawner => spawner;
-
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -41,9 +35,7 @@ public abstract class ShootableObjectCtrl : NguyenMonoBehaviour
         this.LoadObjectShooting();
         this.LoadObjectMovement();
         this.LoadObjLookAtTarget();
-        //this.LoadSpawner();
         this.LoadShootableObjectDamageReceiver();
-        //this.LoadShootableObjectUpgrade();
     }
 
     protected virtual void LoadModel()
@@ -95,20 +87,6 @@ public abstract class ShootableObjectCtrl : NguyenMonoBehaviour
         this.objDamageReveiver = GetComponentInChildren<ShootableObjectDamageReceiver>();
         Debug.Log(transform.name + ": LoadShootableObjectDamageReceiver", gameObject);
     }
-
-    //protected virtual void LoadShootableObjectUpgrade()
-    //{
-    //    if (this.shootableObjectUpgrade != null) return;
-    //    this.shootableObjectUpgrade = GetComponentInChildren<ShootableObjectUpgrade>();
-    //    Debug.Log(transform.name + ": LoadShootableObjectUpgrade", gameObject);
-    //}
-
-    //protected virtual void LoadSpawner()
-    //{
-    //    if (this.spawner != null) return;
-    //    this.spawner = transform.parent?.parent?.GetComponent<Spawner>();
-    //    Debug.Log(transform.name + ": LoadSpawner", gameObject);
-    //}
 
     protected abstract string GetObjectTypeString();
 }
