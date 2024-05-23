@@ -13,7 +13,7 @@ public abstract class ObjShooting : NguyenMonoBehaviour
     protected override void Start()
     {
         base.Start();
-        bulletName = BulletSpawner.Instance.bullet1;
+        bulletName = BulletSpawner.Instance.enemyBullet_1;
     }
 
     private void Update()

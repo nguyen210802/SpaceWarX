@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SphereCollider))]
+[RequireComponent(typeof(BoxCollider))]
 [RequireComponent (typeof(Rigidbody))]
 
 public class BulletImpart : BulletAbstract
 {
     [Header("Bullet Impart")]
-    [SerializeField] protected SphereCollider sphereCollider;
+    [SerializeField] protected BoxCollider boxCollider;
     [SerializeField] protected new Rigidbody rigidbody;
 
     protected override void LoadComponents()
@@ -20,10 +20,10 @@ public class BulletImpart : BulletAbstract
 
     protected virtual void LoadCollider()
     {
-        if (this.sphereCollider != null) return;
-        this.sphereCollider = GetComponent<SphereCollider>();
-        sphereCollider.isTrigger = true;
-        sphereCollider.radius = 0.1f;
+        if (this.boxCollider != null) return;
+        this.boxCollider = GetComponent<BoxCollider>();
+        boxCollider.isTrigger = true;
+        boxCollider.size = new Vector3(0.22f, 0.15f, 1);
         Debug.LogWarning(transform.name + ": LoadCollider", gameObject);
     }
 

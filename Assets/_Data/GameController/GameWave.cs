@@ -99,6 +99,56 @@ public class GameWave : NguyenMonoBehaviour
         Invoke("GameOver", this.timeDelay);
     }
 
+    protected virtual void SetValueSpawner()
+    {
+        SetValueJunkSpawner();
+        SetValueEnemySpawner();
+        SetValueMotherShipSpawner();
+        if (this.currentWave == gameWaves.Count - 1)
+            Invoke("SetValueBossSpawner", 2f);
+    }
+
+    protected virtual void SetValueJunkSpawner()
+    {
+        JunkSpawnerRandom.Instance.SetSpawnDelay(gameWaves[currentWave].junkDelay);
+        JunkSpawnerRandom.Instance.SetSpawnLimit(gameWaves[currentWave].junkLimit);
+    }
+
+    protected virtual void SetValueEnemySpawner()
+    {
+        EnemySpawnerRandom.Instance.SetSpawnDelay(gameWaves[currentWave].enemyDelay);
+        EnemySpawnerRandom.Instance.SetSpawnLimit(gameWaves[currentWave].enemyLimit);
+    }
+
+    protected virtual void SetValueMotherShipSpawner()
+    {
+        MotherShipSpawnerRandom.Instance.SetSpawnDelay(gameWaves[currentWave].motherShipDelay);
+        MotherShipSpawnerRandom.Instance.SetSpawnLimit(gameWaves[currentWave].motherShipLimit);
+    }
+
+    protected virtual void SetValueBossSpawner()
+    {
+        GameObject[] allEnemy = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach(GameObject enemy in allEnemy)
+        {
+            if (enemy.activeSelf)
+                enemy.SetActive(false);
+        }
+
+        BossSpawnerRandom.Instance.SetSpawnDelay(gameWaves[currentWave].bossDelay);
+        BossSpawnerRandom.Instance.SetSpawnLimit(gameWaves[currentWave].bossLimit);
+        BossSpawnerRandom.Instance.SetTotalSpawnLimit(gameWaves[currentWave].bossTotalLimit);
+    }
+
+    protected virtual bool SetBossSpawner()
+    {
+        int enemyCount = EnemySpawner.Instance.GetSpawnedCount;
+        int motherShipCount = MotherShipSpawner.Instance.GetSpawnedCount;
+        if (enemyCount == 0 && motherShipCount == 0)
+            return true;
+        return false;
+    }
+
     protected virtual void GameWin()
     {
         Time.timeScale = 0f;
@@ -108,41 +158,5 @@ public class GameWave : NguyenMonoBehaviour
     {
         Time.timeScale = 0f;
         canvasGameOver.SetActive(true);
-    }
-
-    protected virtual void SetValueSpawner()
-    {
-        SetValueJunkSpawner();
-        SetValueEnemySpawner();
-        SetValueMotherShipSpawner();
-        SetValueBossSpawner();
-    }
-
-    protected virtual void SetValueJunkSpawner()
-    {
-        JunkSpawnerRandom.Instance.SetSpawnDelay(gameWaves[currentWave].junkDelay);
-        JunkSpawnerRandom.Instance.SetSpawnLimit(gameWaves[currentWave].junkLimit);
-        //JunkSpawnerRandom.Instance.SetTotalSpawnLimit(gameWaves[currentWave].junkTotalLimit);
-    }
-
-    protected virtual void SetValueEnemySpawner()
-    {
-        EnemySpawnerRandom.Instance.SetSpawnDelay(gameWaves[currentWave].enemyDelay);
-        EnemySpawnerRandom.Instance.SetSpawnLimit(gameWaves[currentWave].enemyLimit);
-        //EnemySpawnerRandom.Instance.SetTotalSpawnLimit(gameWaves[currentWave].enemyTotalLimit);
-    }
-
-    protected virtual void SetValueMotherShipSpawner()
-    {
-        MotherShipSpawnerRandom.Instance.SetSpawnDelay(gameWaves[currentWave].motherShipDelay);
-        MotherShipSpawnerRandom.Instance.SetSpawnLimit(gameWaves[currentWave].motherShipLimit);
-        //MotherShipSpawnerRandom.Instance.SetTotalSpawnLimit(gameWaves[currentWave].motherShipTotalLimit);
-    }
-
-    protected virtual void SetValueBossSpawner()
-    {
-        BossSpawnerRandom.Instance.SetSpawnDelay(gameWaves[currentWave].bossDelay);
-        BossSpawnerRandom.Instance.SetSpawnLimit(gameWaves[currentWave].bossLimit);
-        BossSpawnerRandom.Instance.SetTotalSpawnLimit(gameWaves[currentWave].bossTotalLimit);
     }
 }

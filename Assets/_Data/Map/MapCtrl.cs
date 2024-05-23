@@ -7,9 +7,9 @@ public class MapCtrl : NguyenMonoBehaviour
     private static MapCtrl instance;
     public static MapCtrl Instance => instance;
 
-    [SerializeField] protected float limitX = 50;
+    [SerializeField] protected float limitX = 25;
     public float GetLimitX => limitX;
-    [SerializeField] protected float limitY = 50;
+    [SerializeField] protected float limitY = 25;
     public float GetLimitY => limitY;
 
     protected override void Awake()

@@ -11,7 +11,6 @@ public class BossShooting : ObjShooting
     protected override void IsShooting()
     {
         this.isShooting = true;
-        //return this.isShooting;
     }
 
     protected override void Shooting()
@@ -29,7 +28,7 @@ public class BossShooting : ObjShooting
         for(int i=0; i< coutBullet; i++)
         {
             Quaternion rotation = transform.parent.rotation * Quaternion.Euler(0, 0, angle * i);
-            Transform newBullet = BulletSpawner.Instance.SpawnByName(BulletSpawner.Instance.bullet1, spawnPos, rotation);
+            Transform newBullet = BulletSpawner.Instance.SpawnByName(BulletSpawner.Instance.bossBullet_1, spawnPos, rotation);
             if (newBullet == null)
                 return;
 

@@ -5,6 +5,11 @@ using UnityEngine;
 
 public class ShipShootByMouse : ObjShooting
 {
+    protected override void Start()
+    {
+        base.Start();
+        this.bulletName = BulletSpawner.Instance.shipBullet_1;
+    }
     protected override void IsShooting()
     {
         if (Input.GetMouseButton(0))

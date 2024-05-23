@@ -87,11 +87,11 @@ public class ShipUpgrade : NguyenMonoBehaviour
     protected virtual void UpgradeShoot()
     {
         if (this.currentLevel < 3)
-            shipCtrl.GetObjectShooting.SetBulletName(BulletSpawner.Instance.bullet1);
+            shipCtrl.GetObjectShooting.SetBulletName(BulletSpawner.Instance.shipBullet_1);
         else if (this.currentLevel < 6)
-            shipCtrl.GetObjectShooting.SetBulletName(BulletSpawner.Instance.bullet2);
+            shipCtrl.GetObjectShooting.SetBulletName(BulletSpawner.Instance.shipBullet_2);
         else
-            shipCtrl.GetObjectShooting.SetBulletName(BulletSpawner.Instance.bullet3);
+            shipCtrl.GetObjectShooting.SetBulletName(BulletSpawner.Instance.shipBullet_3);
     }
 
     protected virtual void UnLockedSkill()
