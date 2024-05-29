@@ -31,7 +31,7 @@ public class SkillRocket : SkillAbstract
     private void Update()
     {
         if(this.locked) return;
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             this.FireRocket();
         }

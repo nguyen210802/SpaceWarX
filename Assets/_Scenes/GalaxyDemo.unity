@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -728,6 +727,7 @@ GameObject:
   - component: {fileID: 60275783}
   - component: {fileID: 60275782}
   - component: {fileID: 60275781}
+  - component: {fileID: 60275784}
   m_Layer: 0
   m_Name: BulletImpact
   m_TagString: Untagged
@@ -763,7 +763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletCtrl: {fileID: 460945181}
-  sphereCollider: {fileID: 60275783}
+  boxCollider: {fileID: 0}
   rigidbody: {fileID: 60275782}
 --- !u!54 &60275782
 Rigidbody:
@@ -812,6 +812,27 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.15
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &60275784
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60275779}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &73328699
 GameObject:
@@ -1435,6 +1456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 306527384}
   hp: 2
+  maxHp: 2
   baseHp: 2
   critHpBonus: 0
   isDead: 0
@@ -2056,6 +2078,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 412323065}
   hp: 2
+  maxHp: 2
   baseHp: 2
   critHpBonus: 0
   isDead: 0
@@ -4597,6 +4620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 668679959}
   hp: 15
+  maxHp: 2
   baseHp: 15
   critHpBonus: 0
   isDead: 0
@@ -7566,6 +7590,7 @@ GameObject:
   - component: {fileID: 1033703632}
   - component: {fileID: 1033703631}
   - component: {fileID: 1033703630}
+  - component: {fileID: 1033703633}
   m_Layer: 0
   m_Name: BulletImpact
   m_TagString: Untagged
@@ -7601,7 +7626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletCtrl: {fileID: 229405014}
-  sphereCollider: {fileID: 1033703632}
+  boxCollider: {fileID: 0}
   rigidbody: {fileID: 1033703631}
 --- !u!54 &1033703631
 Rigidbody:
@@ -7650,6 +7675,27 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &1033703633
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033703628}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1038912836
 GameObject:
@@ -7939,6 +7985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 1053777986}
   hp: 2
+  maxHp: 2
   baseHp: 2
   critHpBonus: 0
   isDead: 0
@@ -9577,6 +9624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 1233036598}
   hp: 5
+  maxHp: 2
   baseHp: 5
   critHpBonus: 0
   isDead: 0
@@ -9637,11 +9685,13 @@ MonoBehaviour:
   - {fileID: 1331947457}
   - {fileID: 1292021135}
   poolObjs: []
-  bullet1: Bullet_1
-  bullet2: Bullet_2
-  bullet3: Bullet_3
+  shipBullet_1: ShipBullet_1
+  shipBullet_2: ShipBullet_2
+  shipBullet_3: ShipBullet_3
   rocket: Rocket
   explotion: Explotion
+  enemyBullet_1: EnemyBullet_1
+  bossBullet_1: BossBullet_1
 --- !u!1 &1253932374
 GameObject:
   m_ObjectHideFlags: 0
@@ -12877,6 +12927,7 @@ GameObject:
   - component: {fileID: 1627229615}
   - component: {fileID: 1627229614}
   - component: {fileID: 1627229613}
+  - component: {fileID: 1627229616}
   m_Layer: 0
   m_Name: BulletImpact
   m_TagString: Untagged
@@ -12912,7 +12963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletCtrl: {fileID: 892527178}
-  sphereCollider: {fileID: 1627229615}
+  boxCollider: {fileID: 0}
   rigidbody: {fileID: 1627229614}
 --- !u!54 &1627229614
 Rigidbody:
@@ -12961,6 +13012,27 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.18
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &1627229616
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627229611}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1638622476
 GameObject:
@@ -13127,6 +13199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 1691532507}
   hp: 3
+  maxHp: 2
   baseHp: 3
   critHpBonus: 0
   isDead: 0
@@ -13145,7 +13218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba7ad0d4f7e3ebc4fabaaf46680ca944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageReceiver: {fileID: 0}
+  damageReceiver: {fileID: 1691532505}
   damageReceive: 1
 --- !u!135 &1691532507
 SphereCollider:
@@ -14653,6 +14726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 1953615334}
   hp: 8
+  maxHp: 2
   baseHp: 8
   critHpBonus: 0
   isDead: 0

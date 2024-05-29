@@ -11,6 +11,22 @@ public class ExprotionImpact : NguyenMonoBehaviour
     [SerializeField] protected SphereCollider sphereCollider;
     [SerializeField] protected new Rigidbody rigidbody;
 
+    [SerializeField] protected float timer = 0f;
+    [SerializeField] protected float timerExit = 0.2f;
+    [SerializeField] protected bool canDamage = true;
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
+        this.ResetTimer();
+    }
+
+    protected virtual void ResetTimer()
+    {
+        this.timer = 0f;
+        this.canDamage = true;
+    }
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -44,9 +60,19 @@ public class ExprotionImpact : NguyenMonoBehaviour
         Debug.LogWarning(transform.name + ": LoadCollider", gameObject);
     }
 
+    private void FixedUpdate()
+    {
+        if (!this.canDamage) return;
+
+        timer += Time.fixedDeltaTime;
+        if (this.timer >= this.timerExit)
+            this.canDamage = false;
+    }
+
     protected virtual void OnTriggerEnter(Collider other)
     {
         if (other.transform.parent.tag == this.explotionCtrl.GetShooter.tag) return;
+        if(!this.canDamage) return;
 
         this.explotionCtrl.GetExpDamageSender.SendByTransform(other.transform);
     }

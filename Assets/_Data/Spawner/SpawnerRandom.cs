@@ -52,6 +52,9 @@ public class SpawnerRandom : NguyenMonoBehaviour
 
         Transform prefab = this.spawnerCtrl.GetSpawner.RandomPrefab();
         Transform obj = this.spawnerCtrl.GetSpawner.SpawnByTransform(prefab, pos, rot);
+        Transform minionObjAppearing = obj.Find("ObjAppearing");
+        if(minionObjAppearing != null) 
+            minionObjAppearing.gameObject.SetActive(false);
         obj.gameObject.SetActive(true);
     }
 

@@ -11,10 +11,13 @@ public class DamageReceiver : NguyenMonoBehaviour
 
     [SerializeField] protected float hp = 1;
     public float GetHp => hp;
+    [SerializeField] protected float maxHp = 2;
+    public float GetMaxHp => maxHp;
     [SerializeField] protected float baseHp = 2;
     public float GetBaseHp => baseHp;
 
     [SerializeField] protected float critHpBonus = 0f;
+
     public void SetCritHpBonus(float critHp) 
     { 
         this.critHpBonus = critHp;
@@ -40,20 +43,21 @@ public class DamageReceiver : NguyenMonoBehaviour
         if (this.sphereCollider != null) return;
         this.sphereCollider = GetComponent<SphereCollider>();
         sphereCollider.isTrigger = true;
-        sphereCollider.radius = 0.15f;
+        sphereCollider.radius = 0.3f;
         Debug.Log(transform.name + ": LoadCollider", gameObject);
     }
 
     public virtual void Reborn()
     {
-        this.hp = this.baseHp;
+        this.maxHp = this.baseHp;
+        this.hp = this.maxHp;
         this.isDead = false;
     }
 
     public virtual void Add(float add)
     {
         this.hp += add;
-        if(this.hp > this.baseHp)   this.hp = this.baseHp;
+        if(this.hp > this.maxHp)   this.hp = this.maxHp;
     }
 
     public virtual void Deduct(float deduct)
@@ -78,8 +82,8 @@ public class DamageReceiver : NguyenMonoBehaviour
     protected virtual void UpgradeByLevel()
     {
         if (this.critHpBonus == 0) return;
-        float newHp = this.baseHp * (1 + this.critHpBonus);
-        this.hp = newHp;
+        maxHp = this.baseHp * (1 + this.critHpBonus);
+        this.hp = maxHp;
     }
 
     protected virtual void OnDead() { }

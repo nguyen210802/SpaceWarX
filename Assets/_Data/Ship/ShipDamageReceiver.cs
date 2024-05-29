@@ -2,21 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class ShipDamageReceiver : ShootableObjectDamageReceiver
 {
     [Header("ShipDamageReceiver")]
     [SerializeField] protected ShipCtrl shipCtrl;
-
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-        this.Reborn();
-    }
-
+    [SerializeField] protected new Rigidbody rigidbody;
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadShipCtrl();
+        this.LoadRigidbody();
+    }
+
+    protected virtual void LoadRigidbody()
+    {
+        if (this.rigidbody != null) return;
+        this.rigidbody = GetComponent<Rigidbody>();
+        rigidbody.useGravity = false;
+        rigidbody.isKinematic = true;
+        Debug.LogWarning(transform.name + ": LoadCollider", gameObject);
     }
 
     protected virtual void LoadShipCtrl()
@@ -37,11 +42,5 @@ public class ShipDamageReceiver : ShootableObjectDamageReceiver
     protected override string GetOnDeadFXSmoke()
     {
         return FXSpawner.Instance.explotion;
-    }
-
-    public override void Reborn()
-    {
-        this.baseHp = this.shipCtrl.GetShootableObject.baseHp;
-        base.Reborn();
     }
 }

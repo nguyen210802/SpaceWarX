@@ -13,10 +13,10 @@ public class ShipUpgrade : NguyenMonoBehaviour
     public int GetCurrentLevel => currentLevel;
     [SerializeField] protected int maxLevel = 9;
     [SerializeField] protected int upgradePoint;
+    public int GetUpgradePoint => upgradePoint;
     [SerializeField] protected int nextUpgradePoint;
+    public int GetNextUpgradePoint => nextUpgradePoint;
     [SerializeField] protected ShipLooter shipLooter;
-
-    [SerializeField] protected ExpBar expBar;
 
     [SerializeField] protected bool unLockLaser = false;
     [SerializeField] protected bool unLockRocket = false;
@@ -30,11 +30,6 @@ public class ShipUpgrade : NguyenMonoBehaviour
     protected override void Start()
     {
         this.nextUpgradePoint = shipCtrl.GetShootableObject.listUpgradePoint[currentLevel];
-    }
-
-    private void FixedUpdate()
-    {
-        this.UpdateBar();
     }
 
     protected override void LoadComponents()
@@ -105,12 +100,6 @@ public class ShipUpgrade : NguyenMonoBehaviour
         {
             this.unLockRocket = true;
             shipCtrl.GetSkillCtrl.GetSkillRocket.UnLock();
-        }
-            
-    }
-
-    protected virtual void UpdateBar()
-    {
-        expBar.UpdateBar(upgradePoint, nextUpgradePoint);
+        }  
     }
 }

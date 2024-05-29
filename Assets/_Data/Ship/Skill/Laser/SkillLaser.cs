@@ -39,7 +39,7 @@ public class SkillLaser : SkillAbstract
     {
         if (this.locked) return;
 
-        if (Input.GetKeyDown(KeyCode.Alpha2) && this.timeDelaySkill <= 0)
+        if (Input.GetKeyDown(KeyCode.Alpha3) && this.timeDelaySkill <= 0)
         {
             this.timeDelaySkill = this.timeCD;
             this.timeIndex = this.timeFireLaser;
@@ -81,7 +81,7 @@ public class SkillLaser : SkillAbstract
     {
         if (this.objShooting != null) return;
         this.objShooting = transform.parent.parent.Find("ObjShooting").gameObject;
-        //Debug.Log(transform.name, ": LoadObjShooting", gameObject);
+        Debug.Log(transform.name + ": LoadObjShooting", gameObject);
     }
 
     protected virtual void StartFire()
