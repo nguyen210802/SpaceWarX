@@ -31,6 +31,14 @@ public class FPSController : NguyenMonoBehaviour
         Debug.Log(transform.name + ": LoadFPSDropdown", gameObject);
     }
 
+    protected override void Awake()
+    {
+        base.Awake();
+        int index = PlayerPrefs.GetInt("SelectedDropdownIndex", 0);
+        this.targetFPS = int.Parse(fpsDropdown.options[index].text.ToString());
+        Application.targetFrameRate = targetFPS;
+    }
+
     protected override void Start()
     {
         fpsDropdown.onValueChanged.AddListener(OnDropdownValueChanged);
@@ -43,7 +51,7 @@ public class FPSController : NguyenMonoBehaviour
 
     protected virtual void SetFPSByIndex(int index)
     {
-        targetFPS = int.Parse(fpsDropdown.options[index].text.ToString());
+        this.targetFPS = int.Parse(fpsDropdown.options[index].text.ToString());
         PlayerPrefs.SetInt("SelectedDropdownIndex", index);
         this.SetFPSByValue(targetFPS);
     }
