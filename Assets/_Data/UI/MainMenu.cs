@@ -34,9 +34,6 @@ public class MainMenu : MonoBehaviour
 
         int totalScene = SceneManager.sceneCountInBuildSettings;
 
-        Debug.Log("currentScene: " + currentScene);
-        Debug.Log("TotalScene: " + totalScene);
-
         if (currentScene < totalScene - 1)
             SceneManager.LoadScene(currentScene + 1);
         else

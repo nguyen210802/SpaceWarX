@@ -8,6 +8,11 @@ public class BossShooting : ObjShooting
     [Header("Boss Shooting")]
     [SerializeField] protected int coutBullet = 5;
 
+    protected override void Start()
+    {
+        this.bulletName = BulletSpawner.Instance.bossBullet_1;
+    }
+
     protected override void IsShooting()
     {
         this.isShooting = true;
@@ -28,7 +33,7 @@ public class BossShooting : ObjShooting
         for(int i=0; i< coutBullet; i++)
         {
             Quaternion rotation = transform.parent.rotation * Quaternion.Euler(0, 0, angle * i);
-            Transform newBullet = BulletSpawner.Instance.SpawnByName(BulletSpawner.Instance.bossBullet_1, spawnPos, rotation);
+            Transform newBullet = BulletSpawner.Instance.SpawnByName(bulletName, spawnPos, rotation);
             if (newBullet == null)
                 return;
 

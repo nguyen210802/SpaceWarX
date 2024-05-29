@@ -20,6 +20,8 @@ public class ShipUpgrade : NguyenMonoBehaviour
 
     [SerializeField] protected bool unLockLaser = false;
     [SerializeField] protected bool unLockRocket = false;
+    [SerializeField] protected int levelUnLockLaser = 3;
+    [SerializeField] protected int levelUnLockRocket = 6;
     
     protected override void Awake()
     {
@@ -91,12 +93,12 @@ public class ShipUpgrade : NguyenMonoBehaviour
 
     protected virtual void UnLockedSkill()
     {
-        if (this.currentLevel >= 4 && !this.unLockLaser)
+        if (this.currentLevel >= levelUnLockLaser && !this.unLockLaser)
         {
             this.unLockLaser = true;
             shipCtrl.GetSkillCtrl.GetSkillLaser.UnLock();
         }
-        if(this.currentLevel >= 7 && !this.unLockRocket)
+        if(this.currentLevel >= levelUnLockRocket && !this.unLockRocket)
         {
             this.unLockRocket = true;
             shipCtrl.GetSkillCtrl.GetSkillRocket.UnLock();
