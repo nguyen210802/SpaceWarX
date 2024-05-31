@@ -9,11 +9,11 @@ public class SpawnerRandom : NguyenMonoBehaviour
     [SerializeField] protected float spawnDelay = 1f;
     [SerializeField] protected float spawnTime = 0f;
     [SerializeField] protected int spawnLimit = 9;
-    [SerializeField] protected int totalSpawnLimit = 0;
+    //[SerializeField] protected int totalSpawnLimit = 0;
 
     public void SetSpawnDelay(float value) { this.spawnDelay = value; }
     public void SetSpawnLimit(int value) { this.spawnLimit = value; }
-    public void SetTotalSpawnLimit(int value) { this.totalSpawnLimit = value; }
+    //public void SetTotalSpawnLimit(int value) { this.totalSpawnLimit = value; }
 
     public void SetSpawn(float spawnDelay, int spawnLimit)
     {
@@ -52,9 +52,11 @@ public class SpawnerRandom : NguyenMonoBehaviour
 
         Transform prefab = this.spawnerCtrl.GetSpawner.RandomPrefab();
         Transform obj = this.spawnerCtrl.GetSpawner.SpawnByTransform(prefab, pos, rot);
+
         Transform minionObjAppearing = obj.Find("ObjAppearing");
         if(minionObjAppearing != null) 
             minionObjAppearing.gameObject.SetActive(false);
+
         obj.gameObject.SetActive(true);
     }
 
@@ -65,8 +67,8 @@ public class SpawnerRandom : NguyenMonoBehaviour
 
         if (currentSpawn >= this.spawnLimit)
             return true;
-        if (this.totalSpawnLimit != 0 && currentTotalSpawn >= this.totalSpawnLimit)
-            return true;
+        //if (this.totalSpawnLimit != 0 && currentTotalSpawn >= this.totalSpawnLimit)
+        //    return true;
         return false;
     }
 }

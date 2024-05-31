@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TextTimeCD : BaseText
+public abstract class TextTimeCD : BaseText
 {
     [SerializeField] protected int timeDelaySkill;
 
@@ -18,9 +18,12 @@ public class TextTimeCD : BaseText
 
     protected virtual void UpdateTimeDelay()
     {
+        this.SetTimeDelaySkill();
         if (this.timeDelaySkill <= 0)
             this.text.SetText("");
         else
             this.text.SetText(timeDelaySkill.ToString());
     }
+
+    protected abstract void SetTimeDelaySkill();
 }

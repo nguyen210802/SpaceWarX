@@ -5,7 +5,7 @@ using UnityEngine;
 public abstract class ObjShooting : NguyenMonoBehaviour
 {
     [SerializeField] protected bool isShooting = false;
-    [SerializeField] protected float shootDelay = 0.2f;
+    [SerializeField] protected float shootDelay = 2f;
     [SerializeField] protected float shootTimer = 0f;
     [SerializeField] protected string bulletName;
     public void SetBulletName (string name) { this.bulletName = name; }

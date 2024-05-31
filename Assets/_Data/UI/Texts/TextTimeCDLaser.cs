@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class TextTimeCDLaser : TextTimeCD
 {
-    protected override void UpdateTimeDelay()
+    protected override void SetTimeDelaySkill()
     {
         this.timeDelaySkill = (int)SkillLaser.Instance.GetTimeDelaySkill;
-        base.UpdateTimeDelay();
     }
 }

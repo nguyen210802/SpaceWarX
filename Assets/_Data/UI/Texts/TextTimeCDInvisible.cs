@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class TextTimeCDInvisible : TextTimeCD
 {
-    protected override void UpdateTimeDelay()
+    protected override void SetTimeDelaySkill()
     {
         this.timeDelaySkill = (int)Invisible.Instance.GetTimeDelaySkill;
-        base.UpdateTimeDelay();
     }
 }

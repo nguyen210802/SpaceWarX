@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class TextTimeCDRocket : TextTimeCD
 {
-    protected override void UpdateTimeDelay()
+    protected override void SetTimeDelaySkill()
     {
         this.timeDelaySkill = (int)SkillRocket.Instance.GetTimeDelaySkill;
-        base.UpdateTimeDelay();
     }
 }

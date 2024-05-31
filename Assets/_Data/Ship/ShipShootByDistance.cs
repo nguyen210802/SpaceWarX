@@ -7,7 +7,7 @@ public class ShipShootDistance : ObjShooting
     [Header("Shoot by distance")]
     [SerializeField] protected Transform target;
     [SerializeField] protected float distance = Mathf.Infinity;
-    [SerializeField] protected float shootDistance = 3f;
+    [SerializeField] protected float shootDistance = 20f;
 
     public virtual void SetTarget(Transform target)
     {

@@ -17,8 +17,8 @@ public abstract class ShootableObjectCtrl : NguyenMonoBehaviour
     [SerializeField] protected ObjShooting objShooting;
     public ObjShooting GetObjectShooting => objShooting;
 
-    [SerializeField] protected ObjMovement objMovement;
-    public ObjMovement GetObjMovement => objMovement;
+    //[SerializeField] protected ObjMovement objMovement;
+    //public ObjMovement GetObjMovement => objMovement;
     
     [SerializeField] protected ObjLookAtTarget objLookAtTarget;
     public ObjLookAtTarget GetObjLookAtTarget => objLookAtTarget;
@@ -33,7 +33,7 @@ public abstract class ShootableObjectCtrl : NguyenMonoBehaviour
         this.LoadDespawn();
         this.LoadSO();
         this.LoadObjectShooting();
-        this.LoadObjectMovement();
+        //this.LoadObjectMovement();
         this.LoadObjLookAtTarget();
         this.LoadShootableObjectDamageReceiver();
     }
@@ -67,12 +67,12 @@ public abstract class ShootableObjectCtrl : NguyenMonoBehaviour
         Debug.Log(transform.name + ": LoadObjectShooting", gameObject);
     }
 
-    protected virtual void LoadObjectMovement()
-    {
-        if (this.objMovement != null) return;
-        this.objMovement = GetComponentInChildren<ObjMovement>();
-        Debug.Log(transform.name + ": LoadObjectMovement", gameObject);
-    }
+    //protected virtual void LoadObjectMovement()
+    //{
+    //    if (this.objMovement != null) return;
+    //    this.objMovement = GetComponentInChildren<ObjMovement>();
+    //    Debug.Log(transform.name + ": LoadObjectMovement", gameObject);
+    //}
 
     protected virtual void LoadObjLookAtTarget()
     {

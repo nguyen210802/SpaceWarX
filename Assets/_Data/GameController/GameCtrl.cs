@@ -14,7 +14,7 @@ public class GameCtrl : NguyenMonoBehaviour
 
     [SerializeField] protected float time = 0f;
     public float GetTime => time;
-    [SerializeField] protected float timeFinish = 30f;
+    [SerializeField] protected float timeFinish = 120f;
     public float GetTimeFinish => timeFinish;
 
     [SerializeField] protected GameWave gameWave;
