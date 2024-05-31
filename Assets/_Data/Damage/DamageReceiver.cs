@@ -49,15 +49,9 @@ public class DamageReceiver : NguyenMonoBehaviour
 
     public virtual void Reborn()
     {
-        this.maxHp = this.baseHp;
+        maxHp = this.baseHp * (1 + this.critHpBonus);
         this.hp = this.maxHp;
         this.isDead = false;
-    }
-
-    public virtual void Add(float add)
-    {
-        this.hp += add;
-        if(this.hp > this.maxHp)   this.hp = this.maxHp;
     }
 
     public virtual void Deduct(float deduct)
@@ -81,7 +75,6 @@ public class DamageReceiver : NguyenMonoBehaviour
 
     protected virtual void UpgradeByLevel()
     {
-        if (this.critHpBonus == 0) return;
         maxHp = this.baseHp * (1 + this.critHpBonus);
         this.hp = maxHp;
     }

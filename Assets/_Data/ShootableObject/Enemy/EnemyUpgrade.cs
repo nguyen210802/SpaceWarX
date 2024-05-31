@@ -13,6 +13,7 @@ public class EnemyUpgrade : ShootableObjectUpgrade
     {
         base.OnEnable();
         this.SetLevel();
+        Debug.Log("Helo");
     }
 
     //protected override void Start()

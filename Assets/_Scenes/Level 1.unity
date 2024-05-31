@@ -3926,7 +3926,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 762fe9006005f14408b8801ed0f02248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 30
 --- !u!1 &435412621
 GameObject:
   m_ObjectHideFlags: 0
@@ -4006,7 +4006,7 @@ MonoBehaviour:
   shootDelay: 2
   shootTimer: 0
   bulletName: 
-  target: {fileID: 0}
+  target: {fileID: 104814688}
   distance: Infinity
   shootDistance: 20
 --- !u!1 &459386959
@@ -4594,7 +4594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameCtrl: {fileID: 73328700}
   mapLevel: 1
-  limitMapLevel: 5
+  limitMapLevel: 3
   timeNextLevel: 0
 --- !u!1 &555035275
 GameObject:
@@ -4837,7 +4837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rocketCtrl: {fileID: 1331947458}
-  valueCritDamageBonus: 0.1
+  valueCritDamageBonus: 0.2
 --- !u!1 &580877991
 GameObject:
   m_ObjectHideFlags: 0
@@ -6553,12 +6553,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 668679959}
   hp: 30
-  maxHp: 2
+  maxHp: 30
   baseHp: 30
   critHpBonus: 0
   isDead: 0
   shootableObjectCtrl: {fileID: 1429829148}
-  point: 0
+  point: 2000
 --- !u!135 &668679959
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6578,7 +6578,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.9
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &670962449
 GameObject:
@@ -9179,7 +9179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootableObjectCtrl: {fileID: 1429829148}
   level: 0
-  critHpBonus: 0.2
+  critHpBonus: 0.3
 --- !u!1 &925787198
 GameObject:
   m_ObjectHideFlags: 0
@@ -10797,7 +10797,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1057502287
 Transform:
   m_ObjectHideFlags: 0
@@ -12100,7 +12100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1197477583
 Transform:
   m_ObjectHideFlags: 0
@@ -13222,7 +13222,7 @@ MonoBehaviour:
   shootDelay: 2
   shootTimer: 0
   bulletName: 
-  target: {fileID: 0}
+  target: {fileID: 104814688}
   distance: Infinity
   shootDistance: 20
 --- !u!4 &1309390028
@@ -16827,7 +16827,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.25, z: 1}
+  m_Size: {x: 0.9, y: 0.2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1638622476
 GameObject:
@@ -17626,7 +17626,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootableObjectCtrl: {fileID: 637073738}
   level: 0
-  critHpBonus: 0.2
+  critHpBonus: 0.3
 --- !u!1 &1702265635
 GameObject:
   m_ObjectHideFlags: 0
@@ -18291,7 +18291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9469195ebcec6564e81cc4c3317b0a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 1
   critDamageBonus: 0
   bulletCtrl: {fileID: 1729426327}
 --- !u!4 &1823847019
@@ -18357,7 +18357,7 @@ MonoBehaviour:
   shootDelay: 2
   shootTimer: 0
   bulletName: 
-  target: {fileID: 0}
+  target: {fileID: 104814688}
   distance: Infinity
   shootDistance: 20
 --- !u!1 &1828008082
@@ -19061,7 +19061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   expCtrl: {fileID: 1292021136}
-  valueCritDamageBonus: 0.3
+  valueCritDamageBonus: 0.2
 --- !u!1 &1917433439
 GameObject:
   m_ObjectHideFlags: 0
@@ -19423,7 +19423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 1953615334}
   hp: 8
-  maxHp: 2
+  maxHp: 8
   baseHp: 8
   critHpBonus: 0
   isDead: 0
@@ -19444,11 +19444,11 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 1.9
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1956634831
 GameObject:
@@ -19689,7 +19689,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootableObjectCtrl: {fileID: 1599071839}
   level: 0
-  critHpBonus: 0.2
+  critHpBonus: 0.3
 --- !u!1 &1969390438
 GameObject:
   m_ObjectHideFlags: 0
@@ -20153,7 +20153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60b652d3d54b934981c910bf506b1cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
+  damage: 2
   critDamageBonus: 0
   rocketCtrl: {fileID: 1331947458}
 --- !u!1 &2006518517
@@ -21662,7 +21662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootableObjectCtrl: {fileID: 1466565165}
   level: 0
-  critHpBonus: 0.2
+  critHpBonus: 0.3
 --- !u!1 &167152032674816534
 GameObject:
   m_ObjectHideFlags: 0
