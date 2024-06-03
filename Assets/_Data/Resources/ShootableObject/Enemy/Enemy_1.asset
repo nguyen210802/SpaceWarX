@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d741959b206a9dd49a95a1b10d4d7132, type: 3}
   m_Name: Enemy_1
   m_EditorClassIdentifier: 
-  objectName: Enemy_1
-  objectType: 2
   baseHp: 2
   dropList:
   - itemProfile: {fileID: 11400000, guid: 36a56996f05c4744fb9eb4810086f8e8, type: 2}

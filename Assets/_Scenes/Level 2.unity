@@ -11053,8 +11053,8 @@ MonoBehaviour:
   isShooting: 0
   shootDelay: 1
   shootTimer: 0
-  bulletName: Bullet_1
-  coutBullet: 5
+  bulletName: 
+  coutBullet: 8
 --- !u!1 &1067566537
 GameObject:
   m_ObjectHideFlags: 0
@@ -19441,13 +19441,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 1953615334}
-  hp: 8
-  maxHp: 8
-  baseHp: 8
+  hp: 12
+  maxHp: 12
+  baseHp: 12
   critHpBonus: 0
   isDead: 0
   shootableObjectCtrl: {fileID: 637073738}
-  point: 500
+  point: 0
 --- !u!135 &1953615334
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d741959b206a9dd49a95a1b10d4d7132, type: 3}
   m_Name: Ship
   m_EditorClassIdentifier: 
-  objectName: Ship
-  objectType: 4
   baseHp: 5
   dropList: []
   listUpgradePoint: 0300000006000000090000000c0000000f0000001200000015000000180000001b000000

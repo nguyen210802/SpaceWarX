@@ -3214,7 +3214,7 @@ Transform:
   m_GameObject: {fileID: 351799214}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.93, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3473,7 +3473,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.15
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &413645084
 GameObject:
@@ -3784,7 +3784,7 @@ Transform:
   m_GameObject: {fileID: 419108041}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.93, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4512,7 +4512,7 @@ Transform:
   m_GameObject: {fileID: 540971675}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.93, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5926,7 +5926,7 @@ MonoBehaviour:
   objShooting: {fileID: 1824110688}
   objLookAtTarget: {fileID: 1500632962}
   objDamageReveiver: {fileID: 1953615333}
-  monsterDamageSender: {fileID: 0}
+  monsterDamageSender: {fileID: 419108043}
   spawnPoints: {fileID: 1299070949}
 --- !u!1 &639325624
 GameObject:
@@ -10641,7 +10641,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.15
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1055435720
 GameObject:
@@ -10886,8 +10886,8 @@ MonoBehaviour:
   isShooting: 0
   shootDelay: 1
   shootTimer: 0
-  bulletName: Bullet_1
-  coutBullet: 5
+  bulletName: 
+  coutBullet: 8
 --- !u!1 &1067566537
 GameObject:
   m_ObjectHideFlags: 0
@@ -11373,7 +11373,7 @@ Transform:
   m_GameObject: {fileID: 1110203060}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.93, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13226,7 +13226,7 @@ Transform:
   m_GameObject: {fileID: 1282064285}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.93, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14784,7 +14784,7 @@ Transform:
   m_GameObject: {fileID: 1396720648}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.93, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15347,7 +15347,7 @@ MonoBehaviour:
   objShooting: {fileID: 1057502288}
   objLookAtTarget: {fileID: 0}
   objDamageReveiver: {fileID: 668679958}
-  monsterDamageSender: {fileID: 0}
+  monsterDamageSender: {fileID: 1110203062}
 --- !u!1 &1436714485
 GameObject:
   m_ObjectHideFlags: 0
@@ -15673,11 +15673,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 1668490269}
   despawn: {fileID: 789805023}
-  shootableObject: {fileID: 11400000, guid: f3c630c5b785ffd438b237cb1cc2e542, type: 2}
+  shootableObject: {fileID: 11400000, guid: 7f3b6a0669e80814eafdfa8563993060, type: 2}
   objShooting: {fileID: 1309390027}
   objLookAtTarget: {fileID: 1969390439}
   objDamageReveiver: {fileID: 388645990}
-  monsterDamageSender: {fileID: 0}
+  monsterDamageSender: {fileID: 351799216}
   spawner: {fileID: 1956634833}
 --- !u!1 &1467669573
 GameObject:
@@ -16036,7 +16036,7 @@ Transform:
   m_GameObject: {fileID: 1526480933}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.93, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -16766,7 +16766,7 @@ MonoBehaviour:
   objShooting: {fileID: 444715083}
   objLookAtTarget: {fileID: 971313445}
   objDamageReveiver: {fileID: 306527383}
-  monsterDamageSender: {fileID: 0}
+  monsterDamageSender: {fileID: 1396720650}
   spawner: {fileID: 1956634833}
 --- !u!1 &1608715024
 GameObject:
@@ -17254,7 +17254,7 @@ Transform:
   m_GameObject: {fileID: 1645557156}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.93, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18646,7 +18646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skillCtrl: {fileID: 1074470371}
   shield: {fileID: 1337872365}
-  shipDamageReceiver: {fileID: 0}
+  shipDamageReceiver: {fileID: 1691532505}
   timeDelaySkill: 0
   timeCD: 12
 --- !u!1 &1819070242
@@ -19949,13 +19949,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 1953615334}
-  hp: 8
-  maxHp: 8
-  baseHp: 8
+  hp: 12
+  maxHp: 12
+  baseHp: 12
   critHpBonus: 0
   isDead: 0
   shootableObjectCtrl: {fileID: 637073738}
-  point: 500
+  point: 0
 --- !u!135 &1953615334
 SphereCollider:
   m_ObjectHideFlags: 0
