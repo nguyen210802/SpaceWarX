@@ -10,7 +10,7 @@ public class SkillShield : SkillAbstract
     [SerializeField] protected GameObject shield;
     public GameObject GetShield => shield;
 
-    [SerializeField] protected GameObject damageReceiver;
+    [SerializeField] protected ShipDamageReceiver shipDamageReceiver;
 
     [SerializeField] private float timeDelaySkill = 0f;
     public float GetTimeDelaySkill => timeDelaySkill;
@@ -47,9 +47,9 @@ public class SkillShield : SkillAbstract
     protected virtual void ActiveDamageReceiver()
     {
         if (shield.activeSelf)
-            this.damageReceiver.SetActive(false);
+            this.shipDamageReceiver.SetShield(true);
         else
-            this.damageReceiver.SetActive(true);
+            this.shipDamageReceiver.SetShield(false);
     }
 
     protected override void LoadComponents()
@@ -68,8 +68,9 @@ public class SkillShield : SkillAbstract
 
     protected virtual void LoadDamageReceiver()
     {
-        if(this.damageReceiver != null) return;
-        this.damageReceiver = transform.parent?.parent?.Find("DamageReceiver").gameObject;
+        if(this.shipDamageReceiver != null) return;
+        GameObject damageReceiver = transform.parent?.parent?.Find("DamageReceiver").gameObject;
+        this.shipDamageReceiver = damageReceiver.GetComponent<ShipDamageReceiver>();
         Debug.Log(transform.name + ": LoadDamageReceiver", gameObject);
     }
 

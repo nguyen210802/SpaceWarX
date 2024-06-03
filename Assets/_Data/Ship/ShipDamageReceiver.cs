@@ -8,6 +8,10 @@ public class ShipDamageReceiver : ShootableObjectDamageReceiver
     [Header("ShipDamageReceiver")]
     [SerializeField] protected ShipCtrl shipCtrl;
     [SerializeField] protected new Rigidbody rigidbody;
+    
+    [SerializeField] protected bool shield = false;
+    public void SetShield(bool shield) { this.shield = shield; }
+
     protected override void LoadComponents()
     {
         base.LoadComponents();
@@ -29,6 +33,13 @@ public class ShipDamageReceiver : ShootableObjectDamageReceiver
         if (this.shipCtrl != null) return;
         this.shipCtrl = transform.parent.GetComponent<ShipCtrl>();
         Debug.Log(transform.name + ": LoadShootableObjectCtrl", gameObject);
+    }
+
+    public override void Deduct(float deduct)
+    {
+        if (shield) return;
+
+        base.Deduct(deduct);
     }
 
     protected override void OnDead()
