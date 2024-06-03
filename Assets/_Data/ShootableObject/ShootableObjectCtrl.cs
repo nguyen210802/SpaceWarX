@@ -16,15 +16,15 @@ public abstract class ShootableObjectCtrl : NguyenMonoBehaviour
     
     [SerializeField] protected ObjShooting objShooting;
     public ObjShooting GetObjectShooting => objShooting;
-
-    //[SerializeField] protected ObjMovement objMovement;
-    //public ObjMovement GetObjMovement => objMovement;
     
     [SerializeField] protected ObjLookAtTarget objLookAtTarget;
     public ObjLookAtTarget GetObjLookAtTarget => objLookAtTarget;
 
     [SerializeField] protected ShootableObjectDamageReceiver objDamageReveiver;
     public ShootableObjectDamageReceiver GetShootableObjectDamageReceiver => objDamageReveiver;
+
+    [SerializeField] protected MonsterDamageSender monsterDamageSender;
+    public MonsterDamageSender GetMonsterDamageSender => monsterDamageSender;
 
     protected override void LoadComponents()
     {
@@ -33,9 +33,9 @@ public abstract class ShootableObjectCtrl : NguyenMonoBehaviour
         this.LoadDespawn();
         this.LoadSO();
         this.LoadObjectShooting();
-        //this.LoadObjectMovement();
         this.LoadObjLookAtTarget();
         this.LoadShootableObjectDamageReceiver();
+        this.LoadMonsterDamageSender();
     }
 
     protected virtual void LoadModel()
@@ -67,13 +67,6 @@ public abstract class ShootableObjectCtrl : NguyenMonoBehaviour
         Debug.Log(transform.name + ": LoadObjectShooting", gameObject);
     }
 
-    //protected virtual void LoadObjectMovement()
-    //{
-    //    if (this.objMovement != null) return;
-    //    this.objMovement = GetComponentInChildren<ObjMovement>();
-    //    Debug.Log(transform.name + ": LoadObjectMovement", gameObject);
-    //}
-
     protected virtual void LoadObjLookAtTarget()
     {
         if (this.objLookAtTarget != null) return;
@@ -86,6 +79,13 @@ public abstract class ShootableObjectCtrl : NguyenMonoBehaviour
         if (this.objDamageReveiver != null) return;
         this.objDamageReveiver = GetComponentInChildren<ShootableObjectDamageReceiver>();
         Debug.Log(transform.name + ": LoadShootableObjectDamageReceiver", gameObject);
+    }
+
+    protected virtual void LoadMonsterDamageSender()
+    {
+        if (this.monsterDamageSender != null) return;
+        this.monsterDamageSender = GetComponentInChildren<MonsterDamageSender>();
+        Debug.Log(transform.name + ": LoadMonsterDamageSender", gameObject);
     }
 
     protected abstract string GetObjectTypeString();
