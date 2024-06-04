@@ -15,12 +15,6 @@ public class EnemyUpgrade : ShootableObjectUpgrade
         this.SetLevel();
     }
 
-    //protected override void Start()
-    //{
-    //    base.Start();
-    //    this.UpgradeByLevel();
-    //}
-
     protected virtual void SetLevel()
     {
         this.level = GameCtrl.Instance.GetGameMapLevel.GetMapLevel;

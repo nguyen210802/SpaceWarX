@@ -39,8 +39,6 @@ public class GameCtrl : NguyenMonoBehaviour
     protected virtual void TimeGame()
     {
         this.time += Time.fixedDeltaTime;
-        if(this.time >= this.timeFinish)
-            this.time = this.timeFinish;
     }
 
     protected override void LoadComponents()

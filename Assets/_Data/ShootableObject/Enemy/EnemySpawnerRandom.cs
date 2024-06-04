@@ -10,6 +10,8 @@ public class EnemySpawnerRandom : SpawnerRandom
     protected override void Awake()
     {
         base.Awake();
+        if (EnemySpawnerRandom.instance != null)
+            Debug.LogError("Only one EnemySpawnerRandom allow to exit!");
         EnemySpawnerRandom.instance = this;
     }
 

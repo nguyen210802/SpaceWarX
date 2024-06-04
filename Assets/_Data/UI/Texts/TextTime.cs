@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class TextTime : BaseText
 {
-
     protected override void Start()
     {
         base.Start();
@@ -35,6 +34,7 @@ public class TextTime : BaseText
         int seconds = (int) time - minutes * 60;
 
         float persent = time / timeFinish * 100;
+        if (persent >= 100f) persent = 100;
 
         //this.text.SetText(minutes + " : " + seconds + "\n" +
         //    persent.ToString("F2") + "%");

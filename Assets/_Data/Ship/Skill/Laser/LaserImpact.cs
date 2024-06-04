@@ -46,7 +46,7 @@ public class LaserImpact : NguyenMonoBehaviour
 
     protected virtual void OnTriggerStay(Collider other)
     {
-        if (other.transform.parent == this.laserCtrl.GetShooter) return;
+        if (other.transform.parent.tag == this.laserCtrl.GetShooter.tag) return;
         this.laserCtrl.GetLaserDamageSender.SendByTransform(other.transform);
     }
 }

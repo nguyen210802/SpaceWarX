@@ -6,7 +6,7 @@ using UnityEngine;
 public class BossShooting : ObjShooting
 {
     [Header("Boss Shooting")]
-    [SerializeField] protected int coutBullet = 5;
+    [SerializeField] protected int coutBullet = 8;
 
     protected override void Start()
     {

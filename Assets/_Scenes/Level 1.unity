@@ -4882,7 +4882,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
   m_Color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   m_FlipX: 0
@@ -5012,7 +5012,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
   m_Color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   m_FlipX: 0
@@ -6599,7 +6599,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
   m_Color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   m_FlipX: 0
@@ -7065,7 +7065,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -5177388603050735206, guid: 8884154dfe85442a3a3578be807dbcdf, type: 3}
   m_Color: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 1}
   m_FlipX: 0
@@ -9045,48 +9045,75 @@ MonoBehaviour:
   gameCtrl: {fileID: 73328700}
   gameWaves:
   - timeStart: 0
-    junkDelay: 2
-    junkLimit: 3
-    enemyDelay: 2
-    enemyLimit: 2
-    motherShipDelay: 0
-    motherShipLimit: 0
-    bossDelay: 0
-    bossLimit: 0
-    bossTotalLimit: 0
+    junkWave:
+      junkDelay: 2
+      junkLimit: 3
+    enemyWave:
+      enemyDelay: 2
+      enemyLimit: 2
+    sniperWave:
+      sniperDelay: 0
+      sniperLimit: 0
+    motherShipWave:
+      motherShipDelay: 0
+      motherShipLimit: 0
+    bossWave:
+      bossDelay: 0
+      bossLimit: 0
+      bossTotalLimit: 0
   - timeStart: 40
-    junkDelay: 1
-    junkLimit: 4
-    enemyDelay: 1
-    enemyLimit: 8
-    motherShipDelay: 2
-    motherShipLimit: 1
-    bossDelay: 0
-    bossLimit: 0
-    bossTotalLimit: 0
+    junkWave:
+      junkDelay: 1
+      junkLimit: 4
+    enemyWave:
+      enemyDelay: 1
+      enemyLimit: 8
+    sniperWave:
+      sniperDelay: 0
+      sniperLimit: 0
+    motherShipWave:
+      motherShipDelay: 2
+      motherShipLimit: 1
+    bossWave:
+      bossDelay: 0
+      bossLimit: 0
+      bossTotalLimit: 0
   - timeStart: 80
-    junkDelay: 0.8
-    junkLimit: 5
-    enemyDelay: 0.5
-    enemyLimit: 15
-    motherShipDelay: 1
-    motherShipLimit: 3
-    bossDelay: 0
-    bossLimit: 0
-    bossTotalLimit: 0
+    junkWave:
+      junkDelay: 0.8
+      junkLimit: 5
+    enemyWave:
+      enemyDelay: 0.8
+      enemyLimit: 10
+    sniperWave:
+      sniperDelay: 0
+      sniperLimit: 0
+    motherShipWave:
+      motherShipDelay: 1
+      motherShipLimit: 2
+    bossWave:
+      bossDelay: 0
+      bossLimit: 0
+      bossTotalLimit: 0
   - timeStart: 120
-    junkDelay: 0
-    junkLimit: 0
-    enemyDelay: 0
-    enemyLimit: 0
-    motherShipDelay: 0
-    motherShipLimit: 0
-    bossDelay: 2
-    bossLimit: 1
-    bossTotalLimit: 1
+    junkWave:
+      junkDelay: 0
+      junkLimit: 0
+    enemyWave:
+      enemyDelay: 0
+      enemyLimit: 0
+    sniperWave:
+      sniperDelay: 0
+      sniperLimit: 0
+    motherShipWave:
+      motherShipDelay: 0
+      motherShipLimit: 0
+    bossWave:
+      bossDelay: 2
+      bossLimit: 1
+      bossTotalLimit: 1
   currentWave: 0
   timeNext: 0
-  timeDelay: 2
   spawnedBoss: 0
   gameWin: 0
   canvasGameWin: {fileID: 1646471755}
@@ -12921,6 +12948,7 @@ MonoBehaviour:
   explotion: Explotion
   enemyBullet_1: EnemyBullet_1
   bossBullet_1: BossBullet_1
+  SniperBullet_1: SniperBullet_1
 --- !u!1 &1255058977
 GameObject:
   m_ObjectHideFlags: 0
@@ -18381,7 +18409,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserDamageSender: {fileID: 1461241758}
   laserUpgrade: {fileID: 1847425361}
-  shooter: {fileID: 1337872366}
+  shooter: {fileID: 104814688}
 --- !u!1 &1736907466
 GameObject:
   m_ObjectHideFlags: 0
