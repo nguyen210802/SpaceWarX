@@ -46,4 +46,6 @@ public class ShipCtrl : ShootableObjectCtrl
         this.skillCtrl = transform.GetComponentInChildren<SkillCtrl>();
         Debug.Log(transform.name + ": LoadSkillCtrl", gameObject);
     }
+
+    protected override void LoadMonsterDamageSender(){}
 }

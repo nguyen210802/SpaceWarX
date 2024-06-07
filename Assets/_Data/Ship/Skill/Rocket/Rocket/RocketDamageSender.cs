@@ -25,23 +25,4 @@ public class RocketDamageSender : DamageSender
         //this.CreateFXImpact();
         //this.DestroyBullet();
     }
-
-    //protected virtual void DestroyBullet()
-    //{
-    //    this.rocketCtrl.GetBulletDespawn.DespawnObject();
-    //}
-
-    //protected virtual void CreateFXImpact()
-    //{
-    //    string fxName = this.GetImpactFX();
-    //    Vector3 hitPos = transform.parent.position;
-    //    Quaternion hitRot = transform.parent.rotation;
-    //    Transform FXImpact = FXSpawner.Instance.SpawnByName(fxName, hitPos, hitRot);
-    //    FXImpact.gameObject.SetActive(true);
-    //}
-
-    //protected virtual string GetImpactFX()
-    //{
-    //    return FXSpawner.Instance.impact1;
-    //}
 }

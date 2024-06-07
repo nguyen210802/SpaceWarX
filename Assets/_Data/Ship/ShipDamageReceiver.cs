@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
 public class ShipDamageReceiver : ShootableObjectDamageReceiver
 {
     [Header("ShipDamageReceiver")]
     [SerializeField] protected ShipCtrl shipCtrl;
-    [SerializeField] protected new Rigidbody rigidbody;
     
     [SerializeField] protected bool shield = false;
     public void SetShield(bool shield) { this.shield = shield; }
@@ -16,16 +14,6 @@ public class ShipDamageReceiver : ShootableObjectDamageReceiver
     {
         base.LoadComponents();
         this.LoadShipCtrl();
-        this.LoadRigidbody();
-    }
-
-    protected virtual void LoadRigidbody()
-    {
-        if (this.rigidbody != null) return;
-        this.rigidbody = GetComponent<Rigidbody>();
-        rigidbody.useGravity = false;
-        rigidbody.isKinematic = true;
-        Debug.LogWarning(transform.name + ": LoadCollider", gameObject);
     }
 
     protected virtual void LoadShipCtrl()

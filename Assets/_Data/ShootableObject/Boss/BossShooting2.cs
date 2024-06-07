@@ -1,15 +1,15 @@
-using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossShooting : ObjShooting
+public class BossShooting2 : ObjShooting
 {
-    [Header("Boss Shooting")]
-    [SerializeField] protected int countBullet = 8;
+    [SerializeField] protected int countBullet = 3;
+    [SerializeField] protected float shootingRange = 60;
 
     protected override void Start()
     {
+        base.Start();
         this.bulletName = BulletSpawner.Instance.bossBullet_1;
     }
 
@@ -28,12 +28,13 @@ public class BossShooting : ObjShooting
 
         Vector3 spawnPos = transform.parent.position;
 
-        float angle = 360 / countBullet;
-        
-        for(int i=0; i< countBullet; i++)
+        float angle = shootingRange / (countBullet - 1);
+
+        for (int i = 0; i < countBullet; i++)
         {
-            Quaternion rotation = transform.parent.rotation * Quaternion.Euler(0, 0, angle * i);
-            Transform newBullet = BulletSpawner.Instance.SpawnByName(bulletName, spawnPos, rotation);
+            Quaternion rot = transform.parent.rotation * Quaternion.Euler(0, 0, (angle * i) - (shootingRange / 2));
+
+            Transform newBullet = BulletSpawner.Instance.SpawnByName(bulletName, spawnPos, rot);
             if (newBullet == null)
                 return;
 
@@ -42,6 +43,6 @@ public class BossShooting : ObjShooting
 
             newBullet.gameObject.SetActive(true);
         }
-        
+
     }
 }

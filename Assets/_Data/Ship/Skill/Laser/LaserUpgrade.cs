@@ -5,7 +5,7 @@ using UnityEngine;
 public class LaserUpgrade : NguyenMonoBehaviour
 {
     [SerializeField] protected LaserCtrl laserCtrl;
-    [SerializeField] protected float valueCritDamageBonus= 0.1f;
+    [SerializeField] protected float valueCritDamageBonus = 0.2f;
     
     protected override void LoadComponents()
     {

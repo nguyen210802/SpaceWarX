@@ -14,8 +14,8 @@ public class BulletSpawner : Spawner
     public string explotion = "Explotion";
 
     public string enemyBullet_1 = "EnemyBullet_1";
-    public string bossBullet_1 = "BossBullet_1";
     public string SniperBullet_1 = "SniperBullet_1";
+    public string bossBullet_1 = "BossBullet_1";
 
     protected override void Awake()
     {
