@@ -21,7 +21,7 @@ public class ShipUpgrade : NguyenMonoBehaviour
     [SerializeField] protected bool unLockLaser = false;
     [SerializeField] protected bool unLockRocket = false;
     [SerializeField] protected int levelUnLockLaser = 3;
-    [SerializeField] protected int levelUnLockRocket = 6;
+    [SerializeField] protected int levelUnLockRocket = 5;
     
     protected override void Awake()
     {
