@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Ship
   m_EditorClassIdentifier: 
   baseHp: 5
+  radius: 0.3
+  point: 0
   dropList: []
   listUpgradePoint: 0300000006000000090000000c0000000f0000001200000015000000180000001b000000

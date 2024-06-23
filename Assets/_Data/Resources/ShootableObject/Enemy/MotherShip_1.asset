@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: MotherShip_1
   m_EditorClassIdentifier: 
   baseHp: 12
+  radius: 1.9
+  point: 1000
   dropList:
   - itemProfile: {fileID: 11400000, guid: cba37c987ae1f7d46ae2fb3b5d175604, type: 2}
     dropValue: 80

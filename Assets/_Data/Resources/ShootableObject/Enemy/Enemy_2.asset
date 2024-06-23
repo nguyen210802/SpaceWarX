@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Enemy_2
   m_EditorClassIdentifier: 
   baseHp: 2
+  radius: 0.3
+  point: 100
   dropList:
   - itemProfile: {fileID: 11400000, guid: 36a56996f05c4744fb9eb4810086f8e8, type: 2}
     dropValue: 70

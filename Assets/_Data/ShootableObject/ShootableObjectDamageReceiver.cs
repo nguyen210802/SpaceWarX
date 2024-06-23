@@ -59,6 +59,8 @@ public class ShootableObjectDamageReceiver : DamageReceiver
     public override void Reborn()
     {
         this.baseHp = this.shootableObjectCtrl.GetShootableObject.baseHp;
+        sphereCollider.radius = shootableObjectCtrl.GetShootableObject.radius;
+        this.point = shootableObjectCtrl.GetShootableObject.point;
         base.Reborn();
     }
 }

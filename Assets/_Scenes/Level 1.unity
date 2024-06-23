@@ -2396,7 +2396,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2975,7 +2975,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -5767,7 +5767,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.33, y: 0.22, z: 1}
+  m_Size: {x: 0.6, y: 0.38, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &654482015
 GameObject:
@@ -18466,7 +18466,7 @@ MonoBehaviour:
   critHpBonus: 0
   isDead: 0
   shootableObjectCtrl: {fileID: 637073738}
-  point: 0
+  point: 1000
 --- !u!135 &1953615334
 SphereCollider:
   m_ObjectHideFlags: 0

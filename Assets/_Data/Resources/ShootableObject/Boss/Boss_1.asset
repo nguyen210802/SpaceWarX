@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: Boss_1
   m_EditorClassIdentifier: 
   baseHp: 30
+  radius: 1.9
+  point: 2000
   dropList: []
   listUpgradePoint: 

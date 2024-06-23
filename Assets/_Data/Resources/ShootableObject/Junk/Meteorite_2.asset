@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Meteorite_2
   m_EditorClassIdentifier: 
   baseHp: 2
+  radius: 0.3
+  point: 0
   dropList:
   - itemProfile: {fileID: 11400000, guid: cba37c987ae1f7d46ae2fb3b5d175604, type: 2}
     dropValue: 100

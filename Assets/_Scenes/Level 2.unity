@@ -2685,7 +2685,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -3415,7 +3415,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -3508,7 +3508,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.15
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &413645084
 GameObject:
@@ -5814,7 +5814,7 @@ MonoBehaviour:
   objShooting: {fileID: 1824110688}
   objLookAtTarget: {fileID: 1500632962}
   objDamageReveiver: {fileID: 1953615333}
-  monsterDamageSender: {fileID: 0}
+  monsterDamageSender: {fileID: 12727294}
   spawnPoints: {fileID: 1299070949}
 --- !u!1 &639325624
 GameObject:
@@ -6130,7 +6130,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.33, y: 0.22, z: 1}
+  m_Size: {x: 0.6, y: 0.38, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &654482015
 GameObject:
@@ -7979,7 +7979,7 @@ MonoBehaviour:
   critHpBonus: 0
   isDead: 0
   shootableObjectCtrl: {fileID: 9548203}
-  point: 0
+  point: 2000
 --- !u!135 &797396235
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -10783,7 +10783,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.15
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1055435720
 GameObject:
@@ -16889,13 +16889,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 1641791863}
-  hp: 2
-  maxHp: 2
-  baseHp: 2
+  hp: 5
+  maxHp: 5
+  baseHp: 5
   critHpBonus: 0
   isDead: 0
   shootableObjectCtrl: {fileID: 1943496783}
-  point: 100
+  point: 500
 --- !u!135 &1641791863
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -16911,7 +16911,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -19791,7 +19791,7 @@ MonoBehaviour:
   critHpBonus: 0
   isDead: 0
   shootableObjectCtrl: {fileID: 637073738}
-  point: 0
+  point: 1000
 --- !u!135 &1953615334
 SphereCollider:
   m_ObjectHideFlags: 0
