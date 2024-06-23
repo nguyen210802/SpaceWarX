@@ -20,9 +20,7 @@ public class DamageSender : NguyenMonoBehaviour
 
     public virtual void SendByDamageReceiver(DamageReceiver damageReceiver)
     {
-        Debug.Log("Hello");
         float valueDamage = this.damage * (1 + this.critDamageBonus);
         damageReceiver.Deduct(valueDamage);
-        Debug.Log("value Damage: " + valueDamage, gameObject);
     }
 }
