@@ -22,6 +22,7 @@ public class RocketDespawn : NguyenMonoBehaviour
     public virtual void DespawnObject()
     {
         this.CreateExp();
+        AudioManager.Instance.PlaySfx(AudioManager.Instance.explotionAudioClip);
         BulletSpawner.Instance.Despawn(transform.parent);
     }
 

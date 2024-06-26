@@ -74,6 +74,7 @@ public class GameWave : NguyenMonoBehaviour
     {
         if (gameCtrl.GetTime >= gameCtrl.GetTimeFinish + 5f && BossSpawner.Instance.GetSpawnedCount <= 0)
         {
+            AudioManager.Instance.PlayMusic(AudioManager.Instance.gameWinAudioClip);
             Invoke("GameWin", 2f);
         }
     }
@@ -81,6 +82,7 @@ public class GameWave : NguyenMonoBehaviour
     public void PlayerDespawn()
     {
         Debug.Log("GameOver");
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.gameOverAudioClip);
         Invoke("GameOver", 2f);
     }
 

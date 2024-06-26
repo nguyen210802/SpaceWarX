@@ -44,6 +44,11 @@ public abstract class ObjShooting : NguyenMonoBehaviour
         bulletCtrl.SetShotter(transform.parent);
 
         newBullet.gameObject.SetActive(true);
+
+        if (transform.parent.tag.Equals("Player"))
+        {
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.fireAudioClip);
+        }
     }
 
     protected abstract void IsShooting();

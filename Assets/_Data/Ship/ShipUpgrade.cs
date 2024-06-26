@@ -73,8 +73,11 @@ public class ShipUpgrade : NguyenMonoBehaviour
     public void UpgradeLevel()
     {
         this.currentLevel++;
+        AudioManager.Instance.PlaySfx(AudioManager.Instance.levelUpAudioClip);
+
         if (this.currentLevel >= this.maxLevel)
             this.currentLevel = this.maxLevel;
+
         if(currentLevel < shipCtrl.GetShootableObject.listUpgradePoint.Count)
             this.nextUpgradePoint = shipCtrl.GetShootableObject.listUpgradePoint[currentLevel];
         this.UpgradeShoot();

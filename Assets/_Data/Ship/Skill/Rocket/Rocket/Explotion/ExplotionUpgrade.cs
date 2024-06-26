@@ -7,8 +7,15 @@ public class ExplotionUpgrade : NguyenMonoBehaviour
     [SerializeField] protected ExplotionCtrl expCtrl;
     [SerializeField] protected float valueCritDamageBonus = 0.1f;
 
-    protected override void Awake()
+    // protected override void Awake()
+    // {
+    //     if (expCtrl.GetShooter.CompareTag("Player"))
+    //         this.UpgradeByLevel();
+    // }
+
+    protected override void OnEnable()
     {
+        base.OnEnable();
         if (expCtrl.GetShooter.CompareTag("Player"))
             this.UpgradeByLevel();
     }

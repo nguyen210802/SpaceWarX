@@ -43,10 +43,12 @@ public class MainMenu : MonoBehaviour
     public void PauseTime()
     {
         Time.timeScale = 0f;
+        AudioManager.Instance.PauseAllAudioSources();
     }
 
     public void StopPauseTime()
     {
         Time.timeScale = 1f;
+        AudioManager.Instance.UnPauseAllAudioSources();
     }
 }

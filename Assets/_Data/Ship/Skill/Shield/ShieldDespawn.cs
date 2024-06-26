@@ -2,17 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShieldDespawn : MonoBehaviour
+public class ShieldDespawn1 : DespawnByDistance
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void DespawnObject()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.parent.gameObject.SetActive(false);
     }
 }

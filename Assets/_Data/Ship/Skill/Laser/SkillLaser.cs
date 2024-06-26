@@ -89,6 +89,7 @@ public class SkillLaser : SkillAbstract
         this.laser.SetActive(true);
         this.objShooting.SetActive(false);
         skillCtrl.GetSkillInvisible.GetInvisible.StopInvisible();
+        AudioManager.Instance.PlaySfx(AudioManager.Instance.laserAudioClip);
     }
 
     public virtual void StopFire()

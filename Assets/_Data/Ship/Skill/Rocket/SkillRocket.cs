@@ -47,6 +47,9 @@ public class SkillRocket : SkillAbstract
     protected virtual void FireRocket()
     {
         if (this.timeDelaySkill > 0) return;
+
+        AudioManager.Instance.PlaySfx(AudioManager.Instance.rocketAudioClip);
+
         this.timeDelaySkill = this.timeCD;
         Vector3 spawnPos = transform.parent.position;
         Quaternion rotation = transform.parent.rotation;
