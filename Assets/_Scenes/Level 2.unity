@@ -10209,6 +10209,8 @@ MonoBehaviour:
   laserAudioClip: {fileID: 8300000, guid: 984cee1402793074dbefcfa0224a5386, type: 3}
   rocketAudioClip: {fileID: 8300000, guid: 76e06641d963d9742ab0e6ba9ef61882, type: 3}
   levelUpAudioClip: {fileID: 8300000, guid: d9e44d1840ef4764b8019f1cd9a9a87e, type: 3}
+  enemyDespawnAudioClip: {fileID: 8300000, guid: d381749ee3e98ff40927c2d3be2a1712, type: 3}
+  receiverAudioClip: {fileID: 8300000, guid: 0c5efd1b11a2ee645b955de97e53c62c, type: 3}
 --- !u!1 &995244774
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,6 +25,8 @@ public class AudioManager : NguyenMonoBehaviour
     public AudioClip laserAudioClip;
     public AudioClip rocketAudioClip;
     public AudioClip levelUpAudioClip;
+    public AudioClip enemyDespawnAudioClip;
+    public AudioClip receiverAudioClip;
 
     protected override void Awake()
     {
@@ -49,6 +51,8 @@ public class AudioManager : NguyenMonoBehaviour
         this.LoadLaserAudioClip();
         this.LoadLevelUpAudioClip();
         this.LoadRocketAudioClip();
+        this.LoadEnemyDespawnAudioClip();
+        this.LoadReceiverAudioClip();
     }
     //AudioSource
     protected virtual void LoadMusicAudioSource()
@@ -135,6 +139,20 @@ public class AudioManager : NguyenMonoBehaviour
         if (this.rocketAudioClip != null) return;
         string resPath = "Audio/Rocket";
         this.rocketAudioClip = Resources.Load<AudioClip>(resPath);
+        Debug.Log(transform.name + ": LoadRocketAudioClip" + resPath, gameObject);
+    }
+    protected virtual void LoadEnemyDespawnAudioClip()
+    {
+        if (this.enemyDespawnAudioClip != null) return;
+        string resPath = "Audio/EnemyDespawn";
+        this.enemyDespawnAudioClip = Resources.Load<AudioClip>(resPath);
+        Debug.Log(transform.name + ": LoadEnemyDespawnAudioClip" + resPath, gameObject);
+    }
+    protected virtual void LoadReceiverAudioClip()
+    {
+        if (this.receiverAudioClip != null) return;
+        string resPath = "Audio/Receiver";
+        this.receiverAudioClip = Resources.Load<AudioClip>(resPath);
         Debug.Log(transform.name + ": LoadRocketAudioClip" + resPath, gameObject);
     }
 

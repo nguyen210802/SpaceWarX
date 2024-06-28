@@ -58,6 +58,8 @@ public class DamageReceiver : NguyenMonoBehaviour
     {
         this.hp -= deduct;
         if (this.hp < 0) this.hp = 0;
+        if (transform.parent.tag.Equals("Enemy"))
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.receiverAudioClip);
         this.CheckIsDead();
     }
 

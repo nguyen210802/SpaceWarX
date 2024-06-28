@@ -33,6 +33,8 @@ public class ShootableObjectDamageReceiver : DamageReceiver
         this.shootableObjectCtrl.GetDespawn.DespawnObject();
         TextPoint.Instance.AddPoint(point);
         this.OnDeadFX();
+        if(transform.parent.tag.Equals("Enemy"))
+            AudioManager.Instance.PlaySfx(AudioManager.Instance.enemyDespawnAudioClip);
         //Drop here
         this.OnDeadDrop();
     }
