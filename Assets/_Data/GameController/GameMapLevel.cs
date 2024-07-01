@@ -6,7 +6,7 @@ public class GameMapLevel : NguyenMonoBehaviour
 {
     [SerializeField] protected GameCtrl gameCtrl;
 
-    [SerializeField] protected int mapLevel = 0;
+    [SerializeField] protected int mapLevel = 1;
     public int GetMapLevel => mapLevel;
     [SerializeField] protected int limitMapLevel = 5;
     [SerializeField] protected float timeNextLevel;

@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class ShootableObjectSO : ScriptableObject
 {
-    //public string objectName = "Shootable Object";
-    //public ObjectType objectType = ObjectType.NoType;
     public int baseHp = 2;
     public float radius;
     public int point;

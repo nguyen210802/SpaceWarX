@@ -10,10 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d741959b206a9dd49a95a1b10d4d7132, type: 3}
-  m_Name: Boss_2
+  m_Name: MotherShip_2
   m_EditorClassIdentifier: 
-  baseHp: 50
-  radius: 1.75
-  point: 2000
-  dropList: []
+  baseHp: 15
+  radius: 1.9
+  point: 1300
+  dropList:
+  - itemProfile: {fileID: 11400000, guid: cba37c987ae1f7d46ae2fb3b5d175604, type: 2}
+    dropValue: 80
+    minDrop: 0
+    maxDrop: 100
+  - itemProfile: {fileID: 11400000, guid: 5cd14f822e0df254eaf2ddf5fa99e7e1, type: 2}
+    dropValue: 80
+    minDrop: 0
+    maxDrop: 100
   listUpgradePoint: 

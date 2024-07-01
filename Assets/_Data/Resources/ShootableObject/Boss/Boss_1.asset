@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d741959b206a9dd49a95a1b10d4d7132, type: 3}
   m_Name: Boss_1
   m_EditorClassIdentifier: 
-  baseHp: 30
+  baseHp: 40
   radius: 1.9
   point: 2000
   dropList: []

@@ -6198,9 +6198,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sphereCollider: {fileID: 668679959}
-  hp: 30
-  maxHp: 30
-  baseHp: 30
+  hp: 40
+  maxHp: 40
+  baseHp: 40
   critHpBonus: 0
   isDead: 0
   shootableObjectCtrl: {fileID: 1429829148}
