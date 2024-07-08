@@ -13,11 +13,6 @@ public class ObjLookAtTarget : NguyenMonoBehaviour
         this.LookAtTarget();
     }
 
-    public virtual void SetRotSpeed(float speed)
-    {
-        this.rotSpeed = speed;
-    }
-
     protected virtual void LookAtTarget()
     {
         Vector3 diff = this.targetPosition - transform.parent.position;

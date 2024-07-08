@@ -23,7 +23,7 @@ public class ObjLookAtPlayer : ObjLookAtTarget
     {
         if (this.player != null) return;
         this.player = GameObject.FindGameObjectWithTag("Player");
-        Debug.Log(transform.name + ": LoadObjectAppearing", gameObject);
+        Debug.Log(transform.name + ": LoadPlayer", gameObject);
     }
 
     protected virtual void GetMousePosition()

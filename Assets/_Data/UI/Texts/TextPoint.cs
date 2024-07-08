@@ -9,6 +9,7 @@ public class TextPoint : BaseText
     public static TextPoint Instance => instance;
 
     [SerializeField] protected int point = 0;
+    public int GetPoint => point;
 
     protected override void Awake()
     {
